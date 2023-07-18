@@ -1,0 +1,145 @@
+html, body {
+    height: 100%;
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+    }
+
+.flux {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+header {
+    background: linear-gradient(to bottom right, red, 25%, royalblue);
+    height: 100px;
+    margin: -10px;
+    color: white;}
+
+.logo {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;}
+    
+.link_pages {
+    text-decoration: none;
+    color: white;
+}
+.link_pages:hover {
+    color:rgb(163, 223, 233);
+    font-weight: bold;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;}
+
+ul {
+    list-style: none;
+    color: white;}
+
+.container_matchs {
+    padding-top: 20px;
+    display: flex
+    ;
+}
+
+.table_equipe {
+    width: 500px;
+    text-align: center;
+}
+td {
+    text-align: center;
+    font-size: 12px;
+}
+
+.display_teamname {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(73, 102, 206);
+}
+
+.display_betnumber {
+    font-size: 10px;
+}
+
+/* Formulaire de connexion et new account */
+
+.container_connexion {
+    margin-top: 30px;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: 75%;
+    background-color: whitesmoke;
+}
+.title_form {
+    font-size: 17px;
+    text-align: center;
+    color: rgb(73, 102, 206);
+    padding-top: 20px;
+    font-weight: bold;
+}
+.subtitle {
+    font-size: 12px;
+    text-align: center;
+}
+.container_form {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+label {
+    font-size: 14px;
+}
+.buttons_connexionform {
+    display: flex;
+    justify-content: space-between;
+}
+.button_connexion {
+    background-color:rgb(89, 106, 207);
+    color: white;
+}
+.email_forgottenpassword {
+    color: black;
+    font-size: 14px;
+}
+.container_newuser {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(73, 102, 206);
+    padding-top: 5px;
+    margin: 10%;
+    background-color: rgb(213, 209, 209);
+    height: 100px;
+}
+.email_newaccount {
+    text-decoration: none;
+    color: black;
+}
+
+/* Session user */
+
+.button_bet {
+    background-color:rgb(199, 237, 141); 
+    font-size: 11px;
+    border-color: rgb(202, 199, 204);
+}
+
+.button_bet:hover {
+    background-color:rgb(70, 117, 203);
+    color: white;
+    font-weight: bold;
+}
+
+/* Session administrateur */
+
+.container_bo {
+    margin-top: 30px;
+    margin-left: 17%;
+    margin-right: 17%;
+    background-color: whitesmoke;
+}
+
