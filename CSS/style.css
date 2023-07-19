@@ -40,6 +40,10 @@ ul {
     list-style: none;
     color: white;}
 
+.strong {
+    font-weight: bold;
+}
+
 .container_matchs {
     padding-top: 20px;
     display: flex
