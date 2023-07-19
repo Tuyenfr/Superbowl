@@ -52,15 +52,16 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    max-height: 500px;
+    max-height: 700px;
     width: 100%;
     background-image: url(../Images/SB-matchups.png);
+    overflow: auto;
 }
 
 .table_equipe_index {
     display: flex;
     justify-content: center;
-    width: 600px;
+    width: 500px;
     height: 500px;
     margin-top: -20px;
     padding-top: 20px;
@@ -70,6 +71,8 @@ ul {
 .sous_table_index {
     width: 500px;
     text-align: center;
+    height: 1000px;
+    background-color: white;
 }
 
 .container_matchs {

@@ -31,8 +31,9 @@ session_start();
 
          <div class="sous_table_index">
 
-   <?php
+         <h4> Matchs du jour</h4>
 
+   <?php
 
    require "./constants/matchs_avenir_update.php";
    require "./constants/matchs_encours_update.php";
@@ -115,8 +116,96 @@ session_start();
             echo 'pb de connexion';
             }
       ?>
+
+      <h4> Matchs à venir</h4>
+      
+      <?php
+
+      try{
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
+         {
+            $date =  $match_name['match_date'];
+            $dateUS = DateTime::createFromFormat('Y-m-d', $date);
+            $dateUSfull = date_format($dateUS, 'l d F Y');
+            $dateFRday= str_replace (['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
+            $match_dateFR = str_replace (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
+         
+         ?>
+
+         <div>
+            <table border="0" width="100%">
+               <tr class="display_td" width="100%">
+                  <td>
+                     <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
+                  </td>
+               </tr>
+
+               <tr class="display_td" width="100%">
+                  <td>
+                     <?php echo substr($match_name['start_time'], 0, -3). ' - ' .substr($match_name['end_time'], 0, -3);?>
+                  </td>
+               </tr>
+            </table>
+         </div>   
+         
+         <div>
+            <table border="0" width="100%">
+               <tr>
+                  <td class="display_teamname">
+                  <?php echo $match_name['team1_name'];?>
+                  </td>
+
+                  <td class="display_teamname">
+                  /
+                  </td>
+
+                  <td class="display_teamname">
+                  <?php echo $match_name['team2_name'];?>
+                  </td>
+               </tr>
+         
+               <tr>
+               <td class="display_betnumber" width="45%">
+                  1
+                  </form>
+               </td>
+
+               <td class="display_betnumber" width="10%">
+                  N
+                  </form>
+               </td>
+
+               <td class="display_betnumber" width="45%">
+                  2
+                  </form>
+               </td>
+               </tr>
+
+            <tr>
+               <td class="display_betnumber" width="45%">
+               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
+               </td>
+
+               <td class="display_betnumber" width="10%">
+               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
+               </td>
+
+               <td class="display_betnumber" width="45%">
+               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
+               </td>
+            </tr>
+         </table>
       </div>
-      </div>
+      <br>
+      <?php }            
+      }catch (PDOException $e) {
+         echo 'pb de connexion';
+         }
+   ?>
+   
+            </div>
+         </div>
       </section>
    </body>
    

@@ -24,13 +24,20 @@ session_start();
       </nav>
       </header>
       <br>
-      
+   
+
       <section class="container_matchs">
       
       <div class="table_equipe">
-   <?php
-   try{
-      $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+   
+      <?php
+
+      require "./constants/matchs_avenir_update.php";
+      require "./constants/matchs_encours_update.php";
+      require "./constants/matchs_over_update.php";
+
+      try{
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
          foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC', PDO::FETCH_ASSOC) as $match_name)
             {
                $date =  $match_name['match_date'];
@@ -127,9 +134,9 @@ session_start();
             </div>
             <br>
             <?php }            
-            }catch (PDOException $e) {
-            echo 'pb de connexion';
-            }
+      }catch (PDOException $e) {
+            echo 'pb de connexion';}
+            
       ?>
       </div>
       </section>
