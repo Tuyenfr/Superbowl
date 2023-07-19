@@ -52,7 +52,7 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    max-height: 700px;
+    max-height: 800px;
     width: 100%;
     background-image: url(../Images/SB-matchups.png);
     overflow: auto;
@@ -64,18 +64,23 @@ ul {
     width: 500px;
     height: 500px;
     margin-top: -20px;
-    padding-top: 20px;
     background-color: white;
 }
 
 .sous_table_index {
     width: 500px;
     text-align: center;
-    height: 1000px;
+    height: fit-content;
     background-color: white;
 }
 
+h3 {
+    color: rgb(73, 70, 67);
+}
+
 .container_matchs {
+    display: flex;
+    justify-content: center;
     padding-top: 20px;
     max-height: 800px;
 }
@@ -190,6 +195,12 @@ label {
     background-color:rgb(70, 117, 203);
     color: white;
     font-weight: bold;
+}
+
+.button_score {
+    background-color:rgb(184, 187, 179); 
+    font-size: 12px;
+    border-color: rgba(147, 150, 153, 0.858);
 }
 
 .display_table {

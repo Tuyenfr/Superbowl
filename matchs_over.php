@@ -81,53 +81,32 @@ session_start();
                
                      <tr>
                      <td class="display_betnumber" width="45%">
-                        1
+                        Score
                         </form>
                      </td>
 
                      <td class="display_betnumber" width="10%">
-                        N
-                        </form>
+                        
                      </td>
 
                      <td class="display_betnumber" width="45%">
-                        2
+                        Score
                         </form>
                      </td>
                      </tr>
 
                      <tr>
                      <td class="display_betnumber" width="45%">
-                        <form action="cart.php" method="GET">
-                        <input type="hidden" name="cote1" value="<?php echo $match_name['team1_odds']; ?>">
-                        <input type="hidden" name="team1" value="<?php echo $match_name['team1_name']; ?>">
-                        <input type="hidden" name="team2" value="<?php echo $match_name['team2_name']; ?>">
-                        <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
-                        <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
-                        <input class="button_bet" type="submit" value="<?php echo $match_name['team1_odds']; ?>">
-                        </form>
+                        <button class="button_score"><?php echo $match_name['team1_score']; ?></button>
                      </td>
 
                      <td class="display_betnumber" width="10%">
-                        <form action="cart.php" method="GET">
-                        <input type="hidden" name="cotenull" value="<?php echo $match_name['draw_odds']; ?>">
-                        <input type="hidden" name="team1" value="<?php echo $match_name['team1_name']; ?>">
-                        <input type="hidden" name="team2" value="<?php echo $match_name['team2_name']; ?>">
-                        <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
-                        <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
-                        <input class="button_bet" type="submit" value="<?php echo $match_name['draw_odds']; ?>">
-                        </form>
+                        
                      </td>
 
                      <td class="display_betnumber" width="45%">
-                        <form action="cart.php" method="GET">
-                        <input type="hidden" name="cote2" value="<?php echo $match_name['team2_odds']; ?>">
-                        <input type="hidden" name="team2" value="<?php echo $match_name['team2_name']; ?>">
-                        <input type="hidden" name="team2" value="<?php echo $match_name['team2_name']; ?>">
-                        <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
-                        <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
-                        <input class="button_bet" type="submit" value="<?php echo $match_name['team2_odds']; ?>">
-                        </form>
+                        <button class="button_score"><?php echo $match_name['team2_score']; ?></button>
+                     </td>
                      </td>
                   </tr>
                </table>
@@ -136,7 +115,7 @@ session_start();
             <?php }            
       }catch (PDOException $e) {
             echo 'pb de connexion';}
-            
+
       ?>
       </div>
       </section>
