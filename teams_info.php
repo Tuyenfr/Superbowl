@@ -115,12 +115,17 @@ session_start();
 
       foreach ($matchs_info as $infomatch)
 
-      { ?>
+      { 
+         
+         $matchdate = $infomatch['match_date'];
+         $matchdateUS = date_create_from_format('Y-m-d', $matchdate);
+         $matchdateFR = date_format($matchdateUS, 'd-m-Y');
+         ?>
 
       <p>Historique des matchs</p>
       <table>
       <tr>
-         <td><?php echo $infomatch['match_date']; ?></td>
+         <td><?php echo $matchdateFR; ?></td>
          <td>/ <?php echo $infomatch['team1_name']; ?></td>
          <td>-</td>
          <td><?php echo $infomatch['team2_name']; ?></td>
