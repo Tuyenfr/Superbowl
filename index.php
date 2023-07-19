@@ -25,9 +25,11 @@ session_start();
       </header>
       <br>
 
-      <section class="container_matchs">
+      <section class="container_matchs_index">
 
-      <div class="table_equipe">
+      <div class="table_equipe_index">
+
+         <div class="sous_table_index">
 
    <?php
 
@@ -114,9 +116,8 @@ session_start();
             }
       ?>
       </div>
-
+      </div>
       </section>
-   </div>
    </body>
    
    <footer>

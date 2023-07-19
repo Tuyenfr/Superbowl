@@ -22,7 +22,6 @@ session_start();
             <li><a class="link_pages" href="#matchs_management">Gestion des matchs</li>
             <li><a class="link_pages" href="#teams_management">Gestion des équipes</li>
             <li><a class="link_pages" href="#users_management">Gestion des utilisateurs</li>
-            <li><a class="link_pages" href="#">Statistiques transactions</li>
             <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
          </ul>
       </nav>

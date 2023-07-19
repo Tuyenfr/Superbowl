@@ -8,7 +8,7 @@ body {
     font-family: sans-serif;
     margin: 0%;
     padding: 0%;
-    }
+}
 
 .flux {
     margin-left: 15%;
@@ -48,15 +48,42 @@ ul {
     font-weight: bold;
 }
 
+.container_matchs_index {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    max-height: 500px;
+    width: 100%;
+    background-image: url(../Images/SB-matchups.png);
+}
+
+.table_equipe_index {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 500px;
+    margin-top: -20px;
+    padding-top: 20px;
+    background-color: white;
+}
+
+.sous_table_index {
+    width: 500px;
+    text-align: center;
+}
+
 .container_matchs {
     padding-top: 20px;
-    display: flex
-    ;
+    max-height: 800px;
 }
 
 .table_equipe {
+    display: flex;
+    flex-direction: column;
     width: 500px;
+    height: 800px;
     text-align: center;
+    overflow: auto;
 }
 
 .display_td {

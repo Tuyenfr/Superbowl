@@ -113,7 +113,7 @@ session_start();
       ?>
       </div>
       </section>
-   </div>
+   
    </body>
 
    <footer>
