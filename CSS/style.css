@@ -159,4 +159,33 @@ label {
     text-align: left;
 }
 
+/* session admin */
+
+.container_bo {
+    margin-top: 30px;
+    margin-left: 17%;
+    margin-right: 17%;
+    background-color: whitesmoke;    
+    }
+
+label {
+    font-size: smaller;
+}
+
+.button_connexion {
+    background-color:rgb(89, 106, 207);
+    color: white;
+    }
+
+h4 {
+    color: rgb(70, 73, 75);
+    text-decoration: underline;
+    font-style: italic;
+}
+
+h5 {
+    color: rgb(108, 144, 221);
+}
+
+
 
