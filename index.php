@@ -116,7 +116,7 @@ session_start();
                   </tr>
                </table>
             </div>
-            <br>
+            
             <?php }     
 
          }  else {
@@ -208,7 +208,7 @@ session_start();
             </tr>
          </table>
       </div>
-      <br>
+      
       <?php }            
       }catch (PDOException $e) {
          echo 'pb de connexion';
@@ -291,7 +291,7 @@ session_start();
                      </tr>
             </table>
       </div>
-      <br>
+      
       <?php }            
       }catch (PDOException $e) {
       echo 'pb de connexion';}

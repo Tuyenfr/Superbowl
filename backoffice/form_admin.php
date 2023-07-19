@@ -36,6 +36,9 @@ session_start();
 
       if ($age < 18) {
          echo 'Vous n\'êtes pas autorisés à enregistrer ce nouvel utilisateur.';
+         echo '<br>';
+         echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
+
          } else {
       
       try {
