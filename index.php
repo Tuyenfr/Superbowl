@@ -51,13 +51,13 @@ session_start();
                   <table border="0" width="100%" align="center">
                      
                      <tr width="100%">
-                        <td>                     
+                        <td class="display_td">                     
                            <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
                         </td>
                      </tr>
 
                      <tr width="100%">
-                        <td>
+                        <td class="display_td">
                            <?php echo substr($match_name['start_time'], 0, -3). ' - ' .substr($match_name['end_time'], 0, -3);?>
                         </td>
                      </tr>
@@ -65,7 +65,7 @@ session_start();
                </div>   
                
                <div>
-                  <table border="0" width="100%" align="center">
+                  <table border="0" width="100%">
                      <tr>
                         <td class="display_teamname">
                         <?php echo $match_name['team1_name'];?>
@@ -85,7 +85,7 @@ session_start();
                         1
                      </td>
 
-                     <td class="display_betnumber" width="5%">
+                     <td class="display_betnumber" width="10%">
                         N
                      </td>
 
@@ -95,13 +95,13 @@ session_start();
                      </tr>
 
                      <tr>
-                     <td width="45%">
+                     <td class="display_betnumber" width="45%">
                         <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
                      </td>
-                     <td width="5%">
+                     <td class="display_betnumber" width="10%">
                         <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
                      </td>
-                     <td width="45%">
+                     <td class="display_betnumber" width="45%">
                         <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
                      </td>
                   </tr>
@@ -118,4 +118,5 @@ session_start();
       </section>
    </div>
       </body>
+      <footer>Copyright 2023 - Stania</footer>
 </html>

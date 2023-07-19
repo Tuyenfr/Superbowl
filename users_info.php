@@ -44,36 +44,43 @@ session_start();
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         foreach ($pdo->query('SELECT * FROM users WHERE user_id = '.$user_id.'', PDO::FETCH_ASSOC) as $user_info) {?>
+         foreach ($pdo->query('SELECT * FROM users WHERE user_id = '.$user_id.'', PDO::FETCH_ASSOC) as $user_info) {
+            
+            $birthdate = $user_info['birth_date'];
+            $birthdateUS = date_create_from_format('Y-m-d', $birthdate);
+            $birthdateFR = date_format($birthdateUS, 'd-m-Y');
+            
+            ?>
 
          <table border="0" width="100%">
-            <tr>
-               <td width="20%" align="left">Email de connexion :</td>
+            <tr class="display_info">
+               <td width="20%">Email de connexion :</td>
                <td width="20%"><?php echo $user_info['email']; ?></td>
-               <td width="50%" align="left">
+               <td width="50%">
                   <form action="new_email.php" method="POST">
                      <input type="email" name="new_email" placeholder="Changer mon email">
-                     <input type="submit" value="Changer mon email">
+                     <input type="submit" class="button_connexion" value="Changer mon email">
                   </form>
                </td>
             </tr>
-            <tr>
-               <td align="left">Date de naissance :</td>
-               <td><?php echo $user_info['birth_date']; ?></td>
-               <td align="left">
+            <tr class="display_info">
+               <td>Date de naissance :</td>
+
+               <td><?php echo $birthdateFR; ?></td>
+               <td>
                   <form action="new_birthdate.php" method="POST"> 
                      <input type="date" name="new_birthdate" placeholder="Nouvelle date de naissance">
-                     <input type="submit" value="Changer ma date de naissance">
+                     <input type="submit" class="button_connexion"  value="Changer ma date de naissance">
                   </form>
                </td>
             </tr>
-            <tr>
-               <td align="left">Mot de passe :</td>
+            <tr class="display_info">
+               <td>Mot de passe :</td>
                <td><button style="border: none">********</button></td>
-               <td align="left">
+               <td>
                   <form action="new_password.php" method="POST"> 
                      <input type="text" name="new_password" placeholder="Nouveau mot de passe">
-                     <input type="submit" value="Changer mon mot de passe">
+                     <input class="button_connexion" type="submit" value="Changer mon mot de passe">
                   </form>
                </td>
             </tr>

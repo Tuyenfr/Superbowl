@@ -55,14 +55,14 @@ session_start();
 
                ?>
                <div>
-                  <table border="0" width="100%" align="center">
-                     <tr width="100%">
+                  <table border="0" width="100%">
+                     <tr class="display_td" width="100%">
                         <td>
                            <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
                         </td>
                      </tr>
 
-                     <tr width="100%">
+                     <tr class="display_td" width="100%">
                         <td>
                            <?php echo substr($match_name['start_time'], 0, -3). ' - ' .substr($match_name['end_time'], 0, -3);?>
                         </td>
@@ -92,7 +92,7 @@ session_start();
                         </form>
                      </td>
 
-                     <td class="display_betnumber" width="5%">
+                     <td class="display_betnumber" width="10%">
                         N
                         </form>
                      </td>
@@ -104,7 +104,7 @@ session_start();
                      </tr>
 
                      <tr>
-                     <td width="45%">
+                     <td class="display_betnumber" width="45%">
                         <form action="cart.php" method="GET">
                         <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
                         <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
@@ -115,7 +115,7 @@ session_start();
                         </form>
                      </td>
 
-                     <td width="5%">
+                     <td class="display_betnumber" width="10%">
                         <form action="cart.php" method="GET">
                         <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
                         <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
@@ -126,7 +126,7 @@ session_start();
                         </form>
                      </td>
 
-                     <td width="45%">
+                     <td class="display_betnumber" width="45%">
                         <form action="cart.php" method="GET">
                         <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
                         <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">

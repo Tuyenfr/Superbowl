@@ -60,8 +60,8 @@ session_start();
 
       <br>
 
-      <table border="0" width="100%" align="center" style="font-weight: bold; color: rgb(70, 73, 75)">
-            <tr>
+      <table border="0" width="100%" align="center">
+            <tr class="display_table">
                <td width="20%">Date</td>
                <td width="20%">Type transaction</td>
                <td width="20%">Credit</td>
@@ -89,8 +89,8 @@ session_start();
 
             ?>
 
-         <table border="0" width="100%" align="center">
-            <tr>
+         <table border="0" width="100%" style="font-size: 12px">
+            <tr align="center">
                <td width="20%"><?php echo $transactiondateFR; ?></td>
                <td width="20%"><?php echo $transaction['transaction_description']; ?></td>
                <td width="20%"><?php echo $transaction['credit']; ?></td>

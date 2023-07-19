@@ -2,6 +2,7 @@ html {
     height: 100%;
     margin: 0%;
     padding: 0%;
+    position: relative;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
     margin: 0%;
     padding: 0%;
     }
+
 
 .flux {
     margin-left: 15%;
@@ -18,7 +20,6 @@ body {
 header {
     background: linear-gradient(to bottom right, red, 25%, royalblue);
     height: 100px;
-    margin: -10px;
     color: white;}
 
 .logo {
@@ -59,7 +60,8 @@ ul {
     width: 500px;
     text-align: center;
 }
-td {
+
+.display_td {
     text-align: center;
     font-size: 12px;
 }
@@ -68,10 +70,12 @@ td {
     font-size: 14px;
     font-weight: bold;
     color: rgb(73, 102, 206);
+    text-align: center;
 }
 
 .display_betnumber {
     font-size: 10px;
+    text-align: center;
 }
 
 /* Formulaire de connexion et new account */
@@ -142,4 +146,17 @@ label {
     color: white;
     font-weight: bold;
 }
+
+.display_table {
+    font-weight: bold;
+    color: rgb(70, 73, 75);
+    font-size: 12px;
+    text-align: center;
+}
+
+.display_info {
+    font-size: 12px;
+    text-align: left;
+}
+
 

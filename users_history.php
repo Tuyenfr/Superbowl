@@ -32,8 +32,8 @@ session_start();
 
       <p class="title_form"> Mes paris</p>
 
-      <table border="0" width="100%" align="center" style="font-weight: bold; color: rgb(70, 73, 75)">
-            <tr>
+      <table border="0" width="100%" align="center">
+            <tr class="display_table">
                <td width="10%">Date pari</td>
                <td width="30%">Match</td>
                <td width="10%">Date match</td>
@@ -69,8 +69,8 @@ session_start();
             
             ?> 
             
-         <table border="0" width="100%" align="center">
-            <tr>
+         <table border="0" width="100%" style="font-size: 12px">
+            <tr align="center" >
                <td width="10%"><?php echo $betdateFR; ?></td>
                <td width="30%"><?php echo $bets['team1_name'].' - '.$bets['team2_name']; ?></td>
                <td width="10%"><?php echo $matchdateFR; ?></td>
