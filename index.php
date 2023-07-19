@@ -43,8 +43,12 @@ session_start();
 
    try{
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
-            {
+
+         $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC);
+         $nbmatch = $statement->fetchAll();
+            if (count($nbmatch) > 0) {
+               foreach ($nbmatch as $match_name) {
+   
                $date =  $match_name['match_date'];
                $dateUS = DateTime::createFromFormat('Y-m-d', $date);
                $dateUSfull = date_format($dateUS, 'l d F Y');
@@ -113,7 +117,11 @@ session_start();
                </table>
             </div>
             <br>
-            <?php }            
+            <?php }     
+
+         }  else {
+            echo 'Aucun match en cours';
+      }
             } catch (PDOException $e) {
             echo 'pb de connexion';
             }
