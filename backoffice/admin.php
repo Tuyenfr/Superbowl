@@ -184,7 +184,7 @@ session_start();
                      <input type="email" name="email" placeholder="Saisir l'email"> </div>
 
                <div> <label for="password">Mot de passe</label>
-                     <input type="text" name="password" placeholder="Saisir date de naissance"> </div>
+                     <input type="text" name="password" placeholder="Saisir mot de passe"> </div>
 
                <div>
                <label for="role">Rôle utilisateur</label>
