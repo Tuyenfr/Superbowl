@@ -38,7 +38,7 @@ session_start();
 
    try{
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "en cours"', PDO::FETCH_ASSOC) as $match_name)
+         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
             {
                $date =  $match_name['match_date'];
                $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -52,7 +52,7 @@ session_start();
                      
                      <tr width="100%">
                         <td class="display_td">                     
-                           <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
+                           <?php echo $match_dateFR;?>
                         </td>
                      </tr>
 

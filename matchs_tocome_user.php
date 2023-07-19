@@ -31,7 +31,7 @@ session_start();
    <?php
    try{
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir"', PDO::FETCH_ASSOC) as $match_name)
+         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
             {
                $date =  $match_name['match_date'];
                $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -112,7 +112,7 @@ session_start();
                         </form>
                      </td>
 
-                     <td width="45%">
+                     <td class="display_betnumber" width="45%">
                         <form action="cart.php" method="GET">
                         <input type="hidden" name="cote2" value="<?php echo $match_name['team2_odds']; ?>">
                         <input type="hidden" name="team2" value="<?php echo $match_name['team2_name']; ?>">

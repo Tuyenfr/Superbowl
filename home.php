@@ -58,7 +58,7 @@ session_start();
                   <table border="0" width="100%">
                      <tr class="display_td" width="100%">
                         <td>
-                           <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
+                           <?php echo $match_dateFR;?>
                         </td>
                      </tr>
 
