@@ -266,7 +266,7 @@ session_start();
             </form>
 
 
-            <h5>Mise à jour cote commentaire Equipe</h5>
+            <h5>Mise à jour commentaire Equipe</h5>
             
             <form action="comment_update.php" method="POST">
             
@@ -294,7 +294,7 @@ session_start();
                   </select>
             </div>
 
-            <div> <label for ="comment">Nouvelle cote équipe match</label>
+            <div> <label for ="comment">Nouveau commentaire équipe</label>
                   <input type="text" name="comment" placeholder="Nouveau commentaire"> </div>
 
             <div> <input class="button_connexion" type="submit" value="Valider"> </div>
