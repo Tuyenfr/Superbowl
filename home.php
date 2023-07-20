@@ -333,7 +333,7 @@ try{
 
       <div class="aside_right">
 
-      <div align="center">
+      <div align="center" style="font-size: 14px">
          <?php
          if (isset($_SESSION['user'])) {
          echo 'Bonjour '.$_SESSION['first_name'].' ! ';

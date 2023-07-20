@@ -131,7 +131,7 @@ session_start();
          ?>
 
       <table>
-      <tr>
+      <tr class="text_teaminfo">
          <td><?php echo $matchdateFR; ?></td>
          <td>/ <?php echo $infomatch['team1_name']; ?></td>
          <td>-</td>
