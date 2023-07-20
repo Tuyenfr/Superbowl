@@ -100,6 +100,40 @@ session_start();
             
             </form>
 
+
+
+            <h5>Commentaire match</h5>
+            
+            <form action="match_comment.php" method="POST">
+            
+            <select name ="date_match_name">
+            
+            <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE admin_status = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_open) {
+                        $date_match_name = $match_open['date_match_name'];
+      
+                  ?>
+
+                  <option value = "<?php echo $date_match_name; ?>"><?php echo $date_match_name; ?></option>
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
+                        echo 'Impossible de se connecter à la base de données';}
+                  ?>
+                  </select>
+                  
+
+            <div> <label for="match_comment">Commnentaire match</label>
+                  <input type="text" name="match_comment" placeholder="Commentaire match"> </div>
+      
+            <input class="button_connexion" type="submit" value="Valider">
+            </form>
+
             <h5>Mise à jour scores matchs en cours</h5>
             
             <form action="live_scores.php" method="POST">
@@ -132,7 +166,7 @@ session_start();
             <div> <label for="team2_score">Score Equipe2</label>
                   <input type="text" name="team2_score" placeholder="Score Equipe2"> </div>
       
-            <input class="button_connexion" type="submit" value="Mettre les scores à jour">
+            <input class="button_connexion" type="submit" value="Mettre les scores live à jour">
             </form>
 
             <h5>Mise à jour scores matchs terminés</h5>
@@ -147,12 +181,12 @@ session_start();
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND match_admin = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
-                        $match_scores = $match_over['date_match_name'];
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND admin_status = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
+                        $date_match_name = $match_over['date_match_name'];
                         
                   ?>
 
-                        <option value = "<?php echo $match_scores; ?>"><?php echo $match_scores; ?></option>
+                        <option value = "<?php echo $date_match_name; ?>"><?php echo $date_match_name; ?></option>
                   
                   
                   <?php } 
@@ -191,11 +225,118 @@ session_start();
                   </select>
             </div>
 
-            <input class="button_connexion" type="submit" value="Mettre les scores à jour">
+            <input class="button_connexion" type="submit" value="Valider scores finaux">
+            </form>
+
+      <h4 id="teams_management">Gestion des équipes</h4>
+
+            <h5>Mise à jour cote équipe matchs</h5>
+            
+            <form action="team_odds_update.php" method="POST">
+            
+            <div>
+                  <label for ="team_name">Sélectionner l'équipe</label>
+                  <select name ="team_name">
+            
+            <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+                  foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
+                  $team_name = $team['team_name']; ?>
+      
+                  <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                  
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
+                  echo 'Impossible de se connecter à la base de données';}
+                  ?>
+
+                  </select>
+            </div>
+
+            <div> <label for ="team_winning_odds">Nouvelle cote équipe match</label>
+                  <input type="text" name="team_winning_odds" placeholder="Nouvelle cote"> </div>
+
+            <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote"> </div>
+            
             </form>
 
 
-      <h4 id="teams_management">Gestion des équipes</h4>
+            <h5>Mise à jour cote commentaire Equipe</h5>
+            
+            <form action="comment_update.php" method="POST">
+            
+            <div>
+                  <label for ="team_name">Sélectionner l'équipe</label>
+                  <select name ="team_name">
+            
+            <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+                  foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
+                  $team_name = $team['team_name']; ?>
+      
+                  <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                  
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
+                  echo 'Impossible de se connecter à la base de données';}
+                  ?>
+
+                  </select>
+            </div>
+
+            <div> <label for ="comment">Nouvelle cote équipe match</label>
+                  <input type="text" name="comment" placeholder="Nouveau commentaire"> </div>
+
+            <div> <input class="button_connexion" type="submit" value="Valider"> </div>
+            
+            </form>
+            
+            <h5>Mise à jour dernière actualité Equipe</h5>
+            
+            <form action="news_update.php" method="POST">
+            
+            <div>
+                  <label for ="team_name">Sélectionner l'équipe</label>
+                  <select name ="team_name">
+            
+            <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+                  foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
+                  $team_name = $team['team_name']; ?>
+      
+                  <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                  
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
+                  echo 'Impossible de se connecter à la base de données';}
+                  ?>
+
+                  </select>
+            </div>
+
+            <div> <label for ="latest_news">Nouvelle cote équipe match</label>
+                  <input type="text" name="latest_news" placeholder="Dernière actualité"> </div>
+
+            <div> <input class="button_connexion" type="submit" value="Valider"> </div>
+            
+            </form>
+            
+
             
             <h5>Rajouter une nouvelle équipe</h5>
             
