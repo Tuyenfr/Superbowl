@@ -13,8 +13,10 @@ session_start();
    <body>
    <div class="flux">
       <header>
-         <h1 class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></h1>
-      <nav> 
+
+         <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></p>
+
+      <nav class="nav_index"> 
          <ul class="menu">
             <li><a class="link_pages" href="index.php">Lives</a></li>
             <li class="strong"><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
@@ -125,6 +127,7 @@ session_start();
             </div>
          </div>
       </section>
+   </div>
    </body>
    
    <footer>

@@ -15,9 +15,13 @@ body {
     margin-right: 15%;
 }
 
+.nav_index {
+    margin-right: 150px;
+}
+
 header {
     background: linear-gradient(to bottom right, red, 25%, royalblue);
-    height: 100px;
+    height: 90px;
     color: white;}
 
 .logo {
@@ -30,7 +34,6 @@ header {
 .menu {
     display: flex;
     justify-content: space-around;
-    padding-top: 10px;
     }
     
 .link_pages {
@@ -57,7 +60,9 @@ nav > ul {
     max-height: 800px;
     width: 100%;
     background-image: url(../Images/SB-matchups.png);
-    overflow: auto;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .table_equipe_index {
@@ -75,6 +80,8 @@ nav > ul {
     height: fit-content;
     background-color: white;
     overflow-y: auto;
+    position: relative;
+    z-index: 1;
 }
 
 h3 {

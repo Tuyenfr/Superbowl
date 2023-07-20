@@ -12,7 +12,7 @@ session_start();
 
    <body>
       <header>
-      <h1 class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></h1>
+      <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></p>
       <nav> 
          <ul class="menu">
             <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>

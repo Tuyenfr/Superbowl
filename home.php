@@ -13,7 +13,7 @@ session_start();
    <body>
    <div class="flux">
       <header>
-         <h1 class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></h1>
+         <p class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
       <nav> 
          <ul class="menu">
             <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
@@ -344,6 +344,7 @@ try{
       </div>
 
       </section>
+   </div>
    </body>
 
    <footer>
