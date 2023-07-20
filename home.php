@@ -69,9 +69,95 @@ session_start();
 
       <?php
 
-      require "./constants/matchs_avenir_update.php";
+      require "./constants/matchs_live.php";
       require "./constants/matchs_encours_update.php";
+      require "./constants/matchs_avenir_update.php";
       require "./constants/matchs_over_update.php";
+
+      try{
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+   
+         $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY start_time DESC', PDO::FETCH_ASSOC);
+            $nbmatch = $statement->fetchAll();
+         
+                  foreach ($nbmatch as $match_name) {
+      
+                  $date =  $match_name['match_date'];
+                  $dateUS = DateTime::createFromFormat('Y-m-d', $date);
+                  $dateUSfull = date_format($dateUS, 'l d F Y');
+                  $dateFRday= str_replace (['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
+                  $match_dateFR = str_replace (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
+   
+                  ?>
+                  <div>
+                     <table border="0" width="100%" align="center">
+                        
+                        <tr width="100%">
+                           <td class="display_td">                     
+                              <?php echo $match_dateFR;?>
+                           </td>
+                        </tr>
+   
+                        <tr width="100%">
+                           <td class="display_td">
+                              <?php echo substr($match_name['start_time'], 0, -3). ' - ' .substr($match_name['end_time'], 0, -3);?>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>   
+                  
+                  <div>
+                     <table border="0" width="100%">
+                        <tr>
+                           <td class="display_teamname">
+                           <?php echo $match_name['team1_name'];?>
+                           </td>
+   
+                           <td class="display_teamname">
+                           /
+                           </td>
+   
+                           <td class="display_teamname">
+                           <?php echo $match_name['team2_name'];?>
+                           </td>
+                        </tr>
+                  
+                        <tr>
+                        <td class="display_betnumber" width="48%">
+                           Score
+                        </td>
+   
+                        <td class="display_betnumber" width="4%">
+                           
+                        </td>
+   
+                        <td class="display_betnumber" width="48%">
+                           Score
+                        </td>
+                        </tr>
+   
+                        <tr>
+                        <td class="display_betnumber" width="48%">
+                           <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
+                        </td>
+                        <td class="display_betnumber" width="4%">
+                        
+                        </td>
+                        <td class="display_betnumber" width="48%">
+                        <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <br>
+               <?php }   
+         
+               } catch (PDOException $e) {
+               echo 'pb de connexion';
+               }
+               ?>
+   
+      <?php
 
       try{
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");

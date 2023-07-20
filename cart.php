@@ -109,6 +109,10 @@ session_start();
          $team2_name= $_GET['team2_name'];
          $match_id= $_GET['match_id'];
          $match_date= $_GET['match_date'];
+
+         $matchdateUS = date_create_from_format('Y-m-d', $match_date);
+         $matchdateFR = date_format($matchdateUS, 'd-m-Y');
+
          ?>
          <div>
             <table border="0" width="100%" align="center">
@@ -162,6 +166,10 @@ session_start();
          $team2_name= $_GET['team2_name'];
          $match_id= $_GET['match_id'];
          $match_date= $_GET['match_date'];
+
+         $matchdateUS = date_create_from_format('Y-m-d', $match_date);
+         $matchdateFR = date_format($matchdateUS, 'd-m-Y');
+         
          ?>
          <div>
             <table border="0" width="100%" align="center">
