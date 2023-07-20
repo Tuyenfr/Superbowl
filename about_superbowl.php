@@ -29,7 +29,7 @@ session_start();
 
       </header>
    
-      <div class="container_connexion">
+      <div class="container_about">
 
       <p class="title_form">A propos du Super Bowl</p>
 
@@ -62,6 +62,9 @@ session_start();
          
          <h4 id="superbowl_results">Résultats antérieurs</h4>
 
+         <p class="text_superbowl">A compléter</p>
+         <p class="text_superbowl">A compléter</p>
+         <p class="text_superbowl">A compléter</p>
          <p class="text_superbowl">A compléter</p>
 
       </div>
