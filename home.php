@@ -25,14 +25,6 @@ session_start();
       </header>
       <br>
 
-      <div align="center">
-         <?php
-         if (isset($_SESSION['user'])) {
-         echo 'Bonjour '.$_SESSION['first_name'].' ! ';
-         }
-         ?>
-      </div>
-
       <section class="container_matchs">
 
       <div class="aside_left">
@@ -339,7 +331,17 @@ try{
          </div>
       </div>
 
-      <div class="aside_right">Mon panier</div>
+      <div class="aside_right">
+
+      <div align="center">
+         <?php
+         if (isset($_SESSION['user'])) {
+         echo 'Bonjour '.$_SESSION['first_name'].' ! ';
+         }
+         ?>
+      </div>
+
+      </div>
 
       </section>
    </body>
