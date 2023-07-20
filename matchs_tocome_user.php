@@ -67,10 +67,11 @@ session_start();
          <div class="sous_table">
       
       <h4> Matchs à venir</h4>
+
+      <!-- require "./constants/matchs_live.php"; -->
    
       <?php
       
-      require "./constants/matchs_live.php";
       require "./constants/matchs_encours_update.php";
       require "./constants/matchs_avenir_update.php";
       require "./constants/matchs_over_update.php";

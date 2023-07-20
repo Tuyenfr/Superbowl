@@ -100,40 +100,38 @@ session_start();
             
             </form>
 
-      <h5>Mise à jour scores matchs en cours</h5>
+            <h5>Mise à jour scores matchs en cours</h5>
             
-            <form action="new_scores.php" method="POST">
+            <form action="live_scores.php" method="POST">
             
             <select name ="date_match_name">
-
+            
             <?php
                   try {
 
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_encours) {
-                        $match_scores = $match_encours['date_match_name'];
-                        
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_live) {
+                        $date_match_name = $match_live['date_match_name'];
+      
                   ?>
 
-                        <option value = "<?php echo $match_scores; ?>"><?php echo $match_scores; ?></option>
-                  
-                  
+                  <option value = "<?php echo $date_match_name; ?>"><?php echo $date_match_name; ?></option>
                   <?php } 
                   
-                        } catch (PDOException $e) {
+                  } catch (PDOException $e) {
                         echo 'Impossible de se connecter à la base de données';}
                   ?>
-
-            </select>
+                  </select>
+                  
 
             <div> <label for="team1_score">Score Equipe1</label>
                   <input type="text" name="team1_score" placeholder="Score Equipe1"> </div>
 
             <div> <label for="team2_score">Score Equipe2</label>
                   <input type="text" name="team2_score" placeholder="Score Equipe2"> </div>
-            
+      
             <input class="button_connexion" type="submit" value="Mettre les scores à jour">
             </form>
 
@@ -149,7 +147,7 @@ session_start();
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND team_winining_name IS NULL ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND match_admin = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
                         $match_scores = $match_over['date_match_name'];
                         
                   ?>
@@ -170,6 +168,28 @@ session_start();
 
             <div> <label for="team2_score">Score Equipe2</label>
                   <input type="text" name="team2_score" placeholder="Score Equipe2"> </div>
+                        
+            <div> <label for="team_winning_name">Equipe Gagnante</label> 
+
+                  <select name ="team_winning_name">     
+                  <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                  foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
+                        $team_name = $team['team_name']; ?>
+
+                        <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+
+                  <?php } 
+
+                  } catch (PDOException $e) {
+                        echo 'Impossible de se connecter à la base de données';}
+                  ?>
+                  </select>
+            </div>
 
             <input class="button_connexion" type="submit" value="Mettre les scores à jour">
             </form>

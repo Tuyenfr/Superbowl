@@ -67,9 +67,10 @@ session_start();
       
       <h4> Matchs terminés</h4>
 
+      <!-- require "./constants/matchs_live.php"; -->
+         
       <?php
 
-      require "./constants/matchs_live.php";
       require "./constants/matchs_encours_update.php";
       require "./constants/matchs_avenir_update.php";
       require "./constants/matchs_over_update.php";

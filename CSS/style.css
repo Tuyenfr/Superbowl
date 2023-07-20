@@ -281,6 +281,7 @@ footer {
 .button_score_live {
     background-color:rgb(234, 172, 80); 
     font-size: 12px;
+    min-height: 12px;
     border-color: rgba(147, 150, 153, 0.858);
 }
 
