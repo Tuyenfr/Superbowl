@@ -123,14 +123,47 @@ session_start();
                <div> <label for="team_name">Nouvelle équipe</label>
                      <input type="text" name="team_name" placeholder="Nom nouvelle équipe"> </div>
                
-               <div> <label for="team_winning_odds">Cote gagnante</label>
-                     <input type="text" name="team_winning_odds" placeholder="Cote gagnante"> </div>
+               <div> <label for="team_winning_odds">Cote équipe matchs</label>
+                     <input type="text" name="team_winning_odds" placeholder="Cote équipe"> </div>
 
+               <div> <label for="player1">Nom joueur 1</label>
+                     <input type="text" name="player1" placeholder="Nom joueur 1"> </div>
+
+               <div> <label for="player2">Nom joueur 2</label>
+                     <input type="text" name="player2" placeholder="Nom joueur 2"> </div>            
+
+               <div> <label for="player3">Nom joueur 3</label>
+                     <input type="text" name="player3" placeholder="Nom joueur 3"> </div>
+
+               <div> <label for="player4">Nom joueur 4</label>
+                     <input type="text" name="player4" placeholder="Nom joueur 4"> </div>
+                     
+               <div> <label for="player5">Nom joueur 5</label>
+                     <input type="text" name="player5" placeholder="Nom joueur 5"> </div>
+
+               <div> <label for="player6">Nom joueur 6</label>
+                     <input type="text" name="player6" placeholder="Nom joueur 6"> </div>            
+
+               <div> <label for="player7">Nom joueur7</label>
+                     <input type="text" name="player7" placeholder="Nom joueur 7"> </div>
+
+               <div> <label for="player8">Nom joueur 8</label>
+                     <input type="text" name="player8" placeholder="Nom joueur 8"> </div>
+
+               <div> <label for="player9">Nom joueur 9</label>
+                     <input type="text" name="player9" placeholder="Nom joueur 9"> </div>            
+
+               <div> <label for="player10">Nom joueur 10</label>
+                     <input type="text" name="player10" placeholder="Nom joueur 10"> </div>
+
+               <div> <label for="player11">Nom joueur 11</label>
+                     <input type="text" name="player11" placeholder="Nom joueur 11"> </div>
+                     
                <input class="button_connexion" type="submit" value="Rajouter une nouvelle équipe">
             
             </form>
 
-         <h5>Mise à jour cote équipe gagnante Super Bowl</h5>
+         <h5>Mise à jour cote équipe matchs</h5>
             <form action="team_odds_update.php" method="POST">
             
             <div>
@@ -157,10 +190,10 @@ session_start();
                   </select>
                </div>
 
-               <div> <label for ="team_winning_odds">Nouvelle cote équipe gagnante</label>
-                     <input type="text" name="team_winning_odds" placeholder="Nouvelle cote gagnante"> </div>
+               <div> <label for ="team_winning_odds">Nouvelle cote équipe match</label>
+                     <input type="text" name="team_winning_odds" placeholder="Nouvelle cote"> </div>
 
-               <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote gagnante"> </div>
+               <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote"> </div>
                
             </form>
 

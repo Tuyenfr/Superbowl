@@ -23,15 +23,37 @@ session_start();
 
       $team_name = $_POST['team_name'];
       $team_winning_odds = $_POST['team_winning_odds'];
+      $player1 = $_POST['player1'];
+      $player2 = $_POST['player2'];
+      $player3 = $_POST['player3'];
+      $player4 = $_POST['player4'];
+      $player5 = $_POST['player5'];
+      $player6 = $_POST['player6'];
+      $player7 = $_POST['player7'];
+      $player8 = $_POST['player8'];
+      $player9 = $_POST['player9'];
+      $player10 = $_POST['player10'];
+      $player11 = $_POST['player11'];
    
       try {
 
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         $newteam = $pdo->prepare('INSERT INTO teams (team_name, team_winning_odds) VALUES (:team_name, :team_winning_odds)');
+         $newteam = $pdo->prepare('INSERT INTO teams (team_name, team_winning_odds, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11) VALUES (:team_name, :team_winning_odds, :player1, :player2, :player3, :player4, :player5, :player6, :player7, :player8, :player9, :player10, :player11)');
          $newteam->bindValue(':team_name', $team_name);
          $newteam->bindValue(':team_winning_odds', $team_winning_odds);
+         $newteam->bindValue(':player1', $player1);
+         $newteam->bindValue(':player2', $player2);
+         $newteam->bindValue(':player3', $player3);
+         $newteam->bindValue(':player4', $player4);
+         $newteam->bindValue(':player5', $player5);
+         $newteam->bindValue(':player6', $player6);
+         $newteam->bindValue(':player7', $player7);
+         $newteam->bindValue(':player8', $player8);
+         $newteam->bindValue(':player9', $player9);
+         $newteam->bindValue(':player10', $player10);
+         $newteam->bindValue(':player11', $player11);
       
          if ($newteam->execute()) {
 
