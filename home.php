@@ -33,27 +33,60 @@ session_start();
          ?>
       </div>
 
-      <section class="container_matchs_index">
-      
-      <div class="table_equipe_index">
+      <section class="container_matchs">
 
-         <div class="sous_table_index">
+      <div class="aside_left">
+
+      <p>A propos du Super Bowl</p>
+      <ul>
+         <li>Actualités du Super Bowl</li>
+         <li>Histoire du Super Bowl</li>
+         <li>Résultats des années antérieures</li>
+      </ul>
+
+      <p>Infos équipes</p>
+
+      <?php
+
+      try{
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+   
+         foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team)
+         {
+            ?>
+            <form action="teams_info.php" method="POST">
+            <ul>
+               <li class="teams_list">
+                  <input class="button_team" type="submit" name="team_name" value="<?php echo $team['team_name']; ?>">
+               </li>
+            </ul>
+            </form>
+         <?php }
+      } catch (PDOException $e) {
+         echo 'Accès aux données impossible';}
+         ?>
+
+      </div>
+      
+      <div class="table_equipe">
+
+         <div class="sous_table">
       
       <h4> Matchs du jour</h4>
 
-   <?php
+      <?php
 
-   require "./constants/matchs_avenir_update.php";
-   require "./constants/matchs_encours_update.php";
-   require "./constants/matchs_over_update.php";
+      require "./constants/matchs_avenir_update.php";
+      require "./constants/matchs_encours_update.php";
+      require "./constants/matchs_over_update.php";
 
-   try{
-      $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+      try{
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
 
-      $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC);
-      $nbmatch = $statement->fetchAll();
-         if (count($nbmatch) > 0) {
-            foreach ($nbmatch as $match_name) {
+         $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC);
+         $nbmatch = $statement->fetchAll();
+            if (count($nbmatch) > 0) {
+               foreach ($nbmatch as $match_name) {
 
             $date =  $match_name['match_date'];
             $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -305,6 +338,9 @@ try{
    ?>
          </div>
       </div>
+
+      <div class="aside_right">Mon panier</div>
+
       </section>
    </body>
 

@@ -72,6 +72,7 @@ nav > ul {
     text-align: center;
     height: fit-content;
     background-color: white;
+    overflow-y: auto;
 }
 
 h3 {
@@ -82,26 +83,42 @@ h3 {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    max-height: 800px;
     width: 100%;
-    overflow: auto;
+    max-height: 500px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .table_equipe {
     display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 800px;
-    text-align: center;
-    overflow: auto;
+    justify-content: center;
+    width: 50%;
+    height: 500px;
+    margin-top: -20px;
+    background-color: white;
 }
+
+.sous_table {
+    width: 500px;
+    text-align: center;
+    height: fit-content;
+    background-color: white;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+}
+
 
 .aside_left {
     width: 25%;
     background-color: whitesmoke;
     font-size: smaller;
-    position: relative;
-    overflow: auto;
+}
+
+.aside_right {
+    width: 25%;
+    background-color: whitesmoke;
 }
 
 .button_team {
@@ -112,12 +129,6 @@ h3 {
 .button_team:hover {
     color: rgb(130, 68, 141);
     font-weight: bold;
-}
-
-.aside_right {
-    width: 25%;
-    background-color: whitesmoke;
-    position: relative;
 }
 
 .teams_list {
@@ -145,6 +156,7 @@ h3 {
 
 footer {
     position: absolute;
+    z-index: 2;
     padding-top: 5px;
     padding-bottom: 5px;
     bottom: 0;
