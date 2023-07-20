@@ -112,7 +112,7 @@ session_start();
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_encours) {
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_encours) {
                         $match_scores = $match_encours['date_match_name'];
                         
                   ?>
