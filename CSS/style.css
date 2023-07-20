@@ -57,7 +57,7 @@ nav > ul {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    max-height: 800px;
+    max-height: 700px;
     width: 100%;
     background-image: url(../Images/SB-matchups.png);
     overflow-y: auto;

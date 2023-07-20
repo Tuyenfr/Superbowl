@@ -26,6 +26,7 @@ session_start();
       </nav>
       </header>
       <br>
+      <br>
 
       <section class="container_matchs_index">
 
@@ -183,17 +184,14 @@ session_start();
                <tr>
                <td class="display_betnumber" width="48%">
                   1
-                  </form>
                </td>
 
                <td class="display_betnumber" width="4%">
                   N
-                  </form>
                </td>
 
                <td class="display_betnumber" width="48%">
                   2
-                  </form>
                </td>
                </tr>
 

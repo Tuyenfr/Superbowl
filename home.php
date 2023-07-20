@@ -30,7 +30,7 @@ session_start();
       <div class="aside_left">
 
       <p>A propos du Super Bowl</p>
-      
+
       <ul>
          <li><a class="link_list_about_sb" href="about_superbowl_user.php">Histoire du Super Bowl</a></li>
          <li><a class="link_list_about_sb" href="about_superbowl_user.php">Actualités du Super Bowl</a></li>
@@ -135,16 +135,40 @@ session_start();
                   </td>
                   </tr>
 
-                  <tr>
-                  <td class="display_betnumber" width="48%">
-                     <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
-                  </td>
-                  <td class="display_betnumber" width="4%">
-                     <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
-                  </td>
-                  <td class="display_betnumber" width="48%">
-                     <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
-                  </td>
+            <tr>
+            
+            <td class="display_betnumber" width="48%">
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['team1_odds']; ?>">
+            </form>
+            </td>
+
+            <td class="display_betnumber" width="4%">
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['draw_odds']; ?>">
+            </form>
+            </td>
+
+            <td class="display_betnumber" width="48%">
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['team2_odds']; ?>">
+            </form>
+            </td>  
                </tr>
             </table>
          </div>
@@ -211,33 +235,52 @@ session_start();
             <tr>
             <td class="display_betnumber" width="48%">
                1
-               </form>
             </td>
 
             <td class="display_betnumber" width="4%">
                N
-               </form>
             </td>
 
             <td class="display_betnumber" width="48%">
                2
-               </form>
             </td>
             </tr>
 
          <tr>
             <td class="display_betnumber" width="48%">
-            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['team1_odds']; ?>">
+            </form>
             </td>
 
             <td class="display_betnumber" width="4%">
-            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['draw_odds']; ?>">
+            </form>
             </td>
 
             <td class="display_betnumber" width="48%">
-            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
-            </td>
+            <form action="cart.php" method="GET">
+            <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
+            <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
+            <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
+            <input type="hidden" name="match_id" value="<?php echo $match_name['match_id']; ?>">
+            <input type="hidden" name="match_date" value="<?php echo $match_name['match_date']; ?>">
+            <input class="button_bet" type="submit" value="<?php echo $match_name['team2_odds']; ?>">
+            </form>
+            </td>                       
          </tr>
+
       </table>
    </div>
    <br>
