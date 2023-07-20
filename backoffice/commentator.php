@@ -23,7 +23,6 @@ session_start();
             <li class="strong"><a class="link_pages" href="../index.php">Accueil</a></li>
             <li><a class="link_pages" href="#matchs_management">Gestion des matchs</a></li>
             <li><a class="link_pages" href="#teams_management">Gestion des équipes</a></li>
-            <li><a class="link_pages" href="#users_management">Gestion des utilisateurs</a></li>
             <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
             </ul>
             </nav>
