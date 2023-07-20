@@ -31,9 +31,9 @@ session_start();
 
       <p>A propos du Super Bowl</p>
       <ul>
-         <li>Histoire du Super Bowl</li>
-         <li>Actualités du Super Bowl</li>
-         <li>Résultats des années antérieures</li>
+         <li><a class="link_list_about_sb" href="about_superbowl.php">Histoire du Super Bowl</a></li>
+         <li><a class="link_list_about_sb" href="about_superbowl.php">Actualités du Super Bowl</a></li>
+         <li><a class="link_list_about_sb" href="about_superbowl.php">Résultats des années antérieures</a></li>
       </ul>
 
       <p>Infos équipes</p>

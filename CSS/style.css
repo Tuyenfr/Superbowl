@@ -26,6 +26,12 @@ header {
     text-align: center;
     font-size: large;
     font-weight: bold;}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    }
     
 .link_pages {
     text-decoration: none;
@@ -35,10 +41,6 @@ header {
     color:rgb(163, 223, 233);
     font-weight: bold;
 }
-.menu {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;}
 
 nav > ul {
     list-style: none;
@@ -141,6 +143,16 @@ h3 {
     width: 25%;
     height: 1500px;
     background-color: whitesmoke;
+}
+
+.link_list_about_sb {
+    text-decoration: none;
+    color: black;
+}
+
+.link_list_about_sb:hover{
+    color: rgb(66, 98, 185);
+    font-weight: bold;
 }
 
 .button_team {
