@@ -3,278 +3,305 @@ session_start();
 ?>
 
 <html>
-   
-   <head>
+
+<head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>admin backoffice</title>
       <link rel="stylesheet" href="../CSS/style.css" type="text/css">
-   </head>
+</head>
 
-   <body>
-   <div class="flux">
+<body>
+      
+      <div class="flux">
+      
       <header>
-         <h1 class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></h1>
+            <h1 class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></h1>
 
-         <nav> 
-         <ul class="menu">
-            <li class="strong"><a class="link_pages" href="../index.php">Accueil</li>
-            <li><a class="link_pages" href="#matchs_management">Gestion des matchs</li>
-            <li><a class="link_pages" href="#teams_management">Gestion des équipes</li>
-            <li><a class="link_pages" href="#users_management">Gestion des utilisateurs</li>
+            <nav> 
+            <ul class="menu">
+            <li class="strong"><a class="link_pages" href="../index.php">Accueil</a></li>
+            <li><a class="link_pages" href="#matchs_management">Gestion des matchs</a></li>
+            <li><a class="link_pages" href="#teams_management">Gestion des équipes</a></li>
+            <li><a class="link_pages" href="#users_management">Gestion des utilisateurs</a></li>
             <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
-         </ul>
-      </nav>
+            </ul>
+            </nav>
 
       </header>
-   
+
       <div class="container_bo">
 
       <p class="title_form">Backoffice administrateur</p>
 
       <h4 id="matchs_management">Gestion des matchs</h4>
             
-         <h5>Créer un nouveau match</h5>
+            <h5>Créer un nouveau match</h5>
+            
             <form action="new_match.php" method="POST">
 
-               <div> <label for="match_date">Date du match</label>
-                     <input type="date" name="match_date" placeholder="Saisir la date"> </div>
-               
-               <div> <label for="start_time">Heure début match</label>
-                     <input type="time" name="start_time" placeholder="Saisir l'heure de début"> </div>
+            <div> <label for="match_date">Date du match</label>
+                  <input type="date" name="match_date" placeholder="Saisir la date"> </div>
+            
+            <div> <label for="start_time">Heure début match</label>
+                  <input type="time" name="start_time" placeholder="Saisir l'heure de début"> </div>
 
-               <div> <label for="end_time">Heure fin de match</label>
-                     <input type="time" name="end_time" placeholder="Saisir l'heure de fin"> </div>
+            <div> <label for="end_time">Heure fin de match</label>
+                  <input type="time" name="end_time" placeholder="Saisir l'heure de fin"> </div>
 
-               <div> <label for="team1_name">Sélectionner Equipe1</label> 
+            <div> <label for="team1_name">Sélectionner Equipe1</label> 
 
-                  <select name ="team1_name">     
+                  <select name ="team1_name">    
+                        
                   <?php
-                     try {
+                  try {
 
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
                      foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
-                     $team_name = $team['team_name']; ?>
+                        $team_name = $team['team_name']; ?>
       
-                     <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                        <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
                   
-                     <?php } 
-                     
-                     } catch (PDOException $e) {
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
                         echo 'Impossible de se connecter à la base de données';}
                   ?>
                   </select>
 
-               </div>
+            </div>
 
-               <div> <label for="team2_name">Sélectionner Equipe2</label> 
+            <div> <label for="team2_name">Sélectionner Equipe2</label> 
 
                   <select name ="team2_name">     
                   <?php
-                     try {
+                  try {
 
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
                      foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
-                     $team_name = $team['team_name']; ?>
+                        $team_name = $team['team_name']; ?>
       
-                     <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                        <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
                   
-                     <?php } 
-                     
-                     } catch (PDOException $e) {
+                  <?php } 
+                  
+                  } catch (PDOException $e) {
                         echo 'Impossible de se connecter à la base de données';}
                   ?>
                   </select>
                   
-               </div>
+            </div>
 
-               <input class="button_connexion" type="submit" value="Créer un nouveau match">
+            <input class="button_connexion" type="submit" value="Créer un nouveau match">
             
             </form>
 
-         <h5>Mise à jour des scores</h5>
+      <h5>Mise à jour scores matchs en cours</h5>
             
             <form action="new_scores.php" method="POST">
-
-               <div> <label for="match_date">Date du match</label>
-                     <input type="date" name="match_date" placeholder="Saisir la date"> </div>
-               
-               <div> <label for="match_name">Index match</label>
-                     <input type="text" name="match_name" placeholder="Nom du match"> </div>
-
-               <div> <label for="team1_score">Score Equipe1</label>
-                     <input type="text" name="team1_score" placeholder="Score Equipe1"> </div>
-
-               <div> <label for="team2_score">Score Equipe2</label>
-                     <input type="text" name="team2_score" placeholder="Score Equipe2"> </div>
             
-               <input class="button_connexion" type="submit" value="Mettre les scores à jour">
+            <select name ="date_match_name">
+
+            <?php
+                  try {
+
+                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_encours) {
+                        $match_scores = $match_encours['date_match_name'];
+                        
+                  ?>
+
+                        <option value = "<?php echo $match_scores; ?>"><?php echo $match_scores; ?></option>
+                  
+                  
+                  <?php } 
+                  
+                        } catch (PDOException $e) {
+                        echo 'Impossible de se connecter à la base de données';}
+                  ?>
+
+            </select>
+
+            <div> <label for="team1_score">Score Equipe1</label>
+                  <input type="text" name="team1_score" placeholder="Score Equipe1"> </div>
+
+            <div> <label for="team2_score">Score Equipe2</label>
+                  <input type="text" name="team2_score" placeholder="Score Equipe2"> </div>
+            
+            <input class="button_connexion" type="submit" value="Mettre les scores à jour">
             </form>
 
       <h4 id="teams_management">Gestion des équipes</h4>
             
-         <h5>Rajouter une nouvelle équipe</h5>
+            <h5>Rajouter une nouvelle équipe</h5>
+            
             <form action="new_team.php" method="POST">
 
-               <div> <label for="team_name">Nouvelle équipe</label>
-                     <input type="text" name="team_name" placeholder="Nom nouvelle équipe"> </div>
-               
-               <div> <label for="team_winning_odds">Cote équipe matchs</label>
-                     <input type="text" name="team_winning_odds" placeholder="Cote équipe"> </div>
+            <div> <label for="team_name">Nouvelle équipe</label>
+                  <input type="text" name="team_name" placeholder="Nom nouvelle équipe"> </div>
+            
+            <div> <label for="team_winning_odds">Cote équipe matchs</label>
+                  <input type="text" name="team_winning_odds" placeholder="Cote équipe"> </div>
 
-               <div> <label for="player1">Nom joueur 1</label>
-                     <input type="text" name="player1" placeholder="Nom joueur 1"> </div>
+            <div> <label for="player1">Nom joueur 1</label>
+                  <input type="text" name="player1" placeholder="Nom joueur 1"> </div>
 
-               <div> <label for="player2">Nom joueur 2</label>
-                     <input type="text" name="player2" placeholder="Nom joueur 2"> </div>            
+            <div> <label for="player2">Nom joueur 2</label>
+                  <input type="text" name="player2" placeholder="Nom joueur 2"> </div>            
 
-               <div> <label for="player3">Nom joueur 3</label>
-                     <input type="text" name="player3" placeholder="Nom joueur 3"> </div>
+            <div> <label for="player3">Nom joueur 3</label>
+                  <input type="text" name="player3" placeholder="Nom joueur 3"> </div>
 
-               <div> <label for="player4">Nom joueur 4</label>
-                     <input type="text" name="player4" placeholder="Nom joueur 4"> </div>
-                     
-               <div> <label for="player5">Nom joueur 5</label>
-                     <input type="text" name="player5" placeholder="Nom joueur 5"> </div>
+            <div> <label for="player4">Nom joueur 4</label>
+                  <input type="text" name="player4" placeholder="Nom joueur 4"> </div>
+                  
+            <div> <label for="player5">Nom joueur 5</label>
+                  <input type="text" name="player5" placeholder="Nom joueur 5"> </div>
 
-               <div> <label for="player6">Nom joueur 6</label>
-                     <input type="text" name="player6" placeholder="Nom joueur 6"> </div>            
+            <div> <label for="player6">Nom joueur 6</label>
+                  <input type="text" name="player6" placeholder="Nom joueur 6"> </div>            
 
-               <div> <label for="player7">Nom joueur7</label>
-                     <input type="text" name="player7" placeholder="Nom joueur 7"> </div>
+            <div> <label for="player7">Nom joueur7</label>
+                  <input type="text" name="player7" placeholder="Nom joueur 7"> </div>
 
-               <div> <label for="player8">Nom joueur 8</label>
-                     <input type="text" name="player8" placeholder="Nom joueur 8"> </div>
+            <div> <label for="player8">Nom joueur 8</label>
+                  <input type="text" name="player8" placeholder="Nom joueur 8"> </div>
 
-               <div> <label for="player9">Nom joueur 9</label>
-                     <input type="text" name="player9" placeholder="Nom joueur 9"> </div>            
+            <div> <label for="player9">Nom joueur 9</label>
+                  <input type="text" name="player9" placeholder="Nom joueur 9"> </div>            
 
-               <div> <label for="player10">Nom joueur 10</label>
-                     <input type="text" name="player10" placeholder="Nom joueur 10"> </div>
+            <div> <label for="player10">Nom joueur 10</label>
+                  <input type="text" name="player10" placeholder="Nom joueur 10"> </div>
 
-               <div> <label for="player11">Nom joueur 11</label>
-                     <input type="text" name="player11" placeholder="Nom joueur 11"> </div>
-                     
-               <input class="button_connexion" type="submit" value="Rajouter une nouvelle équipe">
+            <div> <label for="player11">Nom joueur 11</label>
+                  <input type="text" name="player11" placeholder="Nom joueur 11"> </div>
+                  
+            <input class="button_connexion" type="submit" value="Rajouter une nouvelle équipe">
             
             </form>
 
-         <h5>Mise à jour cote équipe matchs</h5>
+            <h5>Mise à jour cote équipe matchs</h5>
+            
             <form action="team_odds_update.php" method="POST">
             
             <div>
-               <label for ="team_name">Sélectionner l'équipe</label>
-               <select name ="team_name">
-               
-               <?php
-               try {
+                  <label for ="team_name">Sélectionner l'équipe</label>
+                  <select name ="team_name">
+            
+            <?php
+                  try {
 
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
                   foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
-                     $team_name = $team['team_name']; ?>
+                  $team_name = $team['team_name']; ?>
       
                   <option value = "<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
                   
                   <?php } 
-                     
-                     } catch (PDOException $e) {
+                  
+                  } catch (PDOException $e) {
                   echo 'Impossible de se connecter à la base de données';}
                   ?>
 
                   </select>
-               </div>
+            </div>
 
-               <div> <label for ="team_winning_odds">Nouvelle cote équipe match</label>
-                     <input type="text" name="team_winning_odds" placeholder="Nouvelle cote"> </div>
+            <div> <label for ="team_winning_odds">Nouvelle cote équipe match</label>
+                  <input type="text" name="team_winning_odds" placeholder="Nouvelle cote"> </div>
 
-               <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote"> </div>
-               
+            <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote"> </div>
+            
             </form>
 
 
       <h4 id="users_management">Gestion des utilisateurs</h4>
             
-         <h5>Créer un nouvel utilisateur</h5>
+            <h5>Créer un nouvel utilisateur</h5>
+            
             <form action="form_admin.php" method="POST">
 
-               <div> <label for="first_name">Prénom</label>
-                     <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
+            <div> <label for="first_name">Prénom</label>
+                  <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
 
-               <div> <label for="last_name">Nom</label>
-                     <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
+            <div> <label for="last_name">Nom</label>
+                  <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
 
-               <div> <label for="birth_date">Date de naissance</label>
-                     <input type="date" name="birth_date" placeholder="Saisir date de naissance"> </div>
+            <div> <label for="birth_date">Date de naissance</label>
+                  <input type="date" name="birth_date" placeholder="Saisir date de naissance"> </div>
 
-               <div> <label for="email">Email</label>
-                     <input type="email" name="email" placeholder="Saisir l'email"> </div>
+            <div> <label for="email">Email</label>
+                  <input type="email" name="email" placeholder="Saisir l'email"> </div>
 
-               <div> <label for="password">Mot de passe</label>
-                     <input type="text" name="password" placeholder="Saisir mot de passe"> </div>
+            <div> <label for="password">Mot de passe</label>
+                  <input type="text" name="password" placeholder="Saisir mot de passe"> </div>
 
-               <div>
-               <label for="role">Rôle utilisateur</label>
-                     <select name ="role">
+            <div>
+                  <label for="role">Rôle utilisateur</label>
+                  <select name ="role">
                         <option value="user">user</option>
                         <option value="admin">admin</option>
                         <option value="commentateur">commentateur</option>
-                     </select>
-               </div>
-               
-               <div><input class="button_connexion" type="submit" value="Créer le nouvel utilisateur"></div>
-               
+                  </select>
+            </div>
+            
+            <div><input class="button_connexion" type="submit" value="Créer le nouvel utilisateur"></div>
+            
             </form>
 
-         <h5>Changer le rôle de l'utilisateur</h5>
+            <h5>Changer le rôle de l'utilisateur</h5>
+            
             <form action="role_reset_admin.php" method="POST">
 
-               <div> <label for="first_name">Prénom utilisateur</label>
-                     <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
+            <div> <label for="first_name">Prénom utilisateur</label>
+                  <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
 
-               <div> <label for="last_name">Nom utilisateur</label>
-                     <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
+            <div> <label for="last_name">Nom utilisateur</label>
+                  <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
 
-               <div> <label for="email">Email utilisateur</label>
-                     <input type="email" name="email" placeholder="Saisir l'email"> </div>
-               
-               <div>
+            <div> <label for="email">Email utilisateur</label>
+                  <input type="email" name="email" placeholder="Saisir l'email"> </div>
+            
+            <div>
                   <label for ="role_reset">Nouveau rôle utilisateur</label>
-                     <select name ="role_reset">
+                  <select name ="role_reset">
                         <option value="user">user</option>
                         <option value="admin">admin</option>
-                        <option value="commentateur">commentateur</option>
-                     </select>
-               </div>
+                        <option value="commentator">commentator</option>
+                  </select>
+            </div>
 
-               <div>
+            <div>
                   <input class="button_connexion" type="submit" value="Changer le rôle">
-               </div>
+            </div>
             </form>
 
-         <h5>Changer le mot de passe de l'utilisateur</h5>
+            <h5>Changer le mot de passe de l'utilisateur</h5>
+            
             <form action="password_reset_admin.php" method="POST">
 
-               <div> <label for="first_name">Prénom utilisateur</label>
-                     <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
+            <div> <label for="first_name">Prénom utilisateur</label>
+                  <input type="text" name="first_name" placeholder="Saisir le prénom"> </div>
 
-               <div> <label for="last_name">Nom utilisateur</label>
-                     <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
+            <div> <label for="last_name">Nom utilisateur</label>
+                  <input type="text" name="last_name" placeholder="Saisir le nom"> </div>
             
-               <div> <label for="email">Email utilisateur</label>
-                     <input type="email" name="email" placeholder="Saisir l'email"> </div>
-               
-               <div> <label for="password_reset">Nouveau mot de passe</label>
-                     <input type="text" name="password_reset" placeholder="Nouveau mot de passe"> </div>
+            <div> <label for="email">Email utilisateur</label>
+                  <input type="email" name="email" placeholder="Saisir l'email"> </div>
+            
+            <div> <label for="password_reset">Nouveau mot de passe</label>
+                  <input type="text" name="password_reset" placeholder="Nouveau mot de passe"> </div>
 
-               <div> </div><input class="button_connexion" type="submit" value="Changer le mot de passe"> </div>
+            <div> </div><input class="button_connexion" type="submit" value="Changer le mot de passe"> </div>
             </form>
 
       </div>
-   </body>
+</body>
 </html>

@@ -16,9 +16,9 @@ session_start();
          <h1 class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></h1>
       <nav> 
          <ul class="menu">
-            <li><a class="link_pages" href="index.php">Lives</li>
-            <li class="strong"><a class="link_pages" href="matchs_tocome.php">Matchs à venir</li>
-            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</li>
+            <li><a class="link_pages" href="index.php">Lives</a></li>
+            <li class="strong"><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
+            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
          </ul>
       </nav>

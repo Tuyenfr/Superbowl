@@ -28,6 +28,7 @@ session_start();
       $team2_name = $_POST['team2_name'];
       $match_status = 'à venir';
       $match_name = $team1_name.' - '.$team2_name;
+      $date_match_name = $match_date.' '.$match_name;
 
       $matchdateUS = date_create_from_format('Y-m-d', $match_date);
       $matchdateFR = date_format($matchdateUS, 'd-m-Y');
@@ -64,13 +65,14 @@ session_start();
          $pdo1 = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
          $pdo1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         $newmatch = $pdo1->prepare('INSERT INTO matchs (match_date, start_time, end_time, team1_name, team2_name, match_name, team1_odds, draw_odds, team2_odds, match_status) VALUES (:match_date, :start_time, :end_time, :team1_name, :team2_name, :match_name, :team1_odds, :draw_odds, :team2_odds, :match_status)');
+         $newmatch = $pdo1->prepare('INSERT INTO matchs (match_date, start_time, end_time, team1_name, team2_name, match_name, date_match_name, team1_odds, draw_odds, team2_odds, match_status) VALUES (:match_date, :start_time, :end_time, :team1_name, :team2_name, :match_name, :date_match_name, :team1_odds, :draw_odds, :team2_odds, :match_status)');
          $newmatch->bindValue(':match_date', $match_date);
          $newmatch->bindValue(':start_time', $start_time);
          $newmatch->bindValue(':end_time', $end_time);
          $newmatch->bindValue(':team1_name', $team1_name);
          $newmatch->bindValue(':team2_name', $team2_name);
          $newmatch->bindValue(':match_name', $match_name);
+         $newmatch->bindValue(':date_match_name', $date_match_name);
          $newmatch->bindValue(':team1_odds', $team1_odds);
          $newmatch->bindValue(':draw_odds', $draw_odds);
          $newmatch->bindValue(':team2_odds', $team2_odds);

@@ -16,9 +16,9 @@ session_start();
          <h1 class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></h1>
       <nav> 
          <ul class="menu">
-            <li class="strong"><a class="link_pages" href="index.php">Lives</li>
-            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</li>
-            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</li>
+            <li class="strong"><a class="link_pages" href="index.php">Lives</a></li>
+            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
+            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
          </ul>
       </nav>
@@ -31,12 +31,14 @@ session_start();
 
          <div class="sous_table_index">
          
-      <h3>Découvrez le plus grand tournoi de football <br> américain et faites vos paris !</h3>
+      <h3>Découvrez le plus grand tournoi de football <br> américain et faites vos paris ! <br> <a class="link_about_SB" href="about_superbowl.php" target="_blank">En savoir plus</a></h3>
+
 
          <h4> Matchs du jour</h4>
 
    <?php
 
+   require "./constants/matchs_live.php";
    require "./constants/matchs_avenir_update.php";
    require "./constants/matchs_encours_update.php";
    require "./constants/matchs_over_update.php";
@@ -116,7 +118,7 @@ session_start();
                   </tr>
                </table>
             </div>
-            
+            <br>
             <?php }     
 
          }  else {
@@ -208,7 +210,7 @@ session_start();
             </tr>
          </table>
       </div>
-      
+      <br>
       <?php }            
       }catch (PDOException $e) {
          echo 'pb de connexion';
@@ -291,7 +293,7 @@ session_start();
                      </tr>
             </table>
       </div>
-      
+      <br>
       <?php }            
       }catch (PDOException $e) {
       echo 'pb de connexion';}

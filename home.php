@@ -16,9 +16,9 @@ session_start();
          <h1 class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></h1>
       <nav> 
          <ul class="menu">
-            <li class="strong"><a class="link_pages" href="home.php">Lives</li>
-            <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</li>
-            <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</li>
+            <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
+            <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
+            <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
          </ul>
       </nav>
@@ -39,8 +39,8 @@ session_start();
 
       <p>A propos du Super Bowl</p>
       <ul>
-         <li>Actualités du Super Bowl</li>
          <li>Histoire du Super Bowl</li>
+         <li>Actualités du Super Bowl</li>
          <li>Résultats des années antérieures</li>
       </ul>
 
@@ -155,7 +155,7 @@ session_start();
                </tr>
             </table>
          </div>
-         
+         <br>
          <?php }     
 
       }  else {
@@ -247,7 +247,7 @@ session_start();
          </tr>
       </table>
    </div>
-   
+   <br>
    <?php }            
    }catch (PDOException $e) {
       echo 'pb de connexion';
@@ -330,7 +330,7 @@ try{
                   </tr>
          </table>
    </div>
-   
+   <br>
    <?php }            
    }catch (PDOException $e) {
       echo 'pb de connexion';}

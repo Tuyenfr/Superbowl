@@ -15,9 +15,9 @@ session_start();
       <h1 class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></h1>
       <nav> 
          <ul class="menu">
-            <li class="strong"><a class="link_pages" href="home.php">Lives</li>
-            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</li>
-            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</li>
+            <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
+            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
+            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="connexion.php">Connexion</a></li>
          </ul>
       </nav>
@@ -59,9 +59,17 @@ session_start();
                               setcookie('user', 'admin', time() + 3600, '/');
                               header("location:backoffice/admin.php");
                                  } else {
-                                 echo 'Identifiants incorrects';}
+                                    if (password_verify ($password, $user['password']) && $user['role'] === 'commentator') {
+                                       $_SESSION['commentator'] = true;
+                                       $_SESSION['first_name'] = $user['first_name'];
+                                       $_SESSION['user_id'] = $user['user_id'];
+                                       setcookie('user', 'commentator', time() + 3600, '/');
+                                       header("location:backoffice/commentator.php");
+                                          } else {
+                                             echo 'Identifiants incorrects';}
+                                       }
                                  }
-                     }
+                        }
                }
             }catch (PDOException $e) {
                echo 'Impossible de se connecter à la base de données';}
