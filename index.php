@@ -14,7 +14,8 @@ session_start();
    <div class="flux">
       <header>
          <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></p>
-      <nav class="nav_index"> 
+      
+         <nav class="nav_index"> 
          <ul class="menu">
 
             <li class="strong"><a class="link_pages" href="index.php">Lives</a></li>
@@ -23,7 +24,7 @@ session_start();
             <li><a class="link_pages" href="about_superbowl.php">A propos du Super Bowl</a></li>
             <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
          </ul>
-      </nav>
+         </nav>
       </header>
       <br>
       <br>
