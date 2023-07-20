@@ -307,5 +307,14 @@ h5 {
     color: rgb(108, 144, 221);
 }
 
+/* team info */
+
+.text_teaminfo {
+    font-size: 14px;
+}
+
+.height_teaminfo {
+    height: 2px;
+}
 
 

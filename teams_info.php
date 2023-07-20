@@ -70,8 +70,8 @@ session_start();
 
                   { ?>
 
-                  <p>Composition de l'équipe</p>
-                  <ol>
+                  <h5 class="height_teaminfo">Composition de l'équipe</h5>
+                  <ol class="text_teaminfo">
                   <li><?php echo $infoteam['player1']; ?></li>
                   <li><?php echo $infoteam['player2']; ?></li>
                   <li><?php echo $infoteam['player3']; ?></li>
@@ -85,11 +85,17 @@ session_start();
                   <li><?php echo $infoteam['player11']; ?></li>
                   </ol>
 
-                  <p>Commentaire</p>
-                  <?php echo $infoteam['comment']; ?>
+                  <h5 class="height_teaminfo">Commentaire</h5>
 
-                  <p>Dernière actualité</p>
+                  <p class="text_teaminfo">
+                  <?php echo $infoteam['comment']; ?>
+                  </p>
+                                 
+                  <h5 class="height_teaminfo">Dernière actualité</h5>
+
+                  <p class="text_teaminfo">
                   <?php echo $infoteam['latest_news']; ?>
+                  </p>
 
                      <?php }
             
@@ -98,6 +104,8 @@ session_start();
                      }
 
                ?>
+
+      <h5 class="height_teaminfo">Historique des matchs</h5>
 
       <?php
 
@@ -122,7 +130,6 @@ session_start();
          $matchdateFR = date_format($matchdateUS, 'd-m-Y');
          ?>
 
-      <p>Historique des matchs</p>
       <table>
       <tr>
          <td><?php echo $matchdateFR; ?></td>
