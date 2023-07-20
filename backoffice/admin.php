@@ -500,7 +500,7 @@ session_start();
 
             <div> </div><input class="button_connexion" type="submit" value="Changer le mot de passe"> </div>
             </form>
-
+      </div>
       </div>
 </body>
 </html>
