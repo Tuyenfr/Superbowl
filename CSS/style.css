@@ -109,15 +109,16 @@ h3 {
     z-index: 1;
 }
 
-
 .aside_left {
     width: 25%;
+    height: 1500px;
     background-color: whitesmoke;
     font-size: smaller;
 }
 
 .aside_right {
     width: 25%;
+    height: 1500px;
     background-color: whitesmoke;
 }
 
