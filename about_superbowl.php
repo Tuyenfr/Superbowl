@@ -22,8 +22,8 @@ session_start();
          <ul class="menu">
             <li><a class="link_pages" href="index.php">Accueil</a></li>
             <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
-            <li><a class="link_pages" href="#superbowl_news">Actualités</a></li>
-            <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs</a></li>
+            <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
+            <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
          </ul>
       </nav>
 
