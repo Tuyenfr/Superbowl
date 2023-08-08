@@ -7,7 +7,8 @@ session_start();
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>SuperBowl-BET - Pari en ligne</title>
-      <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <link rel="stylesheet" href="./CSS/style-test.css" type="text/css">
    </head>
 
    <body>
@@ -96,32 +97,32 @@ session_start();
                      </tr>
                
                      <tr>
-                        <td class="display_betnumber" width="48%">
-                           Score
-                        </td>
+                     <td class="display_betnumber" width="48%">
+                        Score
+                     </td>
 
-                        <td class="display_betnumber" width="4%">
-                        </td>
+                     <td class="display_betnumber" width="4%">
+                        
+                     </td>
 
-                        <td class="display_betnumber" width="48%">
-                           Score
-                        </td>
+                     <td class="display_betnumber" width="48%">
+                        Score
+                     </td>
                      </tr>
 
                      <tr>
-                        <td class="display_betnumber" width="48%">
-                           <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
-                        </td>
-
-                        <td class="display_betnumber" width="4%">
-                        </td>
-                        
-                        <td class="display_betnumber" width="48%">
-                        <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
-                        </td>
-                     </tr>
-                  </table>
-               </div>
+                     <td class="display_betnumber" width="48%">
+                        <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
+                     </td>
+                     <td class="display_betnumber" width="4%">
+                     
+                     </td>
+                     <td class="display_betnumber" width="48%">
+                     <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
+                     </td>
+                  </tr>
+               </table>
+            </div>
             <br>
             <br>
             <?php }   
@@ -199,11 +200,9 @@ session_start();
                         <td class="display_betnumber" width="48%">
                            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
                         </td>
-
                         <td class="display_betnumber" width="4%">
                            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
                         </td>
-                        
                         <td class="display_betnumber" width="48%">
                            <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
                         </td>
@@ -400,5 +399,9 @@ session_start();
       </footer>
 
       </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
    </body>
 </html>

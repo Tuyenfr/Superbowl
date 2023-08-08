@@ -31,7 +31,7 @@ nav > ul {
     list-style: none;
     margin: 0%;
     padding: 0%;
-    }
+}
 
 .menu {
     display: flex;
@@ -42,11 +42,11 @@ nav > ul {
     text-decoration: none;
     color: white;
 }
+
 .link_pages:hover {
     color:rgb(163, 223, 233);
     font-weight: bold;
 }
-
 
 .strong {
     font-weight: bold;
@@ -139,12 +139,6 @@ nav > ul {
     overflow: auto;
     position: relative;
     z-index: 1;
-}
-
-.button-modal {
-    border: none;
-    background-color: white;
-    text-decoration: underline;
 }
 
 .aside_left {

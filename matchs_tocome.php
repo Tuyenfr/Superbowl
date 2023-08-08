@@ -14,7 +14,7 @@ session_start();
    <div class="flux">
       <header>
 
-         <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></p>
+         <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
 
       <nav class="nav_index"> 
          <ul class="menu">
