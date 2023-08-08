@@ -59,12 +59,12 @@ session_start();
          </table>
       
       </div>
-   </div>
-   </body>
 
-   <footer>
+      <footer>
       <p>Jouer comporte des risques</p>
       Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
+      </footer>
    
+      </div>
+   </body>
 </html>

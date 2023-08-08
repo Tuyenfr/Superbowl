@@ -145,18 +145,19 @@ session_start();
 
       <?php }
 
-} catch (PDOException $e) {
-   echo 'Impossible de se connecter à la base de données2';
-      }
+         } catch (PDOException $e) {
+            echo 'Impossible de se connecter à la base de données2';
+               }
 
-?>
-   </div>
-   </div>
+      ?>
+      
+         </div>
+
+         <footer>
+            <p>Jouer comporte des risques</p>
+            Mentions légales / © Copyright 2023 - Stania.com / Contact
+         </footer>
+
+      </div>
    </body>
-
-   <footer>
-      <p>Jouer comporte des risques</p>
-      Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
-
 </html>

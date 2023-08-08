@@ -11,34 +11,33 @@ session_start();
    </head>
 
    <body>
+   
    <div class="flux">
+      
       <header>
          <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></p>
       
-         <nav class="nav_index"> 
-         <ul class="menu">
-
-            <li class="strong"><a class="link_pages" href="index.php">Lives</a></li>
-            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
-            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
-            <li><a class="link_pages" href="about_superbowl.php">A propos du Super Bowl</a></li>
-            <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
-         </ul>
+         <nav> 
+            <ul class="menu">
+               <li class="strong"><a class="link_pages" href="index.php">Lives</a></li>
+               <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
+               <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
+               <li><a class="link_pages" href="about_superbowl.php">A propos du Super Bowl</a></li>
+               <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
+            </ul>
          </nav>
       </header>
       <br>
       <br>
 
       <section class="container_matchs_index">
-
-      <div class="table_equipe_index">
-
-         <div class="sous_table_index">
+         <div class="table_equipe_index">
+            <div class="sous_table_index">
          
-      <h3>Découvrez le plus grand tournoi de football <br> américain et faites vos paris ! <br> <a class="link_about_SB" href="about_superbowl.php" target="_blank">En savoir plus</a></h3>
+            <div class="teaser">Découvrez le plus grand tournoi de football américain et faites vos paris !</div>
+            <a class="link_about_SB" href="about_superbowl.php" target="_blank">En savoir plus</a>
 
-
-         <h4> Matchs du jour</h4>
+               <h4>Matchs du jour</h4>
 
       <!-- require "./constants/matchs_live.php"; -->
 
@@ -124,6 +123,7 @@ session_start();
                </table>
             </div>
             <br>
+            <br>
             <?php }   
       
             } catch (PDOException $e) {
@@ -182,45 +182,44 @@ session_start();
                      </tr>
                
                      <tr>
-                     <td class="display_betnumber" width="48%">
-                        1
-                     </td>
+                        <td class="display_betnumber" width="48%">
+                           1
+                        </td>
 
-                     <td class="display_betnumber" width="4%">
-                        N
-                     </td>
+                        <td class="display_betnumber" width="4%">
+                           N
+                        </td>
 
-                     <td class="display_betnumber" width="48%">
-                        2
-                     </td>
+                        <td class="display_betnumber" width="48%">
+                           2
+                        </td>
                      </tr>
 
                      <tr>
-                     <td class="display_betnumber" width="48%">
-                        <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
-                     </td>
-                     <td class="display_betnumber" width="4%">
-                        <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
-                     </td>
-                     <td class="display_betnumber" width="48%">
-                        <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
-                     </td>
-                  </tr>
-               </table>
-            </div>
+                        <td class="display_betnumber" width="48%">
+                           <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
+                        </td>
+                        <td class="display_betnumber" width="4%">
+                           <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
+                        </td>
+                        <td class="display_betnumber" width="48%">
+                           <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            <br>
             <br>
             <?php }     
 
-         }  else {
-            echo 'Aucun match en cours';
-      }
-            } catch (PDOException $e) {
-            echo 'pb de connexion';
-            }
-   
-      ?>
+         }  else {echo 'Aucun match en cours';}
 
-         <h4> Matchs à venir</h4>
+            } catch (PDOException $e) 
+                  {echo 'pb de connexion';}
+   
+            ?>
+
+         <h4>Matchs à venir</h4>
       
       <?php
 
@@ -234,7 +233,7 @@ session_start();
             $dateFRday= str_replace (['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
             $match_dateFR = str_replace (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
          
-         ?>
+      ?>
 
          <div>
             <table border="0" width="100%">
@@ -269,42 +268,44 @@ session_start();
                </tr>
          
                <tr>
-               <td class="display_betnumber" width="48%">
-                  1
-               </td>
+                  <td class="display_betnumber" width="48%">
+                     1
+                  </td>
 
-               <td class="display_betnumber" width="4%">
-                  N
-               </td>
+                  <td class="display_betnumber" width="4%">
+                     N
+                  </td>
 
-               <td class="display_betnumber" width="48%">
-                  2
-               </td>
+                  <td class="display_betnumber" width="48%">
+                     2
+                  </td>
                </tr>
 
-            <tr>
-               <td class="display_betnumber" width="48%">
-               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
-               </td>
+               <tr>
+                  <td class="display_betnumber" width="48%">
+                  <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
+                  </td>
 
-               <td class="display_betnumber" width="4%">
-               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
-               </td>
+                  <td class="display_betnumber" width="4%">
+                  <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
+                  </td>
 
-               <td class="display_betnumber" width="48%">
-               <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
-               </td>
-            </tr>
+                  <td class="display_betnumber" width="48%">
+                  <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
+                  </td>
+               </tr>
          </table>
       </div>
       <br>
+      <br>
+
       <?php }            
       }catch (PDOException $e) {
          echo 'pb de connexion';
          }
-   ?>
+      ?>
    
-         <h4> Matchs terminés</h4>
+         <h4>Matchs terminés</h4>
 
    <?php
 
@@ -352,35 +353,35 @@ session_start();
                </tr>
          
                <tr>
-                        <td class="display_betnumber" width="48%">
-                        Score
-                        </td>
+                  <td class="display_betnumber" width="48%">
+                  Score
+                  </td>
 
-                        <td class="display_betnumber" width="4%">
-                        
-                        </td>
+                  <td class="display_betnumber" width="4%">
+                  </td>
 
-                        <td class="display_betnumber" width="48%">
-                        Score
-                        </td>
-                     </tr>
+                  <td class="display_betnumber" width="48%">
+                  Score
+                  </td>
+               </tr>
 
-                     <tr>
-                        <td class="display_betnumber" width="48%">
-                        <button class="button_score"><?php echo $match_name['team1_score']; ?></button>
-                        </td>
+               <tr>
+                  <td class="display_betnumber" width="48%">
+                     <button class="button_score"><?php echo $match_name['team1_score']; ?></button>
+                  </td>
 
-                        <td class="display_betnumber" width="4%">
-                        
-                        </td>
+                  <td class="display_betnumber" width="4%">
+                  </td>
 
-                        <td class="display_betnumber" width="48%">
-                        <button class="button_score"><?php echo $match_name['team2_score']; ?></button>
-                        </td>
-                     </tr>
+                  <td class="display_betnumber" width="48%">
+                     <button class="button_score"><?php echo $match_name['team2_score']; ?></button>
+                  </td>
+               </tr>
             </table>
-      </div>
+         </div>
       <br>
+      <br>
+
       <?php }            
       }catch (PDOException $e) {
       echo 'pb de connexion';}
@@ -390,12 +391,12 @@ session_start();
             </div>
          </div>
       </section>
-   </div>
-   </body>
-   
-   <footer>
+
+      <footer>
       <p>Jouer comporte des risques</p>
       Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
+      </footer>
 
+      </div>
+   </body>
 </html>

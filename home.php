@@ -14,14 +14,14 @@ session_start();
    <div class="flux">
       <header>
          <p class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
-      <nav> 
-         <ul class="menu">
-            <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
-            <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
-            <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
-            <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
-         </ul>
-      </nav>
+         <nav> 
+            <ul class="menu">
+               <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
+               <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
+               <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
+               <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
+            </ul>
+         </nav>
       </header>
       <br>
 
@@ -475,12 +475,12 @@ try{
       </div>
 
       </section>
-   </div>
-   </body>
 
-   <footer>
+      <footer>
       <p>Jouer comporte des risques</p>
       Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
-
-   </html>
+      </footer>
+   
+      </div>
+   </body>
+</html>

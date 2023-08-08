@@ -58,12 +58,12 @@ session_start();
                <p><button><a class="email_newaccount" href="create_account.php"> Créer mon compte</a></button></p>
             </div>
       </div>
-   </div>
-   </body>
 
-   <footer>
+      <footer>
       <p>Jouer comporte des risques</p>
       Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
+      </footer>
 
+      </div>
+   </body>
 </html>

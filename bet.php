@@ -13,6 +13,7 @@ session_start();
 
    <body>
    <div class="flux">
+
       <header>
          <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
       </header>
@@ -271,12 +272,12 @@ session_start();
    }
       ?>
       </div>
-   </div>
-   </body>
 
-   <footer>
+      <footer>
       <p>Jouer comporte des risques</p>
       Mentions légales / © Copyright 2023 - Stania.com / Contact
-   </footer>
-   
+      </footer>
+
+   </div>
+   </body>
 </html>
