@@ -18,7 +18,8 @@ body {
 header {
     background: linear-gradient(to bottom right, red, 25%, royalblue);
     height: 90px;
-    color: white;}
+    color: white;
+}
 
 .logo {
     padding-top: 20px;
@@ -90,7 +91,7 @@ nav > ul {
     margin-right: 10%;
 }
 
-.link_about_sb {
+.link_about_SB {
     font-size: 12px;
     color: rgb(100, 84, 192);
     font-style: italic;
@@ -141,23 +142,13 @@ nav > ul {
     z-index: 1;
 }
 
-.button-modal {
-    border: none;
-    background-color: white;
-    text-decoration: underline;
-}
+/* Aside gauche */
 
 .aside_left {
     width: 25%;
-    height: 1500px;
+    height: 2000px;
     background-color: whitesmoke;
     font-size: smaller;
-}
-
-.aside_right {
-    width: 25%;
-    height: 1500px;
-    background-color: whitesmoke;
 }
 
 .link_list_about_sb {
@@ -184,6 +175,23 @@ nav > ul {
     height: 5px;
 }
 
+/* Aside droit */
+
+.aside_right {
+    width: 25%;
+    height: 2000px;
+    background-color: whitesmoke;
+}
+
+
+/* Tableaux matchs */
+
+.display_td_notover {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .display_td {
     text-align: center;
     font-size: 12px;
@@ -197,9 +205,59 @@ nav > ul {
 }
 
 .display_betnumber {
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
 }
+
+/* modal commentaires matchs */
+
+.modal_margin {
+    margin-top: 5px;
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_content {
+    border-radius: 4px;
+    top: 20px;
+    position: relative;
+    max-height: 50px;
+    width: 200px;
+    max-width: 90%;
+    background: whitesmoke;
+    padding: 1.5em 1.5em;
+    font-size: 12px;
+}
+
+.modal_close {
+    position: absolute;
+    top: 25px;
+    right: 145px;
+    color: grey;
+    text-decoration: none;
+}
+
+.link_comment {
+    font-size: 11px;
+    color: rgb(58, 61, 63);
+    font-style: italic;
+}
+
 
 /* Footer */
 

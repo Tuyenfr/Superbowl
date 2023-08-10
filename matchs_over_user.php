@@ -13,7 +13,7 @@ session_start();
    <body>
    <div class="flux">
       <header>
-         <p class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
+         <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
       <nav> 
          <ul class="menu">
             <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
@@ -88,7 +88,7 @@ session_start();
                      
       ?>
       <div>
-         <table border="0" width="100%">
+         <table width="100%">
             <tr width="100%">
                <td class="display_td">
                   <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
@@ -104,17 +104,17 @@ session_start();
       </div>   
       
       <div>
-         <table border="0" width="100%">
+         <table width="100%">
             <tr>
-               <td class="display_teamname">
+               <td class="display_teamname" width="48%">
                <?php echo $match_name['team1_name'];?>
                </td>
 
-               <td class="display_teamname">
+               <td class="display_teamname" width="4%">
                /
                </td>
 
-               <td class="display_teamname">
+               <td class="display_teamname" width="48%">
                <?php echo $match_name['team2_name'];?>
                </td>
             </tr>
@@ -134,15 +134,14 @@ session_start();
                   </tr>
 
                   <tr>
-                     <td class="display_betnumber" width="48%">
+                     <td align="center" width="48%">
                      <button class="button_score"><?php echo $match_name['team1_score']; ?></button>
                      </td>
 
-                     <td class="display_betnumber" width="4%">
-                     
+                     <td align="center" width="4%">
                      </td>
 
-                     <td class="display_betnumber" width="48%">
+                     <td calign="center" width="48%">
                      <button class="button_score"><?php echo $match_name['team2_score']; ?></button>
                      </td>
                   </tr>

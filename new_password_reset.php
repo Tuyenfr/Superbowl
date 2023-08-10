@@ -14,7 +14,7 @@ session_start();
    <body>
    <div class="flux">
       <header>
-         <p class="logo"><strong><i>Super</i>Bowl-BET</strong></a></p>
+         <p class="logo"><i>Super</i>Bowl-BET</a></p>
       </header>
    
       <div class="container_connexion">

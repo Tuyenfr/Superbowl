@@ -15,7 +15,7 @@ session_start();
 
       <header>
 
-         <p class="logo"><a class="link_pages" href="home.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
+         <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
          
          <nav>
          

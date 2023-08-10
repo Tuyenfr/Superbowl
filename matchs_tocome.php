@@ -14,7 +14,7 @@ session_start();
    <div class="flux">
       <header>
 
-         <p class="logo"><a class="link_pages" href="index.php"><strong><i>Super</i>Bowl-BET</strong></a></p>
+         <p class="logo"><a class="link_pages" href="index.php"><i>Super</i>Bowl-BET</a></p>
 
       <nav class="nav_index"> 
          <ul class="menu">
@@ -58,15 +58,15 @@ session_start();
          ?>
 
          <div>
-            <table border="0" width="100%">
-               <tr class="display_td" width="100%">
-                  <td>
+            <table width="100%">
+               <tr>
+                  <td class="display_td_notover" width="100%">
                      <?php echo $match_dateFR. ' - ' .'Match'.' '.$match_name['match_status'];?>
                   </td>
                </tr>
 
-               <tr class="display_td" width="100%">
-                  <td>
+               <tr>
+                  <td class="display_td" width="100%">
                      <?php echo substr($match_name['start_time'], 0, -3). ' - ' .substr($match_name['end_time'], 0, -3);?>
                   </td>
                </tr>
@@ -74,17 +74,17 @@ session_start();
          </div>   
          
          <div>
-            <table border="0" width="100%">
+            <table width="100%">
                <tr>
-                  <td class="display_teamname">
+                  <td class="display_teamname" width="48%">
                   <?php echo $match_name['team1_name'];?>
                   </td>
 
-                  <td class="display_teamname">
+                  <td class="display_teamname" width="4%">
                   /
                   </td>
 
-                  <td class="display_teamname">
+                  <td class="display_teamname" width="48%">
                   <?php echo $match_name['team2_name'];?>
                   </td>
                </tr>
@@ -107,21 +107,32 @@ session_start();
                </tr>
 
             <tr>
-               <td class="display_betnumber" width="48%">
+               <td align="center" width="48%">
                <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team1_odds']; ?></button></a>
                </td>
 
-               <td class="display_betnumber" width="4%">
+               <td align="center" width="4%">
                <a href="connexion.php"><button class="button_bet"><?php echo $match_name['draw_odds']; ?></button></a>
                </td>
 
-               <td class="display_betnumber" width="48%">
+               <td align="center" width="48%">
                <a href="connexion.php"><button class="button_bet"><?php echo $match_name['team2_odds']; ?></button></a>
                </td>
             </tr>
          </table>
       </div>
+
+      <div class="modal_margin">
+         <a href="#<?php echo $match_name['match_name'];?>" class="link_comment">Commentaires match</a>
+         <div id="<?php echo $match_name['match_name'];?>" class="modal">
+            <div class="modal_content"><?php echo $match_name['match_comment'];?></div>
+            <a href="#" class="modal_close">x</a>
+         </div>
+      </div>
+
       <br>
+      <br>
+      
       <?php }            
       }catch (PDOException $e) {
          echo 'pb de connexion';
