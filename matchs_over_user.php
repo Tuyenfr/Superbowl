@@ -141,7 +141,7 @@ session_start();
                      <td align="center" width="4%">
                      </td>
 
-                     <td calign="center" width="48%">
+                     <td align="center" width="48%">
                      <button class="button_score"><?php echo $match_name['team2_score']; ?></button>
                      </td>
                   </tr>
