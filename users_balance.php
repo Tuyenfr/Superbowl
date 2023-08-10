@@ -45,7 +45,7 @@ session_start();
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $balance = $pdo->prepare('SELECT user_balance FROM users_balance WHERE user_id = :user_id');
+      $balance = $pdo->prepare('SELECT user_balance FROM users WHERE user_id = :user_id');
       $balance->bindValue(':user_id', $user_id);
       if ($balance->execute()) {
             $user_balance = $balance->fetchColumn();

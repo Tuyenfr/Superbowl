@@ -160,7 +160,6 @@ session_start();
          </div>
       </div>
                <br>
-               <br>
 
                <?php }   
          
@@ -279,7 +278,6 @@ session_start();
          </div>
       </div>
 
-         <br>
          <br>
          <?php }     
 

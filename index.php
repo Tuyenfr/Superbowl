@@ -231,7 +231,7 @@ session_start();
       </div>
 
             <br>
-            <br>
+            
             <?php }     
 
          }  else {echo 'Aucun match en cours';}
