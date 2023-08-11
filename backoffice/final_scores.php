@@ -44,8 +44,6 @@ session_start();
          {  
             echo 'Le score final du match '.$date_match_name.' a bien été enregistré.'.'<br>';
    
-            echo '<br>';
-            echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
          } else {
             echo 'Impossible d\'enregistrer les nouveaux scores';
          }
@@ -62,47 +60,39 @@ session_start();
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         foreach ($pdo->query('SELECT * FROM bets WHERE date_match_name = :date_match_name, PDO::FETCH_ASSOC') as $bet_status) {
-            $potential_gain = $bet_status['potential_gain'];
-         }
-
-         $betUpdateGain = $pdo->prepare('UPDATE bets SET bet_status = "Gagné", bet_gain = :potential_gain   WHERE date_match_name = :date_match_name AND team_name_bet = :team_winning_name');
+         $betUpdateGain = $pdo->prepare('UPDATE bets SET bet_status = "Gagné" WHERE date_match_name = :date_match_name AND team_name_bet = :team_winning_name');
          $betUpdateGain->bindValue(':date_match_name', $date_match_name);
          $betUpdateGain->bindValue(':team_winning_name', $team_winning_name);
-         $betUpdateGain->bindValue(':potential_gain', $potential_gain);
 
          if ($betUpdateGain->execute())
-         { 
-            echo 'Le pari a été mis à jour avec le statut Gagné';}
+            {echo 'Le pari a été mis à jour avec le statut Gagné';}
 
             else {
-               echo 'Impossible de mettre à jour le pari';
-            }
 
-      } catch (PDOException $e) {
-         echo 'Impossible de se connecter à la base de données2';
-      }
+                  try {
 
-      try {
+                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                     $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
+                     $betUpdateLost->bindValue(':date_match_name', $date_match_name);
+                     $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
 
-         $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
-         $betUpdateLost->bindValue(':date_match_name', $date_match_name);
-         $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
+                     if ($betUpdateLost->execute())
+                     { echo 'Le pari a été mis à jour avec le statut Perdu';}
 
-         if ($betUpdateLost->execute())
-         { echo 'Le pari a été mis à jour avec le statut Perdu';}
+                     } catch (PDOException $e) {
+                        echo 'Impossible de se connecter à la base de données2';
+                     }
 
-            else {
-               echo 'Impossible de mettre à jour le pari';
-            }
+                  }
 
-      } catch (PDOException $e) {
-         echo 'Impossible de se connecter à la base de données3';
-      }
-
+                  } catch (PDOException $e) {
+                  echo 'Impossible de se connecter à la base de données3';
+               }
+               
+            echo '<br>';
+            echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
       ?>
 
       </div>

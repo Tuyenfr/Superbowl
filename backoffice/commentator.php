@@ -29,6 +29,13 @@ session_start();
 
       </header>
 
+      <?php
+            require_once "../constants/matchs_encours_update.php";
+            require_once "../constants/matchs_avenir_update.php";
+            require_once "../constants/matchs_over_update.php";
+            require_once "../constants/bets_update.php";
+      ?>
+
       <div class="container_bo">
 
       <p class="title_form">Backoffice commentateur</p>

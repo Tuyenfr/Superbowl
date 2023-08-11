@@ -45,9 +45,10 @@ session_start();
 
    <?php
 
-   require "./constants/matchs_encours_update.php";
-   require "./constants/matchs_avenir_update.php";
-   require "./constants/matchs_over_update.php";
+      require_once "./constants/matchs_encours_update.php";
+      require_once "./constants/matchs_avenir_update.php";
+      require_once "./constants/matchs_over_update.php";
+      require_once "./constants/bets_update.php";
 
    try{
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");

@@ -38,12 +38,13 @@ session_start();
       $team_name_bet = $team1_name;
       $date_match_name = $match_date." ".$team1_name." - ".$team2_name;
       $bet_status = 'En cours';
+      $bet_admin_status = "open";
    
       try {
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name,date_match_name, team1_odds, team_name_bet, team1_bet, bet_status, potential_gain) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team1_odds, :team_name_bet, :team1_bet, :bet_status, :potential_gain)');
+      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name,date_match_name, team1_odds, team_name_bet, team1_bet, bet_status, potential_gain, bet_admin_status) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team1_odds, :team_name_bet, :team1_bet, :bet_status, :potential_gain, :bet_admin_status)');
       $statement->bindValue(':bet_date', $bet_date);
       $statement->bindValue(':user_id', $user_id);
       $statement->bindValue(':match_date', $match_date);
@@ -56,6 +57,7 @@ session_start();
       $statement->bindValue(':team1_bet', $team1_bet);
       $statement->bindValue(':bet_status', $bet_status);
       $statement->bindValue(':potential_gain', $potential_gain);
+      $statement->bindValue(':bet_admin_status', $bet_admin_status);
 
       if ($statement->execute()) {
          
@@ -82,7 +84,7 @@ session_start();
             $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
             
             $credit ="0";
-            $transaction_description = "Pari";
+            $transaction_description = "Mise pari";
    
                $newtransaction= $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :team1_bet, :newcurrentbalance)');
                $newtransaction->bindValue(':user_id', $user_id);
