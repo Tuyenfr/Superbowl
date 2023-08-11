@@ -11,7 +11,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
     $betUpdateGain= $pdo->prepare('UPDATE bets SET bet_gain = :potential_gain, bet_admin_status = "closed" WHERE bet_status = "Gagné" AND bet_admin_status = "open"');
     $betUpdateGain->bindValue(':potential_gain', $potential_gain);
         
-        $betUpdateGain->execute();
+        if ($betUpdateGain->execute()) {
 
     $userUpdateGain= $pdo->prepare('UPDATE users_balance SET transaction_date = :match_date, transaction_description = "Gain pari", credit = :potential_gain,  WHERE user_id = :user_id');
     $userUpdateGain->bindValue(':match_date', $match_date);
@@ -19,10 +19,15 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
     $userUpdateGain->bindValue(':user_id', $user_id);
             
         $userUpdateGain->execute();
+        }
+
+        else {
+            echo 'Impossible de mettre à jour les tables';
+        }
     }
 
         } catch (PDOException $e) {
-            echo 'Impossible de mettre à jour la table paris';
+            echo 'Impossible de se connecter à la base de données';
         }
 
 ?>
