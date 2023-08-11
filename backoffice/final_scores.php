@@ -25,7 +25,6 @@ session_start();
       $team2_score = $_POST['team2_score'];
       $date_match_name = $_POST['date_match_name'];
       $team_winning_name = $_POST['team_winning_name'];
-      $match_id = $_POST['match_id'];
       $admin_status = 'closed';
 
          try {
@@ -56,17 +55,19 @@ session_start();
          echo 'Impossible de se connecter à la base de données';
       }
 
+      echo '<br>';
+
       try {
 
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         foreach ($pdo->query('SELECT * FROM bets WHERE match_id = $match_id, PDO::FETCH_ASSOC') as $bet_status) {
+         foreach ($pdo->query('SELECT * FROM bets WHERE date_match_name = :date_match_name, PDO::FETCH_ASSOC') as $bet_status) {
             $potential_gain = $bet_status['potential_gain'];
          }
 
-         $betUpdateGain = $pdo->prepare('UPDATE bets SET bet_status = "Gagné", bet_gain = :potential_gain  WHERE match_id = :match_id AND team_name_bet = :team_winning_name');
-         $betUpdateGain->bindValue(':match_id', $match_id);
+         $betUpdateGain = $pdo->prepare('UPDATE bets SET bet_status = "Gagné", bet_gain = :potential_gain   WHERE date_match_name = :date_match_name AND team_name_bet = :team_winning_name');
+         $betUpdateGain->bindValue(':date_match_name', $date_match_name);
          $betUpdateGain->bindValue(':team_winning_name', $team_winning_name);
          $betUpdateGain->bindValue(':potential_gain', $potential_gain);
 
@@ -87,8 +88,8 @@ session_start();
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu" WHERE match_id = :match_id AND team_name_bet != :team_winning_name');
-         $betUpdateLost->bindValue(':match_id', $match_id);
+         $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
+         $betUpdateLost->bindValue(':date_match_name', $date_match_name);
          $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
 
          if ($betUpdateLost->execute())
@@ -101,7 +102,6 @@ session_start();
       } catch (PDOException $e) {
          echo 'Impossible de se connecter à la base de données3';
       }
-
 
       ?>
 

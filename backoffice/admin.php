@@ -183,7 +183,6 @@ session_start();
       
                      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND admin_status = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
                         $date_match_name = $match_over['date_match_name'];
-                        $match_id = $match_over['match_id'];
                         
                   ?>
 
@@ -225,7 +224,6 @@ session_start();
                   ?>
                   </select>
             </div>
-            <input type="hidden" name="match_id" value="<?php echo $match_id; ?>">
             <input class="button_connexion" type="submit" value="Valider scores finaux">
             </form>
 

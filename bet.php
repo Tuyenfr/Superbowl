@@ -36,19 +36,21 @@ session_start();
 
       $potential_gain = $team1_odds*$team1_bet;
       $team_name_bet = $team1_name;
+      $date_match_name = $match_date." ".$team1_name." - ".$team2_name;
       $bet_status = 'En cours';
    
       try {
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name, team1_odds, team_name_bet, team1_bet, bet_status, potential_gain) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :team1_odds, :team_name_bet, :team1_bet, :bet_status, :potential_gain)');
+      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name,date_match_name, team1_odds, team_name_bet, team1_bet, bet_status, potential_gain) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team1_odds, :team_name_bet, :team1_bet, :bet_status, :potential_gain)');
       $statement->bindValue(':bet_date', $bet_date);
       $statement->bindValue(':user_id', $user_id);
       $statement->bindValue(':match_date', $match_date);
       $statement->bindValue(':match_id', $match_id);
       $statement->bindValue(':team1_name', $team1_name);
       $statement->bindValue(':team2_name', $team2_name);
+      $statement->bindValue(':date_match_name', $date_match_name);
       $statement->bindValue(':team_name_bet', $team_name_bet);
       $statement->bindValue(':team1_odds', $team1_odds);
       $statement->bindValue(':team1_bet', $team1_bet);
