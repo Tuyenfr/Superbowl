@@ -13,14 +13,32 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
         
         if ($betUpdateGain->execute()) {
 
-    $userUpdateGain= $pdo->prepare('UPDATE users_balance SET transaction_date = :match_date, transaction_description = "Gain pari", credit = :potential_gain,  WHERE user_id = :user_id');
-    $userUpdateGain->bindValue(':match_date', $match_date);
-    $userUpdateGain->bindValue(':potential_gain', $potential_gain);
-    $userUpdateGain->bindValue(':user_id', $user_id);
-            
-        $userUpdateGain->execute();
-        }
+            foreach ($pdo2->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
+                $currentbalance['user_balance'] += $potential_gain;
+                $newcurrentbalance = $currentbalance['user_balance'];
+    
+                $newbalance= $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id ='.$user_id.'');
+                $newbalance->bindValue(':balance', $newcurrentbalance);
+                $newbalance->execute();
+    
+                $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                
+                $credit = $potential_gain;
+                $debit = "0";
+                $transaction_description = "Gain pari";
 
+                $newtransaction= $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :match_date, :transaction_description, :credit, :debit, :newcurrentbalance)');
+                $newtransaction->bindValue(':user_id', $user_id);
+                $newtransaction->bindValue(':match_date', $match_date);
+                $newtransaction->bindValue(':transaction_description', $transaction_description);
+                $newtransaction->bindValue(':credit', $credit);
+                $newtransaction->bindValue(':debit', $debit);
+                $newtransaction->bindValue(':newcurrentbalance', $newcurrentbalance);
+                $newtransaction->execute();
+                
+            }
+        }
         else {
             echo 'Impossible de mettre à jour les tables';
         }
