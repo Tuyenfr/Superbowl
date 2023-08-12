@@ -47,7 +47,7 @@ session_start();
 
       try{
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
+         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC) as $match_name)
          {
             $date =  $match_name['match_date'];
             $dateUS = DateTime::createFromFormat('Y-m-d', $date);

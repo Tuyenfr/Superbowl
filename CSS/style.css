@@ -142,7 +142,7 @@ nav > ul {
     z-index: 1;
 }
 
-/* Aside gauche */
+/* Aside left */
 
 .aside_left {
     width: 25%;
@@ -175,7 +175,7 @@ nav > ul {
     height: 5px;
 }
 
-/* Aside droit */
+/* Aside right */
 
 .aside_right {
     width: 25%;

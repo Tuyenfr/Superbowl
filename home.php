@@ -29,35 +29,7 @@ session_start();
 
       <div class="aside_left">
 
-      <p>A propos du Super Bowl</p>
-
-      <ul>
-         <li><a class="link_list_about_sb" href="about_superbowl_user.php">Histoire du Super Bowl</a></li>
-         <li><a class="link_list_about_sb" href="about_superbowl_user.php">Actualités du Super Bowl</a></li>
-         <li><a class="link_list_about_sb" href="about_superbowl_user.php">Résultats des années antérieures</a></li>
-      </ul>
-
-      <p>Infos équipes</p>
-
-      <?php
-
-      try{
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-   
-         foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team)
-         {
-            ?>
-            <form action="teams_info.php" method="POST">
-            <ul>
-               <li class="teams_list">
-                  <input class="button_team" type="submit" name="team_name" value="<?php echo $team['team_name']; ?>">
-               </li>
-            </ul>
-            </form>
-         <?php }
-      } catch (PDOException $e) {
-         echo 'Accès aux données impossible';}
-         ?>
+      <?php include_once "./templates/aside_left_content.php"; ?>
 
       </div>
       
@@ -174,7 +146,7 @@ session_start();
       try{
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
 
-         $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC', PDO::FETCH_ASSOC);
+         $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
          $nbmatch = $statement->fetchAll();
             if (count($nbmatch) > 0) {
                foreach ($nbmatch as $match_name) {
@@ -297,7 +269,7 @@ session_start();
 
    try{
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_name)
+      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC) as $match_name)
       {
          $date =  $match_name['match_date'];
          $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -414,7 +386,7 @@ session_start();
 
 try{
    $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC', PDO::FETCH_ASSOC) as $match_name)
+      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC', PDO::FETCH_ASSOC) as $match_name)
       {
       $date =  $match_name['match_date'];
       $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -495,13 +467,7 @@ try{
 
       <div class="aside_right">
 
-      <div align="center" style="font-size: 14px">
-         <?php
-         if (isset($_SESSION['user'])) {
-         echo 'Bonjour '.$_SESSION['first_name'].' ! ';
-         }
-         ?>
-      </div>
+      <?php include_once "./templates/aside_right_content.php"; ?>
 
       </div>
 
