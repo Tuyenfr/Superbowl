@@ -249,7 +249,7 @@ session_start();
             $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $credit ="0";
-            $transaction_description = "Pari";
+            $transaction_description = "Mise pari";
    
             $newtransaction= $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :draw_bet, :newcurrentbalance)');
                $newtransaction->bindValue(':user_id', $user_id);

@@ -11,14 +11,13 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
     $betUpdateGain= $pdo->prepare('UPDATE bets SET bet_gain = :potential_gain, bet_admin_status = "closed" WHERE bet_status = "Gagné" AND bet_admin_status = "open"');
     $betUpdateGain->bindValue(':potential_gain', $potential_gain);
         
-    $betUpdateGain->execute();
+    if ($betUpdateGain->execute()){
 
-            foreach ($pdo2->query('SELECT * FROM users WHERE user_id = $user_id', PDO::FETCH_ASSOC) as $currentbalance) {
+            foreach ($pdo2->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
                 $currentbalance['user_balance'] += $potential_gain;
                 $newcurrentbalance = $currentbalance['user_balance'];
     
-                $newbalance= $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id = :user_id');
-                $newbalance->bindValue(':user_id', $user_id);
+                $newbalance= $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id ='.$user_id.'');
                 $newbalance->bindValue(':balance', $newcurrentbalance);
                 $newbalance->execute();
     
@@ -37,10 +36,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
                 $newtransaction->bindValue(':debit', $debit);
                 $newtransaction->bindValue(':newcurrentbalance', $newcurrentbalance);
                 $newtransaction->execute();
-                
+
+                }
             }
         }
-        
+
         } catch (PDOException $e) {
             echo 'Impossible de se connecter à la base de données';
         }
