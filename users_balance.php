@@ -94,7 +94,7 @@ session_start();
                <td width="20%"><?php echo $transactiondateFR; ?></td>
                <td width="20%"><?php echo $transaction['transaction_description']; ?></td>
                <td width="20%"><?php echo $transaction['credit']; ?></td>
-               <td width="20%"><?php echo ' - '.$transaction['debit']; ?></td>
+               <td width="20%"><?php if ($transaction['debit'] != '0') {echo ' - '.$transaction['debit'];} else {echo '&nbsp;&nbsp;0.00';}; ?></td>
                <td width="20%"><?php echo $transaction['user_balance']; ?></td>
          </tr>
          </table>
