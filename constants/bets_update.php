@@ -2,6 +2,7 @@
 
 try {
 $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     foreach ($pdo->query('SELECT * FROM bets WHERE bet_status = "Gagné" AND bet_admin_status = "open"', PDO::FETCH_ASSOC) as $betUpdate)
     {   $potential_gain = $betUpdate['potential_gain'];
@@ -13,22 +14,25 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
         
     if ($betUpdateGain->execute()){
 
+        $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+        $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             foreach ($pdo2->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
                 $currentbalance['user_balance'] += $potential_gain;
                 $newcurrentbalance = $currentbalance['user_balance'];
     
-                $newbalance= $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id ='.$user_id.'');
+                $newbalance= $pdo->prepare('UPDATE users SET user_balance = :balance WHERE user_id ='.$user_id.'');
                 $newbalance->bindValue(':balance', $newcurrentbalance);
                 $newbalance->execute();
     
-                $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-                $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
                 
                 $credit = $potential_gain;
                 $debit = "0";
                 $transaction_description = "Gain pari";
 
-                $newtransaction= $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :match_date, :transaction_description, :credit, :debit, :newcurrentbalance)');
+                $newtransaction= $pdo->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :match_date, :transaction_description, :credit, :debit, :newcurrentbalance)');
                 $newtransaction->bindValue(':user_id', $user_id);
                 $newtransaction->bindValue(':match_date', $match_date);
                 $newtransaction->bindValue(':transaction_description', $transaction_description);
