@@ -20,7 +20,7 @@ session_start();
 
             <nav> 
             <ul class="menu">
-            <li class="strong"><a class="link_pages" href="../index.php">Accueil</a></li>
+            <li class="bold"><a class="link_pages" href="../index.php">Accueil</a></li>
             <li><a class="link_pages" href="#matchs_management">Gestion des matchs</a></li>
             <li><a class="link_pages" href="#teams_management">Gestion des équipes</a></li>
             <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>

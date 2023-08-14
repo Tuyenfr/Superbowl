@@ -18,7 +18,7 @@ session_start();
          
          <nav> 
          <ul class="menu">
-            <li class="strong"><a class="link_pages" href="index.php">Lives</li>
+            <li class="bold"><a class="link_pages" href="index.php">Lives</li>
             <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</li>
             <li><a class="link_pages" href="matchs_over.php">Matchs terminés</li>
             <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>

@@ -15,6 +15,8 @@ body {
     margin-right: 15%;
 }
 
+/* HEADER */
+
 header {
     background: linear-gradient(to bottom right, red, 25%, royalblue);
     height: 90px;
@@ -48,10 +50,11 @@ nav > ul {
     font-weight: bold;
 }
 
-
-.strong {
+.bold {
     font-weight: bold;
 }
+
+/* CONTAINERS index et home */
 
 .container_matchs_index {
     display: flex;
@@ -80,36 +83,6 @@ nav > ul {
     overflow-y: auto;
     position: relative;
     z-index: 1;
-}
-
-.teaser {
-    color: rgb(73, 70, 67);
-    font-weight: bold;
-    font-size: 20px;
-    font-style: italic;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.link_about_SB {
-    font-size: 12px;
-    color: rgb(100, 84, 192);
-    font-style: italic;
-}
-
-.container_about {
-    margin-top: 30px;
-    margin-left: 17%;
-    margin-right: 17%;
-    height: 70%;
-    background-color: whitesmoke;
-    overflow: auto;
-}
-
-.text_superbowl {
-    font-size: 13px;
-    color: rgb(49, 103, 161);
-
 }
 
 .container_matchs {
@@ -142,7 +115,39 @@ nav > ul {
     z-index: 1;
 }
 
-/* Aside left */
+/* ABOUT SUPERBOWL */
+
+.teaser {
+    color: rgb(73, 70, 67);
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.link_about_SB {
+    font-size: 12px;
+    color: rgb(100, 84, 192);
+    font-style: italic;
+}
+
+.container_about {
+    margin-top: 30px;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: 70%;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+.text_superbowl {
+    font-size: 13px;
+    color: rgb(49, 103, 161);
+
+}
+
+/* ASIDE LEFT */
 
 .aside_left {
     width: 25%;
@@ -175,7 +180,7 @@ nav > ul {
     height: 5px;
 }
 
-/* Aside right */
+/* ASIDE RIGHT */
 
 .aside_right {
     width: 25%;
@@ -184,7 +189,7 @@ nav > ul {
 }
 
 
-/* Tableaux matchs */
+/* TABLEAUX MATCHS */
 
 .display_td_notover {
     text-align: center;
@@ -209,7 +214,7 @@ nav > ul {
     text-align: center;
 }
 
-/* modal commentaires matchs */
+/* MODAL commentaires matchs */
 
 .modal_margin {
     margin-top: 5px;
@@ -258,8 +263,7 @@ nav > ul {
     font-style: italic;
 }
 
-
-/* Footer */
+/* FOOTER */
 
 footer {
     position: absolute;
@@ -330,7 +334,7 @@ footer {
     color: black;
 }
 
-/* Session user */
+/* SESSION USER */
 
 .button_bet {
     background-color:rgb(199, 237, 141); 
@@ -370,7 +374,7 @@ footer {
     text-align: left;
 }
 
-/* session admin */
+/* SESSION ADMIN */
 
 .container_bo {
     margin-top: 30px;
@@ -378,6 +382,8 @@ footer {
     margin-right: 17%;
     background-color: whitesmoke;    
     }
+
+/* FORMULAIRE */
 
 label {
     font-size: smaller;
@@ -398,7 +404,7 @@ h5 {
     color: rgb(108, 144, 221);
 }
 
-/* team info */
+/* TEAM INFO */
 
 .text_teaminfo {
     font-size: 14px;
@@ -408,7 +414,7 @@ h5 {
     height: 2px;
 }
 
-/* media query */
+/* MEDIA QUERY */
 
 @media screen and (max-width: 960px) {
     nav > ul {font-size: small;}

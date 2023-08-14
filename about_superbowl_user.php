@@ -19,13 +19,13 @@ session_start();
          <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
 
          <nav> 
-         <ul class="menu">
-            <li><a class="link_pages" href="home.php">Accueil</a></li>
-            <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
-            <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
-            <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
-         </ul>
-      </nav>
+            <ul class="menu">
+               <li><a class="link_pages" href="home.php">Accueil</a></li>
+               <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
+               <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
+               <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
+            </ul>
+         </nav>
 
       </header>
    
@@ -52,7 +52,7 @@ session_start();
             Le Super Bowl est <strong>l'événement sportif le plus regardé à la télévision aux Etats-Unis</strong>, et l'un des événéments sportifs les plus suivis au monde. Les chaînes de télévision profitent de la rencontre pour vendre des spots publicitaires à des prix records.
             </p>
 
-         </div>
+            </div>
 
          <h4 id="superbowl_news">Actualités du Super Bowl</h4>
 
@@ -73,5 +73,4 @@ session_start();
 
    </div>
    </body>
-
 </html>

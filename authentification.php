@@ -15,7 +15,7 @@ session_start();
       <p class="logo"><a class="link_pages" href="index.php"><i>Super</i>Bowl-BET</p>
       <nav> 
          <ul class="menu">
-            <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
+            <li class="bold"><a class="link_pages" href="home.php">Lives</a></li>
             <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
             <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="connexion.php">Connexion</a></li>

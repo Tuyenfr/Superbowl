@@ -21,7 +21,7 @@ session_start();
          
          <ul class="menu">
 
-            <li class="strong"><a class="link_pages" href="home.php">Lives</a></li>
+            <li class="bold"><a class="link_pages" href="home.php">Lives</a></li>
             <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
             <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
             <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
