@@ -336,6 +336,15 @@ footer {
 
 /* SESSION USER */
 
+.container_useraccount {
+    margin-top: 30px;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: 70%;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
 .button_bet {
     background-color:rgb(199, 237, 141); 
     font-size: 11px;
