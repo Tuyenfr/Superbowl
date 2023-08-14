@@ -71,6 +71,8 @@ session_start();
             echo 'Impossible de se connecter à la base de données';
          }
 
+      echo '<br>';
+
       try {
 
          $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
@@ -87,9 +89,9 @@ session_start();
             echo 'Impossible de se connecter à la base de données';
          }
 
-            echo '<br>';
-            echo '<br>';
-            echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
+      echo '<br>';
+      echo '<br>';
+      echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
       ?>
 
       </div>
