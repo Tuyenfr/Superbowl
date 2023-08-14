@@ -228,15 +228,17 @@ session_start();
                                           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
-                                                $team_name = $team['team_name']; ?>
+                                                $match_nul = 'Match nul';
+                                                $team_name = $team['team_name'];?>
 
-                                                <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                                          <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
 
                                     <?php }
                                     } catch (PDOException $e) {
                                           echo 'Impossible de se connecter à la base de données';
                                     }
                                     ?>
+                                          <option value="<?php echo $match_nul; ?>"><?php echo $match_nul; ?></option>
                               </select>
                         </div>
 
