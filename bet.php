@@ -130,7 +130,7 @@ session_start();
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name, date_match_name, team2_odds, team_name_bet, team2_bet, bet_status, potential_gain) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name :team2_odds, :team_name_bet, :team2_bet, :bet_status, :potential_gain)');
+      $statement= $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name, date_match_name, team2_odds, team_name_bet, team2_bet, bet_status, potential_gain) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team2_odds, :team_name_bet, :team2_bet, :bet_status, :potential_gain)');
       $statement->bindValue(':bet_date', $bet_date);
       $statement->bindValue(':user_id', $user_id);
       $statement->bindValue(':match_date', $match_date);
