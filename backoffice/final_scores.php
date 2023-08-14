@@ -27,26 +27,26 @@ session_start();
       $team_winning_name = $_POST['team_winning_name'];
       $admin_status = 'closed';
 
-         try {
-         
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      try {
+      
+      $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-         $finalscores = $pdo->prepare('UPDATE matchs SET team1_score = :team1_score, team2_score = :team2_score, team_winning_name = :team_winning_name, admin_status = :admin_status WHERE date_match_name = :date_match_name');
-         $finalscores->bindValue(':date_match_name', $date_match_name);
-         $finalscores->bindValue(':team1_score', $team1_score);
-         $finalscores->bindValue(':team2_score', $team2_score);
-         $finalscores->bindValue(':team_winning_name', $team_winning_name);
-         $finalscores->bindValue(':admin_status', $admin_status);
+      $finalscores = $pdo->prepare('UPDATE matchs SET team1_score = :team1_score, team2_score = :team2_score, team_winning_name = :team_winning_name, admin_status = :admin_status WHERE date_match_name = :date_match_name');
+      $finalscores->bindValue(':date_match_name', $date_match_name);
+      $finalscores->bindValue(':team1_score', $team1_score);
+      $finalscores->bindValue(':team2_score', $team2_score);
+      $finalscores->bindValue(':team_winning_name', $team_winning_name);
+      $finalscores->bindValue(':admin_status', $admin_status);
 
-         if ($finalscores->execute())
+      if ($finalscores->execute())
 
-         {  
-            echo 'Le score final du match '.$date_match_name.' a bien été enregistré.'.'<br>';
-   
-         } else {
-            echo 'Impossible d\'enregistrer les nouveaux scores';
-         }
+      {  
+         echo 'Le score final du match '.$date_match_name.' a bien été enregistré.'.'<br>';
+
+      } else {
+         echo 'Impossible d\'enregistrer les nouveaux scores';
+      }
 
       }
       catch (PDOException $e) {
