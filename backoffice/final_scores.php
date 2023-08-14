@@ -67,30 +67,26 @@ session_start();
          if ($betUpdateGain->execute())
             {echo 'Les paris ont été mis à jour avec le statut Gagné';}
 
-            else {
+         } catch (PDOException $e) {
+            echo 'Impossible de se connecter à la base de données';
+         }
 
-                  try {
+      try {
 
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+         $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
+         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                     $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
-                     $betUpdateLost->bindValue(':date_match_name', $date_match_name);
-                     $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
+         $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
+         $betUpdateLost->bindValue(':date_match_name', $date_match_name);
+         $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
 
-                     if ($betUpdateLost->execute())
-                     { echo 'Les paris ont été mis à jour avec le statut Perdu';}
+         if ($betUpdateLost->execute())
+         { echo 'Les paris ont été mis à jour avec le statut Perdu';}
 
-                     } catch (PDOException $e) {
-                        echo 'Impossible de se connecter à la base de données2';
-                     }
+         } catch (PDOException $e) {
+            echo 'Impossible de se connecter à la base de données';
+         }
 
-                  }
-
-                  } catch (PDOException $e) {
-                  echo 'Impossible de se connecter à la base de données3';
-               }
-               
             echo '<br>';
             echo '<br>';
             echo '<button class="button_connexion"><a class="link_pages" href="admin.php">Retour à la page administrateur</a></button>';
