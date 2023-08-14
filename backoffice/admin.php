@@ -231,7 +231,9 @@ session_start();
                   ?>
                   </select>
             </div>
+
             <input class="button_connexion" type="submit" value="Valider scores finaux">
+            
             </form>
 
       <h4 id="teams_management">Gestion des équipes</h4>
