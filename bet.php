@@ -277,10 +277,7 @@ session_start();
       ?>
       </div>
 
-      <footer>
-      <p>Jouer comporte des risques</p>
-      Mentions légales / © Copyright 2023 - Stania.com / Contact
-      </footer>
+      <?php require_once "./templates/footer.php"; ?>
 
    </div>
    </body>

@@ -28,7 +28,6 @@ session_start();
          </nav>
       </header>
       <br>
-      <br>
 
       <section class="container_matchs_index">
          <div class="table_equipe_index">
@@ -423,10 +422,7 @@ session_start();
          </div>
       </section>
 
-      <footer>
-      <p>Jouer comporte des risques</p>
-      Mentions légales / © Copyright 2023 - Stania.com / Contact
-      </footer>
+      <?php require_once "./templates/footer.php"; ?>
 
       </div>
    </body>
