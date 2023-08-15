@@ -42,10 +42,9 @@ session_start();
 
                <h4>Matchs du jour</h4>
 
-               <!-- require "./constants/matchs_live.php"; -->
-
                <?php
 
+               require_once "./constants/matchs_live.php";
                require_once "./constants/matchs_encours_update.php";
                require_once "./constants/matchs_avenir_update.php";
                require_once "./constants/matchs_over_update.php";
