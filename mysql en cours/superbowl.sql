@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 14 août 2023 à 21:37
+-- Généré le : mar. 15 août 2023 à 19:00
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -85,8 +85,6 @@ CREATE TABLE `matchs` (
   `match_date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
-  `date_start_time` varchar(255) NOT NULL,
-  `date_end_time` varchar(255) NOT NULL,
   `team1_name` varchar(255) NOT NULL,
   `team2_name` varchar(255) NOT NULL,
   `match_name` varchar(255) NOT NULL,
@@ -106,41 +104,44 @@ CREATE TABLE `matchs` (
 -- Déchargement des données de la table `matchs`
 --
 
-INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `date_start_time`, `date_end_time`, `team1_name`, `team2_name`, `match_name`, `match_comment`, `date_match_name`, `team1_odds`, `draw_odds`, `team2_odds`, `team1_score`, `team2_score`, `team_winning_name`, `match_status`, `admin_status`) VALUES
-(1, '2023-07-17', '20:30:00', '22:00:00', '', '', 'Atlanta', 'Kansas City', 'Atlanta - Kansas City', '', '2023-07-17 Atlanta - Kansas City', 1.53, 13.00, 1.47, 35, 40, 'Kansas City', 'terminé', 'closed'),
-(3, '2023-07-19', '20:00:00', '21:30:00', '', '', 'Houston', 'Kansas City', 'Houston - Kansas City', '', '2023-07-19 Houston - Kansas City', 1.73, 14.00, 1.27, 35, 49, 'Kansas City', 'terminé', 'closed'),
-(4, '2023-07-19', '20:30:00', '22:00:00', '', '', 'Indianapolis', 'Las Vegas', 'Indianapolis - Las Vegas', '', '2023-07-19 Indianapolis - Las Vegas', 1.47, 13.00, 1.53, 39, 26, 'Indianapolis', 'terminé', 'closed'),
-(9, '2023-07-18', '20:00:00', '21:30:00', '', '', 'San Francisco', 'Tennessee', 'San Francisco - Tennessee', '', '2023-07-18 San Francisco - Tennessee', 1.33, 19.00, 1.67, 21, 32, 'Tennessee', 'terminé', 'closed'),
-(12, '2023-07-27', '21:00:00', '22:30:00', '', '', 'Cleveland', 'New England', 'Cleveland - New England', '', '2023-07-27 Cleveland - New England', 1.35, 14.00, 1.65, 56, 47, 'Cleveland', 'terminé', 'closed'),
-(13, '2023-07-20', '20:00:00', '21:30:00', '', '', 'Detroit', 'Carolina', 'Detroit - Carolina', '', '2023-07-20 Detroit - Carolina', 1.62, 13.00, 1.38, 21, 40, 'Carolina', 'terminé', 'closed'),
-(14, '2023-07-20', '21:00:00', '22:30:00', '', '', 'Houston', 'Cleveland', 'Houston - Cleveland', 'Beau combat à venir !', '2023-07-20 Houston - Cleveland', 1.58, 13.00, 1.42, 35, 48, 'Cleveland', 'terminé', 'closed'),
-(15, '2023-07-20', '20:30:00', '22:00:00', '', '', 'Jacksonville', 'Tennessee', 'Jacksonville - Tennessee', '', '2023-07-20 Jacksonville - Tennessee', 1.21, 21.00, 1.79, 21, 42, 'Tennessee', 'terminé', 'closed'),
-(16, '2023-07-21', '20:00:00', '21:30:00', '', '', 'Miami', 'Pittsburgh', 'Miami - Pittsburgh', 'Beau combat à venir !', '2023-07-21 Miami - Pittsburgh', 1.44, 13.00, 1.56, 28, 46, 'Pittsburgh', 'terminé', 'closed'),
-(17, '2023-07-21', '20:00:00', '21:30:00', '', '', 'LA Rams', 'LA Chargers', 'LA Rams - LA Chargers', '', '2023-07-21 LA Rams - LA Chargers', 1.50, 12.00, 1.50, 35, 28, 'LA Chargers', 'terminé', 'closed'),
-(18, '2023-07-25', '20:00:00', '21:30:00', '', '', 'Houston', 'San Francisco', 'Houston - San Francisco', '', '2023-07-25 Houston - San Francisco', 1.33, 15.00, 1.67, 37, 45, 'San Francisco', 'terminé', 'closed'),
-(19, '2023-08-20', '20:00:00', '21:30:00', '', '', 'Washington', 'Buffalo', 'Washington - Buffalo', 'Un match de titans !', '2023-08-20 Washington - Buffalo', 1.90, 23.00, 1.10, NULL, NULL, NULL, 'à venir', 'open'),
-(20, '2023-09-02', '20:00:00', '21:30:00', '', '', 'Atlanta', 'Dallas', 'Atlanta - Dallas', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-09-02 Atlanta - Dallas', 1.37, 13.00, 1.63, NULL, NULL, NULL, 'à venir', 'open'),
-(22, '2023-08-10', '22:00:00', '23:30:00', '', '', 'Pittsburgh', 'LA Rams', 'Pittsburgh - LA Rams', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-10 Pittsburgh - LA Rams', 1.60, 14.00, 1.40, 24, 36, 'LA Rams', 'terminé', 'closed'),
-(23, '2023-08-11', '14:00:00', '15:30:00', '', '', 'NY Jets', 'Minnesota', 'NY Jets - Minnesota', 'Un très beau match en perspective !', '2023-08-11 NY Jets - Minnesota', 1.56, 13.00, 1.44, 42, 36, 'NY Jets', 'terminé', 'closed'),
-(24, '2023-08-11', '16:00:00', '17:30:00', '', '', 'Detroit', 'Baltimore', 'Detroit - Baltimore', 'Beau combat à venir !', '2023-08-11 Detroit - Baltimore', 1.67, 14.00, 1.33, 20, 42, 'Baltimore', 'terminé', 'closed'),
-(25, '2023-08-22', '20:00:00', '21:30:00', '', '', 'Denver', 'Miami', 'Denver - Miami', 'Beau combat à venir !', '2023-08-22 Denver - Miami', 1.37, 14.00, 1.63, NULL, NULL, NULL, 'à venir', 'open'),
-(26, '2023-09-20', '20:00:00', '21:30:00', '', '', 'Cleveland', 'Jacksonville', 'Cleveland - Jacksonville', 'Beau combat à venir.', '2023-09-20 Cleveland - Jacksonville', 1.40, 14.00, 1.60, NULL, NULL, NULL, 'à venir', 'open'),
-(27, '2023-08-12', '11:30:00', '13:00:00', '', '', 'Carolina', 'Houston', 'Carolina - Houston', 'Beau combat à venir !', '2023-08-12 Carolina - Houston', 1.35, 14.00, 1.65, 41, 28, 'Carolina', 'terminé', 'closed'),
-(28, '2023-08-12', '14:00:00', '15:30:00', '', '', 'Cleveland', 'Miami', 'Cleveland - Miami', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-12 Cleveland - Miami', 1.35, 14.00, 1.65, 45, 37, 'Cleveland', 'terminé', 'closed'),
-(29, '2023-08-12', '16:00:00', '17:30:00', '', '', 'Denver', 'San Francisco', 'Denver - San Francisco', 'Un match de titans !', '2023-08-12 Denver - San Francisco', 1.28, 16.00, 1.72, 36, 25, 'Denver', 'terminé', 'closed'),
-(30, '2023-08-12', '14:45:00', '16:15:00', '', '', 'Green Bay', 'Jacksonville', 'Green Bay - Jacksonville', '', '2023-08-12 Green Bay - Jacksonville', 1.47, 13.00, 1.53, 51, 75, 'Jacksonville', 'terminé', 'closed'),
-(31, '2023-08-12', '15:00:00', '16:30:00', '', '', 'Indianapolis', 'Minnesota', 'Indianapolis - Minnesota', '', '2023-08-12 Indianapolis - Minnesota', 1.43, 13.00, 1.57, 42, 32, 'Indianapolis', 'terminé', 'closed'),
-(32, '2023-08-12', '16:30:00', '18:00:00', '', '', 'Cincinnati', 'Tampa Bay', 'Cincinnati - Tampa Bay', 'Beau combat à venir.', '2023-08-12 Cincinnati - Tampa Bay', 1.21, 18.00, 1.79, 45, 36, 'Cincinnati', 'terminé', 'closed'),
-(33, '2023-08-12', '16:45:00', '18:15:00', '', '', 'Carolina', 'Atlanta', 'Carolina - Atlanta', '', '2023-08-12 Carolina - Atlanta', 1.56, 13.00, 1.44, 35, 26, 'Carolina', 'terminé', 'closed'),
-(34, '2023-08-14', '14:00:00', '15:30:00', '', '', 'Cincinnati', 'Tampa Bay', 'Cincinnati - Tampa Bay', '', '2023-08-14 Cincinnati - Tampa Bay', 1.21, 18.00, 1.79, 24, 36, 'Tampa Bay', 'terminé', 'closed'),
-(35, '2023-08-14', '14:00:00', '15:30:00', '', '', 'New Orleans', 'Cleveland', 'New Orleans - Cleveland', '', '2023-08-14 New Orleans - Cleveland', 1.65, 14.00, 1.35, 48, 65, 'Cleveland', 'terminé', 'closed'),
-(36, '2023-08-14', '15:30:00', '16:00:00', '', '', 'Atlanta', 'New Orleans', 'Atlanta - New Orleans', '', '2023-08-14 Atlanta - New Orleans', 1.24, 15.00, 1.76, 48, 26, 'Atlanta', 'terminé', 'closed'),
-(37, '2023-08-14', '15:30:00', '16:00:00', '', '', 'San Francisco', 'Baltimore', 'San Francisco - Baltimore', '', '2023-08-14 San Francisco - Baltimore', 1.82, 17.00, 1.18, 31, 24, 'San Francisco', 'terminé', 'closed'),
-(38, '2023-08-14', '14:45:00', '16:15:00', '', '', 'Kansas City', 'Las Vegas', 'Kansas City - Las Vegas', '', '2023-08-14 Kansas City - Las Vegas', 1.25, 15.00, 1.75, 40, 35, 'Kansas City', 'terminé', 'closed'),
-(39, '2023-08-14', '15:00:00', '16:30:00', '', '', 'Carolina', 'NY Jets', 'Carolina - NY Jets', 'Beau match à venir !', '2023-08-14 Carolina - NY Jets', 1.25, 16.00, 1.75, 48, 42, 'Carolina', 'terminé', 'closed'),
-(40, '2023-08-14', '15:00:00', '16:30:00', '', '', 'Buffalo', 'Seattle', 'Buffalo - Seattle', 'Un match de titans !', '2023-08-14 Buffalo - Seattle', 1.18, 17.00, 1.82, 41, 35, 'Buffalo', 'terminé', 'closed'),
-(41, '2023-08-14', '15:00:00', '16:30:00', '', '', 'Indianapolis', 'Jacksonville', 'Indianapolis - Jacksonville', '', '2023-08-14 Indianapolis - Jacksonville', 1.47, 13.00, 1.53, 36, 24, 'Indianapolis', 'terminé', 'closed'),
-(42, '2023-08-14', '19:30:00', '21:00:00', '', '', 'LA Rams', 'Tennessee', 'LA Rams - Tennessee', '', '2023-08-14 LA Rams - Tennessee', 1.21, 21.00, 1.79, 25, 25, 'Match nul', 'terminé', 'closed');
+INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1_name`, `team2_name`, `match_name`, `match_comment`, `date_match_name`, `team1_odds`, `draw_odds`, `team2_odds`, `team1_score`, `team2_score`, `team_winning_name`, `match_status`, `admin_status`) VALUES
+(1, '2023-07-17', '20:30:00', '22:00:00', 'Atlanta', 'Kansas City', 'Atlanta - Kansas City', '', '2023-07-17 Atlanta - Kansas City', 1.53, 13.00, 1.47, 35, 40, 'Kansas City', 'terminé', 'closed'),
+(3, '2023-07-19', '20:00:00', '21:30:00', 'Houston', 'Kansas City', 'Houston - Kansas City', '', '2023-07-19 Houston - Kansas City', 1.73, 14.00, 1.27, 35, 49, 'Kansas City', 'terminé', 'closed'),
+(4, '2023-07-19', '20:30:00', '22:00:00', 'Indianapolis', 'Las Vegas', 'Indianapolis - Las Vegas', '', '2023-07-19 Indianapolis - Las Vegas', 1.47, 13.00, 1.53, 39, 26, 'Indianapolis', 'terminé', 'closed'),
+(9, '2023-07-18', '20:00:00', '21:30:00', 'San Francisco', 'Tennessee', 'San Francisco - Tennessee', '', '2023-07-18 San Francisco - Tennessee', 1.33, 19.00, 1.67, 21, 32, 'Tennessee', 'terminé', 'closed'),
+(12, '2023-07-27', '21:00:00', '22:30:00', 'Cleveland', 'New England', 'Cleveland - New England', '', '2023-07-27 Cleveland - New England', 1.35, 14.00, 1.65, 56, 47, 'Cleveland', 'terminé', 'closed'),
+(13, '2023-07-20', '20:00:00', '21:30:00', 'Detroit', 'Carolina', 'Detroit - Carolina', '', '2023-07-20 Detroit - Carolina', 1.62, 13.00, 1.38, 21, 40, 'Carolina', 'terminé', 'closed'),
+(14, '2023-07-20', '21:00:00', '22:30:00', 'Houston', 'Cleveland', 'Houston - Cleveland', 'Beau combat à venir !', '2023-07-20 Houston - Cleveland', 1.58, 13.00, 1.42, 35, 48, 'Cleveland', 'terminé', 'closed'),
+(15, '2023-07-20', '20:30:00', '22:00:00', 'Jacksonville', 'Tennessee', 'Jacksonville - Tennessee', '', '2023-07-20 Jacksonville - Tennessee', 1.21, 21.00, 1.79, 21, 42, 'Tennessee', 'terminé', 'closed'),
+(16, '2023-07-21', '20:00:00', '21:30:00', 'Miami', 'Pittsburgh', 'Miami - Pittsburgh', 'Beau combat à venir !', '2023-07-21 Miami - Pittsburgh', 1.44, 13.00, 1.56, 28, 46, 'Pittsburgh', 'terminé', 'closed'),
+(17, '2023-07-21', '20:00:00', '21:30:00', 'LA Rams', 'LA Chargers', 'LA Rams - LA Chargers', '', '2023-07-21 LA Rams - LA Chargers', 1.50, 12.00, 1.50, 35, 28, 'LA Chargers', 'terminé', 'closed'),
+(18, '2023-07-25', '20:00:00', '21:30:00', 'Houston', 'San Francisco', 'Houston - San Francisco', '', '2023-07-25 Houston - San Francisco', 1.33, 15.00, 1.67, 37, 45, 'San Francisco', 'terminé', 'closed'),
+(19, '2023-08-20', '20:00:00', '21:30:00', 'Washington', 'Buffalo', 'Washington - Buffalo', 'Un match de titans !', '2023-08-20 Washington - Buffalo', 1.90, 23.00, 1.10, NULL, NULL, NULL, 'à venir', 'open'),
+(20, '2023-09-02', '20:00:00', '21:30:00', 'Atlanta', 'Dallas', 'Atlanta - Dallas', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-09-02 Atlanta - Dallas', 1.37, 13.00, 1.63, NULL, NULL, NULL, 'à venir', 'open'),
+(22, '2023-08-10', '22:00:00', '23:30:00', 'Pittsburgh', 'LA Rams', 'Pittsburgh - LA Rams', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-10 Pittsburgh - LA Rams', 1.60, 14.00, 1.40, 24, 36, 'LA Rams', 'terminé', 'closed'),
+(23, '2023-08-11', '14:00:00', '15:30:00', 'NY Jets', 'Minnesota', 'NY Jets - Minnesota', 'Un très beau match en perspective !', '2023-08-11 NY Jets - Minnesota', 1.56, 13.00, 1.44, 42, 36, 'NY Jets', 'terminé', 'closed'),
+(24, '2023-08-11', '16:00:00', '17:30:00', 'Detroit', 'Baltimore', 'Detroit - Baltimore', 'Beau combat à venir !', '2023-08-11 Detroit - Baltimore', 1.67, 14.00, 1.33, 20, 42, 'Baltimore', 'terminé', 'closed'),
+(25, '2023-08-22', '20:00:00', '21:30:00', 'Denver', 'Miami', 'Denver - Miami', 'Beau combat à venir !', '2023-08-22 Denver - Miami', 1.37, 14.00, 1.63, NULL, NULL, NULL, 'à venir', 'open'),
+(26, '2023-09-20', '20:00:00', '21:30:00', 'Cleveland', 'Jacksonville', 'Cleveland - Jacksonville', 'Beau combat à venir.', '2023-09-20 Cleveland - Jacksonville', 1.40, 14.00, 1.60, NULL, NULL, NULL, 'à venir', 'open'),
+(27, '2023-08-12', '11:30:00', '13:00:00', 'Carolina', 'Houston', 'Carolina - Houston', 'Beau combat à venir !', '2023-08-12 Carolina - Houston', 1.35, 14.00, 1.65, 41, 28, 'Carolina', 'terminé', 'closed'),
+(28, '2023-08-12', '14:00:00', '15:30:00', 'Cleveland', 'Miami', 'Cleveland - Miami', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-12 Cleveland - Miami', 1.35, 14.00, 1.65, 45, 37, 'Cleveland', 'terminé', 'closed'),
+(29, '2023-08-12', '16:00:00', '17:30:00', 'Denver', 'San Francisco', 'Denver - San Francisco', 'Un match de titans !', '2023-08-12 Denver - San Francisco', 1.28, 16.00, 1.72, 36, 25, 'Denver', 'terminé', 'closed'),
+(30, '2023-08-12', '14:45:00', '16:15:00', 'Green Bay', 'Jacksonville', 'Green Bay - Jacksonville', '', '2023-08-12 Green Bay - Jacksonville', 1.47, 13.00, 1.53, 51, 75, 'Jacksonville', 'terminé', 'closed'),
+(31, '2023-08-12', '15:00:00', '16:30:00', 'Indianapolis', 'Minnesota', 'Indianapolis - Minnesota', '', '2023-08-12 Indianapolis - Minnesota', 1.43, 13.00, 1.57, 42, 32, 'Indianapolis', 'terminé', 'closed'),
+(32, '2023-08-12', '16:30:00', '18:00:00', 'Cincinnati', 'Tampa Bay', 'Cincinnati - Tampa Bay', 'Beau combat à venir.', '2023-08-12 Cincinnati - Tampa Bay', 1.21, 18.00, 1.79, 45, 36, 'Cincinnati', 'terminé', 'closed'),
+(33, '2023-08-12', '16:45:00', '18:15:00', 'Carolina', 'Atlanta', 'Carolina - Atlanta', '', '2023-08-12 Carolina - Atlanta', 1.56, 13.00, 1.44, 35, 26, 'Carolina', 'terminé', 'closed'),
+(34, '2023-08-14', '14:00:00', '15:30:00', 'Cincinnati', 'Tampa Bay', 'Cincinnati - Tampa Bay', '', '2023-08-14 Cincinnati - Tampa Bay', 1.21, 18.00, 1.79, 24, 36, 'Tampa Bay', 'terminé', 'closed'),
+(35, '2023-08-14', '14:00:00', '15:30:00', 'New Orleans', 'Cleveland', 'New Orleans - Cleveland', '', '2023-08-14 New Orleans - Cleveland', 1.65, 14.00, 1.35, 48, 65, 'Cleveland', 'terminé', 'closed'),
+(36, '2023-08-14', '15:30:00', '16:00:00', 'Atlanta', 'New Orleans', 'Atlanta - New Orleans', '', '2023-08-14 Atlanta - New Orleans', 1.24, 15.00, 1.76, 48, 26, 'Atlanta', 'terminé', 'closed'),
+(37, '2023-08-14', '15:30:00', '16:00:00', 'San Francisco', 'Baltimore', 'San Francisco - Baltimore', '', '2023-08-14 San Francisco - Baltimore', 1.82, 17.00, 1.18, 31, 24, 'San Francisco', 'terminé', 'closed'),
+(38, '2023-08-14', '14:45:00', '16:15:00', 'Kansas City', 'Las Vegas', 'Kansas City - Las Vegas', '', '2023-08-14 Kansas City - Las Vegas', 1.25, 15.00, 1.75, 40, 35, 'Kansas City', 'terminé', 'closed'),
+(39, '2023-08-14', '15:00:00', '16:30:00', 'Carolina', 'NY Jets', 'Carolina - NY Jets', 'Beau match à venir !', '2023-08-14 Carolina - NY Jets', 1.25, 16.00, 1.75, 48, 42, 'Carolina', 'terminé', 'closed'),
+(40, '2023-08-14', '15:00:00', '16:30:00', 'Buffalo', 'Seattle', 'Buffalo - Seattle', 'Un match de titans !', '2023-08-14 Buffalo - Seattle', 1.18, 17.00, 1.82, 41, 35, 'Buffalo', 'terminé', 'closed'),
+(41, '2023-08-14', '15:00:00', '16:30:00', 'Indianapolis', 'Jacksonville', 'Indianapolis - Jacksonville', '', '2023-08-14 Indianapolis - Jacksonville', 1.47, 13.00, 1.53, 36, 24, 'Indianapolis', 'terminé', 'closed'),
+(42, '2023-08-14', '19:30:00', '21:00:00', 'LA Rams', 'Tennessee', 'LA Rams - Tennessee', '', '2023-08-14 LA Rams - Tennessee', 1.21, 21.00, 1.79, 25, 25, 'Match nul', 'terminé', 'closed'),
+(44, '2023-08-15', '15:00:00', '16:30:00', 'Cleveland', 'Seattle', 'Cleveland - Seattle', 'Beau combat à venir !', '2023-08-15 Cleveland - Seattle', 1.27, 16.00, 1.73, 42, 56, 'Cleveland', 'terminé', 'closed'),
+(45, '2023-08-15', '17:15:00', '18:45:00', 'Indianapolis', 'Cincinnati', 'Indianapolis - Cincinnati', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-15 Indianapolis - Cincinnati', 1.60, 13.00, 1.40, 42, 52, 'Cincinnati', 'terminé', 'closed'),
+(46, '2023-08-15', '17:30:00', '19:00:00', 'Pittsburgh', 'Dallas', 'Pittsburgh - Dallas', 'Un match de titans !', '2023-08-15 Pittsburgh - Dallas', 1.70, 15.00, 1.30, 23, 25, NULL, 'live', 'open');
 
 -- --------------------------------------------------------
 
@@ -332,7 +333,7 @@ ALTER TABLE `bets`
 -- AUTO_INCREMENT pour la table `matchs`
 --
 ALTER TABLE `matchs`
-  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `teams`
