@@ -38,17 +38,15 @@ session_start();
 
             <div class="sous_table">
 
-               <h4> Matchs du jour</h4>
-
-               <!-- require "./constants/matchs_live.php"; -->
+               <h4> Matchs live</h4>
 
                <?php
 
-               require_once "./constants/bets_update.php";
                require_once "./constants/matchs_encours_update.php";
                require_once "./constants/matchs_live.php";
                require_once "./constants/matchs_avenir_update.php";
                require_once "./constants/matchs_over_update.php";
+               require_once "./constants/bets_update.php";
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
@@ -56,7 +54,9 @@ session_start();
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY start_time DESC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
 
-                  foreach ($nbmatch as $match_name) {
+                  if (count($nbmatch) > 0) {
+
+                     foreach ($nbmatch as $match_name) {
 
                      $date =  $match_name['match_date'];
                      $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -113,14 +113,14 @@ session_start();
                            </tr>
 
                            <tr>
-                              <td calign="center" width="48%">
+                              <td align="center" width="48%">
                                  <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
                               </td>
 
                               <td align="center" width="4%">
                               </td>
 
-                              <td calign="center" width="48%">
+                              <td align="center" width="48%">
                                  <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
                               </td>
                            </tr>
@@ -137,6 +137,9 @@ session_start();
                      <br>
 
                <?php }
+                  } else {
+                     echo 'Aucun match en cours';
+                  }
                } catch (PDOException $e) {
                   echo 'pb de connexion';
                }

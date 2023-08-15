@@ -31,10 +31,13 @@ session_start();
             </header>
 
             <?php
-            require_once "../constants/matchs_encours_update.php";
-            require_once "../constants/matchs_avenir_update.php";
-            require_once "../constants/matchs_over_update.php";
-            require_once "../constants/bets_update.php";
+
+            require_once "./constants/matchs_encours_update.php";
+            require_once "./constants/matchs_live.php";
+            require_once "./constants/matchs_avenir_update.php";
+            require_once "./constants/matchs_over_update.php";
+            require_once "./constants/bets_update.php";
+
             ?>
 
             <div class="container_bo">
@@ -229,16 +232,16 @@ session_start();
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $match_nul = 'Match nul';
-                                                $team_name = $team['team_name'];?>
+                                                $team_name = $team['team_name']; ?>
 
-                                          <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
+                                                <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
 
                                     <?php }
                                     } catch (PDOException $e) {
                                           echo 'Impossible de se connecter à la base de données';
                                     }
                                     ?>
-                                          <option value="<?php echo $match_nul; ?>"><?php echo $match_nul; ?></option>
+                                    <option value="<?php echo $match_nul; ?>"><?php echo $match_nul; ?></option>
                               </select>
                         </div>
 
