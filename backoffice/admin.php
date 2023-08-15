@@ -32,11 +32,11 @@ session_start();
 
             <?php
 
-            require_once "./constants/matchs_encours_update.php";
-            require_once "./constants/matchs_live.php";
-            require_once "./constants/matchs_avenir_update.php";
-            require_once "./constants/matchs_over_update.php";
-            require_once "./constants/bets_update.php";
+            require_once "../constants/matchs_encours_update.php";
+            require_once "../constants/matchs_live.php";
+            require_once "../constants/matchs_avenir_update.php";
+            require_once "../constants/matchs_over_update.php";
+            require_once "../constants/bets_update.php";
 
             ?>
 
