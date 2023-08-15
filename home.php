@@ -58,83 +58,83 @@ session_start();
 
                      foreach ($nbmatch as $match_name) {
 
-                     $date =  $match_name['match_date'];
-                     $dateUS = DateTime::createFromFormat('Y-m-d', $date);
-                     $dateUSfull = date_format($dateUS, 'l d F Y');
-                     $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
-                     $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
+                        $date =  $match_name['match_date'];
+                        $dateUS = DateTime::createFromFormat('Y-m-d', $date);
+                        $dateUSfull = date_format($dateUS, 'l d F Y');
+                        $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
+                        $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
 
                ?>
-                     <div>
-                        <table width="100%" align="center">
+                        <div>
+                           <table width="100%" align="center">
 
-                           <tr>
-                              <td class="display_td_notover" width="100%">
-                                 <?php echo $match_dateFR; ?>
-                              </td>
-                           </tr>
+                              <tr>
+                                 <td class="display_td_notover" width="100%">
+                                    <?php echo $match_dateFR; ?>
+                                 </td>
+                              </tr>
 
-                           <tr>
-                              <td class="display_td" width="100%">
-                                 <?php echo substr($match_name['start_time'], 0, -3) . ' - ' . substr($match_name['end_time'], 0, -3); ?>
-                              </td>
-                           </tr>
-                        </table>
-                     </div>
-
-                     <div>
-                        <table width="100%">
-                           <tr>
-                              <td class="display_teamname" width="48%">
-                                 <?php echo $match_name['team1_name']; ?>
-                              </td>
-
-                              <td class="display_teamname" width="4%">
-                                 /
-                              </td>
-
-                              <td class="display_teamname" width="48%">
-                                 <?php echo $match_name['team2_name']; ?>
-                              </td>
-                           </tr>
-
-                           <tr>
-                              <td class="display_betnumber" width="48%">
-                                 Score
-                              </td>
-
-                              <td class="display_betnumber" width="4%">
-
-                              </td>
-
-                              <td class="display_betnumber" width="48%">
-                                 Score
-                              </td>
-                           </tr>
-
-                           <tr>
-                              <td align="center" width="48%">
-                                 <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
-                              </td>
-
-                              <td align="center" width="4%">
-                              </td>
-
-                              <td align="center" width="48%">
-                                 <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
-                              </td>
-                           </tr>
-                        </table>
-                     </div>
-
-                     <div>
-                        <a href="#<?php echo $match_name['match_name']; ?>" class="link_comment">Commentaires match</a>
-                        <div id="<?php echo $match_name['match_name']; ?>" class="modal">
-                           <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
-                           <a href="#" class="modal_close">x</a>
+                              <tr>
+                                 <td class="display_td" width="100%">
+                                    <?php echo substr($match_name['start_time'], 0, -3) . ' - ' . substr($match_name['end_time'], 0, -3); ?>
+                                 </td>
+                              </tr>
+                           </table>
                         </div>
-                     </div>
-                     <br>
+
+                        <div>
+                           <table width="100%">
+                              <tr>
+                                 <td class="display_teamname" width="48%">
+                                    <?php echo $match_name['team1_name']; ?>
+                                 </td>
+
+                                 <td class="display_teamname" width="4%">
+                                    /
+                                 </td>
+
+                                 <td class="display_teamname" width="48%">
+                                    <?php echo $match_name['team2_name']; ?>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td class="display_betnumber" width="48%">
+                                    Score
+                                 </td>
+
+                                 <td class="display_betnumber" width="4%">
+
+                                 </td>
+
+                                 <td class="display_betnumber" width="48%">
+                                    Score
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td align="center" width="48%">
+                                    <button class="button_score_live"><?php echo $match_name['team1_score']; ?></button>
+                                 </td>
+
+                                 <td align="center" width="4%">
+                                 </td>
+
+                                 <td align="center" width="48%">
+                                    <button class="button_score_live"><?php echo $match_name['team2_score']; ?></button>
+                                 </td>
+                              </tr>
+                           </table>
+                        </div>
+
+                        <div>
+                           <a href="#<?php echo $match_name['match_name']; ?>" class="link_comment">Commentaires match</a>
+                           <div id="<?php echo $match_name['match_name']; ?>" class="modal">
+                              <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
+                              <a href="#" class="modal_close">x</a>
+                           </div>
+                        </div>
+                        <br>
 
                <?php }
                   } else {
@@ -144,6 +144,8 @@ session_start();
                   echo 'pb de connexion';
                }
                ?>
+
+               <h4>Matchs du jour</h4>
 
                <?php
 
