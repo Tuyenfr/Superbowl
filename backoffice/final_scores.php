@@ -60,7 +60,7 @@ session_start();
             $betUpdateGain->bindValue(':team_winning_name', $team_winning_name);
 
             if ($betUpdateGain->execute()) {
-               echo 'Les paris ont été mis à jour avec le statut Gagné';
+               echo 'Les paris gagnants ont été mis à jour avec le statut Gagné';
             }
          } catch (PDOException $e) {
             echo 'Impossible de se connecter à la base de données';
@@ -78,7 +78,7 @@ session_start();
             $betUpdateLost->bindValue(':team_winning_name', $team_winning_name);
 
             if ($betUpdateLost->execute()) {
-               echo 'Les paris ont été mis à jour avec le statut Perdu';
+               echo 'Les paris perdants ont été mis à jour avec le statut Perdu';
             }
          } catch (PDOException $e) {
             echo 'Impossible de se connecter à la base de données';

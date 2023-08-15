@@ -6,6 +6,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
         $statusUpdate->execute();
 
         } catch (PDOException $e) {
-            echo 'Impossible de se connecter à la BDD';
+            echo 'Impossible d\'enregistrer le pari après le début du match';
         }
 ?>

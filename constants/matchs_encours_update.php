@@ -8,4 +8,5 @@ $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", passwo
         } catch (PDOException $e) {
             echo 'Impossible de se connecter à la BDD';
         }
+
 ?>
