@@ -24,7 +24,7 @@
       <div class="container_connexion">
          <p class="title_form">Création de compte</p>
          <div class="container_form">
-            <form action="form.php" method="POST">
+            <form action="create_account_output.php" method="POST">
                <div>
                   <label for="first_name">Votre prénom : </label>
                   <input type="text" name="first_name" placeholder="Saisissez votre prénom" required>
