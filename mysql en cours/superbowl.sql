@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 15 août 2023 à 19:00
+-- Généré le : jeu. 17 août 2023 à 21:32
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -72,7 +72,8 @@ INSERT INTO `bets` (`bet_id`, `bet_date`, `user_id`, `match_id`, `match_date`, `
 (19, '2023-08-14', 1, 39, '2023-08-14', 'Carolina', 'NY Jets', '2023-08-14 Carolina - NY Jets', 0.00, 0.00, 1.75, 'NY Jets', 0.00, 0.00, 1.00, 'Perdu', 1.75, 0.00, 'closed'),
 (20, '2023-08-14', 1, 40, '2023-08-14', 'Buffalo', 'Seattle', '2023-08-14 Buffalo - Seattle', 0.00, 17.00, 0.00, 'Match nul', 0.00, 1.00, 0.00, 'Perdu', 17.00, 0.00, 'closed'),
 (21, '2023-08-14', 1, 41, '2023-08-14', 'Indianapolis', 'Jacksonville', '2023-08-14 Indianapolis - Jacksonville', 1.47, 0.00, 0.00, 'Indianapolis', 1.00, 0.00, 0.00, 'Gagné', 1.47, 1.47, 'closed'),
-(22, '2023-08-14', 1, 42, '2023-08-14', 'LA Rams', 'Tennessee', '2023-08-14 LA Rams - Tennessee', 0.00, 21.00, 0.00, 'Match nul', 0.00, 1.00, 0.00, 'Gagné', 21.00, 21.00, 'closed');
+(22, '2023-08-14', 1, 42, '2023-08-14', 'LA Rams', 'Tennessee', '2023-08-14 LA Rams - Tennessee', 0.00, 21.00, 0.00, 'Match nul', 0.00, 1.00, 0.00, 'Gagné', 21.00, 21.00, 'closed'),
+(24, '2023-08-16', 1, 25, '2023-08-22', 'Denver', 'Miami', '2023-08-22 Denver - Miami', 0.00, 0.00, 1.63, 'Miami', 0.00, 0.00, 1.00, 'En cours', 1.63, 0.00, 'open');
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,7 @@ INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1
 (42, '2023-08-14', '19:30:00', '21:00:00', 'LA Rams', 'Tennessee', 'LA Rams - Tennessee', '', '2023-08-14 LA Rams - Tennessee', 1.21, 21.00, 1.79, 25, 25, 'Match nul', 'terminé', 'closed'),
 (44, '2023-08-15', '15:00:00', '16:30:00', 'Cleveland', 'Seattle', 'Cleveland - Seattle', 'Beau combat à venir !', '2023-08-15 Cleveland - Seattle', 1.27, 16.00, 1.73, 42, 56, 'Cleveland', 'terminé', 'closed'),
 (45, '2023-08-15', '17:15:00', '18:45:00', 'Indianapolis', 'Cincinnati', 'Indianapolis - Cincinnati', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-15 Indianapolis - Cincinnati', 1.60, 13.00, 1.40, 42, 52, 'Cincinnati', 'terminé', 'closed'),
-(46, '2023-08-15', '17:30:00', '19:00:00', 'Pittsburgh', 'Dallas', 'Pittsburgh - Dallas', 'Un match de titans !', '2023-08-15 Pittsburgh - Dallas', 1.70, 15.00, 1.30, 23, 25, NULL, 'live', 'open');
+(46, '2023-08-15', '17:30:00', '19:00:00', 'Pittsburgh', 'Dallas', 'Pittsburgh - Dallas', 'Un match de titans !', '2023-08-15 Pittsburgh - Dallas', 1.70, 15.00, 1.30, 23, 25, NULL, 'terminé', 'open');
 
 -- --------------------------------------------------------
 
@@ -228,7 +229,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `birth_date`, `role`, `user_balance`) VALUES
-(1, 'John', 'Doe', 'john@doe.com', '$2y$10$pNOImO7wC0RW5DJ2fKhcqO1FXQoRCYtORT.Sxt9UxZaJCmPl6dQ7O', '1971-07-16', 'user', 7.25),
+(1, 'John', 'Doe', 'john@doe.com', '$2y$10$pNOImO7wC0RW5DJ2fKhcqO1FXQoRCYtORT.Sxt9UxZaJCmPl6dQ7O', '1971-07-16', 'user', 6.25),
 (2, 'Tuyen', 'Nguyen', 'tuyen.nguyen.fr@gmail.com', '$2y$10$OB04TjAvT4IYVmlsAYf8tuCi18hRykgEaFNzqTXWjc4nb/SRVWOcG', '1971-07-16', 'admin', 0.21),
 (3, 'Laure', 'Mondi', 'laure@mondi.com', '$2y$10$Nw/hIHVacODDDK/aymCIsel0NCSLVJszMlKazeS9Uk2DVaSP4sCy.', '1971-07-16', 'commentator', 0.00);
 
@@ -283,7 +284,8 @@ INSERT INTO `users_balance` (`transaction_id`, `transaction_date`, `user_id`, `t
 (31, '2023-08-14', 1, 'Mise pari', 0.00, 1.00, -14.22),
 (32, '2023-08-14', 1, 'Gain pari', 1.47, 0.00, -12.75),
 (33, '2023-08-14', 1, 'Mise pari', 0.00, 1.00, -13.75),
-(34, '2023-08-14', 1, 'Gain pari', 21.00, 0.00, 7.25);
+(34, '2023-08-14', 1, 'Gain pari', 21.00, 0.00, 7.25),
+(36, '2023-08-16', 1, 'Mise pari', 0.00, 1.00, 6.25);
 
 --
 -- Index pour les tables déchargées
@@ -327,7 +329,7 @@ ALTER TABLE `users_balance`
 -- AUTO_INCREMENT pour la table `bets`
 --
 ALTER TABLE `bets`
-  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `bet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT pour la table `matchs`
@@ -351,7 +353,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users_balance`
 --
 ALTER TABLE `users_balance`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
