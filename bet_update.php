@@ -101,11 +101,11 @@ session_start();
                               </td>
 
                               <td align="center" width="4%">
-                                 <a href="connexion.php"><button class="button_bet"><?php echo bet_draw_odds; ?></button></a>
+                                 <a href="connexion.php"><button class="button_bet"><?php echo $bet_draw_odds; ?></button></a>
                               </td>
 
                               <td align="center" width="48%">
-                                 <a href="connexion.php"><button class="button_bet"><?php echo bet_team2_odds; ?></button></a>
+                                 <a href="connexion.php"><button class="button_bet"><?php echo $bet_team2_odds; ?></button></a>
                               </td>
                            </tr>
 
