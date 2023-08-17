@@ -398,6 +398,10 @@ label {
     font-size: smaller;
 }
 
+.label_bet_update {
+    font-size: 14px;
+}
+
 .button_connexion {
     background-color:rgb(89, 106, 207);
     color: white;
