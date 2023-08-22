@@ -71,7 +71,7 @@ session_start();
 
        echo 'Votre nouveau pari pour le match ' . $team1_name . ' - ' . $team2_name . ' du '.$matchdateFR.' a bien été enregistré.';
        echo '<br>';
-       echo 'Votre gain potentiel est de : ' . $potential_gain_1;
+       echo 'Votre gain potentiel est de : ' . $potential_gain_1.' €';
       } else {
        echo 'Impossible d\'enregistrer le nouveau pari.';
       }
@@ -93,7 +93,7 @@ session_start();
 
        echo 'Votre nouveau pari pour le match ' . $team1_name . ' - ' . $team2_name . ' du '.$matchdateFR.' a bien été enregistré.';
        echo '<br>';
-       echo 'Votre gain potentiel est de : ' . $potential_gain_2;
+       echo 'Votre gain potentiel est de : ' . $potential_gain_2.' €';
       } else {
        echo 'Impossible d\'enregistrer le nouveau pari.';
       }
@@ -114,7 +114,7 @@ session_start();
 
        echo 'Votre nouveau pari pour le match ' . $team1_name . ' - ' . $team2_name . ' du '.$matchdateFR.' a bien été enregistré.';
        echo '<br>';
-       echo 'Votre gain potentiel est de : ' . $potential_gain_0;
+       echo 'Votre gain potentiel est de : ' . $potential_gain_0.' €';
       } else {
        echo 'Impossible d\'enregistrer le nouveau pari.';
       }
