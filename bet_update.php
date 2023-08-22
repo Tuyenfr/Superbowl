@@ -57,13 +57,42 @@ session_start();
             echo '<br>';
                if ($bet_team1 != 0) {
                echo 'Mise actuelle : '.$bet_team1;
+               echo '<br>';
+               echo 'Cote actuelle : '.$bet_team1_odds;
+               echo '<br>';
+               $gain_potentiel_1 = $bet_team1*$bet_team1_odds;
+               echo 'Gain potentiel actuel : '.$gain_potentiel;
                }
                elseif ($bet_draw != 0) {
                   echo 'Mise actuelle : '.$bet_draw;
+                  echo '<br>';
+                  echo 'Cote actuelle : '.$bet_draw_odds;
+                  echo '<br>';
+                  $gain_potentiel_0 = $bet_draw*$bet_draw_odds;
+                  echo 'Gain potentiel actuel : '.$gain_potentiel_0;
                   }
                   elseif ($bet_team2 != 0) {
                      echo 'Mise actuelle : '.$bet_team2;
-                     } ?>
+                     echo '<br>';
+                     echo 'Cote actuelle : '.$bet_team2_odds;
+                     echo '<br>';
+                     $gain_potentiel_2 = $bet_team2*$bet_team2_odds;
+                     echo 'Gain potentiel actuel : '.$gain_potentiel_2;
+                     }
+
+                     echo '<br>';
+                     
+                     /* AU CAS OU UN JOUR LES COTES SERAIENT DYNAMIQUES */
+
+                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
+                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                     foreach($pdo->query('SELECT * FROM matchs WHERE match_id =' .$bet_match_id. '', PDO::FETCH_ASSOC) as $currentodds) {
+                        $current_team1_odds = $currentodds['team1_odds'];
+                        $current_draw_odds = $currentodds['draw_odds'];
+                        $current_team2_odds = $currentodds['team2_odds'];
+                     }
+                     ?>
 
                      <div>
                         <table width="100%">
@@ -97,15 +126,15 @@ session_start();
 
                            <tr>
                               <td align="center" width="48%">
-                                 <a href="connexion.php"><button class="button_bet"><?php echo $bet_team1_odds; ?></button></a>
+                                 <a href="connexion.php"><button class="button_bet"><?php echo $current_team1_odds; ?></button></a>
                               </td>
 
                               <td align="center" width="4%">
-                                 <a href="connexion.php"><button class="button_bet"><?php echo $bet_draw_odds; ?></button></a>
+                                 <a href="connexion.php"><button class="button_bet"><?php echo $current_draw_odds; ?></button></a>
                               </td>
 
                               <td align="center" width="48%">
-                                 <a href="connexion.php"><button class="button_bet"><?php echo $bet_team2_odds; ?></button></a>
+                                 <a href="connexion.php"><button class="button_bet"><?php echo $current_team2_odds; ?></button></a>
                               </td>
                            </tr>
 
@@ -113,20 +142,24 @@ session_start();
                      </div>
 
                      <div>
-                     <form method="POST" action="bet_update_confirmation.php">
+                     <form method="POST" action="bet_update_output.php">
 
                      <label class="label_bet_update" for="confirm_winning_team">Confirmez le choix de l'équipe gagnante</label>
                      <Select name="confirm_winning_team">
                         <option value="<?php echo $bet_team1_name;?>"><?php echo $bet_team1_name;?></option>
                         <option value="<?php echo $bet_team2_name;?>"><?php echo $bet_team2_name;?></option>
+                        <option value="Match nul">Match nul</option>
+                     </Select>
                      <br>
 
                      <label class="label_bet_update" for="new_bet">Confirmez la nouvelle mise</label>
-                     <input type="text" name="new_bet" placeholder="Nouvelle mise">
+                     <input type="text" width="20px" name="new_bet" placeholder="Nouvelle mise">
                      <br>
 
                      <input type="hidden" name="match_id" value="<?php echo $bet_match_id; ?>">
-                     <!-- RAJOUTER COTE EN COURS -->
+                     <input type="hidden" name="team1_odds" value="<?php echo $current_team1_odds; ?>">
+                     <input type="hidden" name="draw_odds" value="<?php echo $current_draw_odds; ?>">
+                     <input type="hidden" name="team2_odds" value="<?php echo $current_team2_odds; ?>">
                      <input type="submit" class="button_connexion" value="Valider et annuler mise précédente">
 
                      </form>

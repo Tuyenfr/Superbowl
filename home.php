@@ -135,7 +135,6 @@ session_start();
                               <a href="#" class="modal_close">x</a>
                            </div>
                         </div>
-                        <br>
 
                <?php }
                   } else {
