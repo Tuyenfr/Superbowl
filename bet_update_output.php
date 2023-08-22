@@ -40,7 +40,7 @@ session_start();
    $bet_new_amount = $_POST['new_bet'];
    $bet_team1_odds = $_POST['team1_odds'];
    $bet_draw_odds = $_POST['draw_odds'];
-   $bet_team2_odds = $_POST['team1_odds'];
+   $bet_team2_odds = $_POST['team2_odds'];
 
    try {
     $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
@@ -99,7 +99,7 @@ session_start();
       }
      } else {
 
-      $potential_gain_0 = $bet_new_amount * $draw_odds;
+      $potential_gain_0 = $bet_new_amount * $bet_draw_odds;
 
       $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -108,7 +108,7 @@ session_start();
       $bet_update_0->bindValue(':bet_draw_odds', $bet_draw_odds);
       $bet_update_0->bindValue(':bet_new_amount', $bet_new_amount);
       $bet_update_0->bindValue(':potential_gain_0', $potential_gain_0);
-      $bet_update_0_->bindValue(':bet_match_id', $bet_match_id);
+      $bet_update_0->bindValue(':bet_match_id', $bet_match_id);
 
       if ($bet_update_0->execute()) {
 

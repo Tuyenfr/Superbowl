@@ -79,6 +79,8 @@ session_start();
             }
 
             echo '<br>';
+            echo '<br>';
+            echo 'Nouveau pari :';
 
             /* AU CAS OU UN JOUR LES COTES SERAIENT DYNAMIQUES */
 
@@ -138,6 +140,8 @@ session_start();
 
                </table>
             </div>
+
+            <br>
 
             <div>
                <form method="POST" action="bet_update_output.php">
