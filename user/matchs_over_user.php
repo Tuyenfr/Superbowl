@@ -7,7 +7,7 @@ session_start();
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv='refresh' content='20'>
+   <meta http-equiv='refresh' content='30'>
    <title>SuperBowl-BET</title>
    <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
