@@ -22,7 +22,7 @@ session_start();
                <li class="bold"><a class="link_pages" href="users_history.php">Mes paris</li>
                <li><a class="link_pages" href="users_balance.php">Mon solde</li>
                <li><a class="link_pages" href="users_info.php">Mes infos personnelles</a></li>
-               <li><a class="link_pages" href="session_destroy.php">Déconnexion</a></li>
+               <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
             </ul>
          </nav>
 
