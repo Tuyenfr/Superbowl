@@ -31,7 +31,7 @@ session_start();
 
          <div class="aside_left">
 
-            <?php include_once "./templates/aside_left_content.php"; ?>
+            <?php include_once "../templates/aside_left_content.php"; ?>
 
          </div>
 
@@ -471,7 +471,7 @@ session_start();
 
          <div class="aside_right">
 
-            <?php include_once "./templates/aside_right_content.php"; ?>
+            <?php include_once "../templates/aside_right_content.php"; ?>
 
          </div>
 

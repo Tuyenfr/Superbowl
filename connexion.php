@@ -29,7 +29,7 @@ session_start();
       <div class="container_connexion">
          <p class="title_form">Formulaire de connexion</p>
          <div class="container_form">
-            <form action=".user/authentification.php" method="POST">
+            <form action="authentification.php" method="POST">
                <div>
                   <label for="email">Votre email : </label>
                   <input type="email" name="email" placeholder="Saisissez votre email" required>

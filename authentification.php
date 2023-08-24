@@ -50,7 +50,7 @@ session_start();
                   $_SESSION['email'] = $user['email'];
                   setcookie('user', 'user', time() + 3600, '/');
                   echo 'Bienvenue ' . $user['first_name'] . ' ! ';
-                  header("location:home.php");
+                  header("location:user/home.php");
                } else {
                   if (password_verify($password, $user['password']) && $user['role'] === 'admin') {
                      $_SESSION['admin'] = true;
