@@ -8,7 +8,7 @@ session_start();
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>about super bowl</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@ session_start();
 
          <nav>
             <ul class="menu">
-               <li><a class="link_pages" href="home.php">Accueil</a></li>
+               <li><a class="link_pages" href=".user/home.php">Accueil</a></li>
                <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
                <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
                <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
@@ -69,7 +69,7 @@ session_start();
 
       </div>
 
-      <?php require_once "./templates/footer.php"; ?>
+      <?php require_once "../templates/footer.php"; ?>
 
    </div>
 </body>

@@ -8,7 +8,7 @@ session_start();
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Bet</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@ session_start();
             <ul class="menu">
                <li class="bold"><a class="link_pages" href="home.php">Lives</a></li>
                <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
-               <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
+               <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
                <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
             </ul>
 

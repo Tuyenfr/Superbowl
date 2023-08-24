@@ -9,7 +9,7 @@ session_start();
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv='refresh' content='10'>
    <title>SuperBowl-BET</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -43,11 +43,11 @@ session_start();
 
                <?php
 
-               require_once "./constants/matchs_encours_update.php";
-               require_once "./constants/matchs_live.php";
-               require_once "./constants/matchs_avenir_update.php";
-               require_once "./constants/matchs_over_update.php";
-               require_once "./constants/bets_update.php";
+               require_once "../constants/matchs_encours_update.php";
+               require_once "../constants/matchs_live.php";
+               require_once "../constants/matchs_avenir_update.php";
+               require_once "../constants/matchs_over_update.php";
+               require_once "../constants/bets_update.php";
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
@@ -477,7 +477,7 @@ session_start();
 
       </section>
 
-      <?php require_once "./templates/footer.php"; ?>
+      <?php require_once "../templates/footer.php"; ?>
 
    </div>
 </body>

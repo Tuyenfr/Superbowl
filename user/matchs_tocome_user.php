@@ -9,7 +9,7 @@ session_start();
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv='refresh' content='10'>
    <title>SuperBowl-BET</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@ session_start();
 
          <div class="aside_left">
 
-            <?php include_once "./templates/aside_left_content.php"; ?>
+            <?php include_once "../templates/aside_left_content.php"; ?>
 
          </div>
 
@@ -40,8 +40,6 @@ session_start();
             <div class="sous_table">
 
                <h4> Matchs à venir</h4>
-
-               <!-- require "./constants/matchs_live.php"; -->
 
                <?php
 
@@ -174,7 +172,7 @@ session_start();
 
       </section>
 
-      <?php require_once "./templates/footer.php"; ?>
+      <?php require_once "../templates/footer.php"; ?>
 
    </div>
 </body>

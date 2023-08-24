@@ -7,8 +7,8 @@ session_start();
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>New birthdate</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+   <title>New_email</title>
+   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ session_start();
 
          <?php
 
-         $new_birthdate = $_POST['new_birthdate'];
+         $new_email = $_POST['new_email'];
 
          try {
 
@@ -32,17 +32,17 @@ session_start();
             $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $birthdatechange = $pdo->prepare('UPDATE users SET birth_date = :new_birthdate WHERE user_id = :user_id');
-            $birthdatechange->bindValue(':new_birthdate', $new_birthdate);
-            $birthdatechange->bindValue(':user_id', $user_id);
+            $emailchange = $pdo->prepare('UPDATE users SET email = :new_email WHERE user_id = :user_id');
+            $emailchange->bindValue(':new_email', $new_email);
+            $emailchange->bindValue(':user_id', $user_id);
 
-            if ($birthdatechange->execute()) {
+            if ($emailchange->execute()) {
 
-               echo 'Votre nouvelle date de naissance a bien été enregistrée.' . '<br>';
+               echo 'Votre nouvelle adresse email a bien été enregistrée.' . '<br>';
                echo '<br>';
                echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
             } else {
-               echo 'Impossible d\'enregistrer la nouvelle date de naissance';
+               echo 'Impossible d\'enregistrer le nouvel email';
             }
          } catch (PDOException $e) {
             echo 'Impossible de se connecter à la base de données';
@@ -51,7 +51,7 @@ session_start();
          ?>
       </div>
 
-      <?php require_once "./templates/footer.php"; ?>
+      <?php require_once "../templates/footer.php"; ?>
 
    </div>
 </body>
