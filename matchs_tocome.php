@@ -7,7 +7,7 @@ session_start();
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv='refresh' content='30'>
+   <meta http-equiv='refresh' content='60'>
    <title>SuperBowl-BET - Pari en ligne</title>
    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
 </head>
@@ -29,6 +29,7 @@ session_start();
          </nav>
       </header>
       <br>
+      <br>
 
       <section class="container_matchs_index">
 
@@ -38,13 +39,12 @@ session_start();
 
                <h4> Matchs à venir</h4>
 
-               <!-- require "./constants/matchs_live.php"; -->
-
                <?php
 
-               require "./constants/matchs_encours_update.php";
-               require "./constants/matchs_avenir_update.php";
-               require "./constants/matchs_over_update.php";
+               require_once "./constants/matchs_encours_update.php";
+               require_once "./constants/matchs_live.php";
+               require_once "./constants/matchs_avenir_update.php";
+               require_once "./constants/matchs_over_update.php";
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");

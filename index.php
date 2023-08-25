@@ -7,7 +7,7 @@ session_start();
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv='refresh' content='30'>
+   <meta http-equiv='refresh' content='60'>
    <title>SuperBowl-BET - Pari en ligne</title>
    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
 </head>
@@ -40,6 +40,7 @@ session_start();
                <a class="link_about_SB" href="about_superbowl.php" target="_blank">En savoir plus</a>
 
                <br>
+               <br>
 
                <h4>Matchs live</h4>
 
@@ -53,6 +54,7 @@ session_start();
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY start_time DESC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
@@ -146,6 +148,8 @@ session_start();
                }
                ?>
 
+               <br>
+               <br>
                <h4>Matchs du jour</h4>
 
                <?php
@@ -153,6 +157,8 @@ session_start();
                try {
 
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
                   if (count($nbmatch) > 0) {
@@ -248,12 +254,16 @@ session_start();
 
                ?>
 
+               <br>
+               <br>
                <h4>Matchs à venir</h4>
 
                <?php
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
                   foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC) as $match_name) {
                      $date =  $match_name['match_date'];
                      $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -341,12 +351,15 @@ session_start();
                }
                ?>
 
+               <br>
                <h4>Matchs terminés</h4>
 
                <?php
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  
                   foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC', PDO::FETCH_ASSOC) as $match_name) {
                      $date =  $match_name['match_date'];
                      $dateUS = DateTime::createFromFormat('Y-m-d', $date);
