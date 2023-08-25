@@ -211,12 +211,12 @@ session_start();
 
                         <ul class="pages_li">
                            <li>
-                              <a class="pages_liens" href="match_over_user.php">Page 1 &nbsp</a>
+                              <a class="pages_liens" href="matchs_over_user.php">Page 1 &nbsp</a>
                            </li>
                            <?php
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
                               <li>
-                                 <a class="pages_liens" href='match_over_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                                 <a class="pages_liens" href='matchs_over_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>
                            <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
@@ -297,12 +297,12 @@ session_start();
 
                            <ul class="pages_li">
                               <li>
-                                 <a class="pages_liens" href="match_over_user.php">Page 1 &nbsp</a>
+                                 <a class="pages_liens" href="matchs_over_user.php">Page 1 &nbsp</a>
                               </li>
                               <?php
                                     for ($i = 2; $i <= $nbPages; $i++) { ?>
                                  <li>
-                                    <a class="pages_liens" href='match_over_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                                    <a class="pages_liens" href='matchs_over_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                                  </li>
                               <?php } ?>
                               <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php

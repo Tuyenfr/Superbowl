@@ -59,7 +59,7 @@ session_start();
                   $itemsPerPage = 10;
                   $nbPages = ceil($count / $itemsPerPage);
 
-                  if ($count < 1) {
+                  if ($count < 10) {
 
                      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC) as $match_name) {
                         $date =  $match_name['match_date'];
@@ -283,12 +283,12 @@ session_start();
 
                         <ul class="pages_li">
                            <li>
-                              <a class="pages_liens" href="match_tocome_user.php">Page 1 &nbsp</a>
+                              <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
                            </li>
                            <?php
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
                               <li>
-                                 <a class="pages_liens" href='match_tocome_user_following.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                                 <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>
                            <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
@@ -405,12 +405,12 @@ session_start();
 
                            <ul class="pages_li">
                               <li>
-                                 <a class="pages_liens" href="match_tocome_user.php">Page 1 &nbsp</a>
+                                 <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
                               </li>
                               <?php
                                                                   for ($i = 2; $i <= $nbPages; $i++) { ?>
                                  <li>
-                                    <a class="pages_liens" href='match_tocome_user_following.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                                    <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                                  </li>
                               <?php } ?>
                               <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
