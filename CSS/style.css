@@ -89,10 +89,8 @@ nav > ul {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-height: 700px;
-    overflow-y: auto;
-    position: relative;
-    z-index: 1;
+    max-height: 75%;
+    overflow: auto;
 
 }
 
@@ -100,8 +98,8 @@ nav > ul {
     display: flex;
     justify-content: center;
     width: 50%;
-    max-height: 500px;
-    margin-top: -20px;
+    max-height: 700px;
+    margin-top: 0px;
     background-color: white;
 
 }
@@ -109,8 +107,9 @@ nav > ul {
 .sous_table {
     width: 100%;
     text-align: center;
-    max-height: fit-content;
+    height: fit-content;
     background-color: white;
+
 }
 
 .pages_li {
@@ -147,7 +146,7 @@ nav > ul {
     margin-top: 30px;
     margin-left: 17%;
     margin-right: 17%;
-    height: 70%;
+    height: 80%;
     background-color: whitesmoke;
     overflow: auto;
 }
@@ -165,8 +164,6 @@ nav > ul {
     height: 1450px;
     background-color: whitesmoke;
     font-size: smaller;
-    position: relative;
-    z-index: 2;
 }
 
 .link_list_about_sb {
@@ -199,8 +196,6 @@ nav > ul {
     width: 25%;
     height: 1450px;
     background-color: whitesmoke;
-    position: relative;
-    z-index: 2;
 
 }
 
@@ -283,7 +278,7 @@ nav > ul {
 
 footer {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     padding-top: 5px;
     padding-bottom: 5px;
     bottom: 0;

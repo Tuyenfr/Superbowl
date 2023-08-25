@@ -40,7 +40,6 @@ session_start();
             <div class="sous_table">
 
                <br>
-               <br>
                <h4> Matchs à venir</h4>
 
                <?php
