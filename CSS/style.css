@@ -76,7 +76,7 @@ nav > ul {
 }
 
 .sous_table_index {
-    width: 500px;
+    width: 100%;
     text-align: center;
     height: fit-content;
     background-color: white;
@@ -88,31 +88,42 @@ nav > ul {
 .container_matchs {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
     width: 100%;
-    max-height: 500px;
+    max-height: 700px;
     overflow-y: auto;
     position: relative;
     z-index: 1;
+
 }
 
 .table_equipe {
     display: flex;
     justify-content: center;
     width: 50%;
-    height: 500px;
+    max-height: 500px;
     margin-top: -20px;
     background-color: white;
+
 }
 
 .sous_table {
-    width: 500px;
+    width: 100%;
     text-align: center;
-    height: fit-content;
+    max-height: fit-content;
     background-color: white;
-    overflow: auto;
-    position: relative;
-    z-index: 1;
+}
+
+.pages_li {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.pages_liens {
+    text-decoration: none;
+    color: rgb(73, 70, 67);
 }
 
 /* ABOUT SUPERBOWL */
@@ -151,9 +162,11 @@ nav > ul {
 
 .aside_left {
     width: 25%;
-    height: 2000px;
+    height: 1450px;
     background-color: whitesmoke;
     font-size: smaller;
+    position: relative;
+    z-index: 2;
 }
 
 .link_list_about_sb {
@@ -184,8 +197,11 @@ nav > ul {
 
 .aside_right {
     width: 25%;
-    height: 2000px;
+    height: 1450px;
     background-color: whitesmoke;
+    position: relative;
+    z-index: 2;
+
 }
 
 
@@ -267,7 +283,7 @@ nav > ul {
 
 footer {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     padding-top: 5px;
     padding-bottom: 5px;
     bottom: 0;
@@ -411,6 +427,7 @@ h4 {
     color: rgb(70, 73, 75);
     text-decoration: underline;
     font-style: italic;
+    margin-top: -2px;
 }
 
 h5 {
