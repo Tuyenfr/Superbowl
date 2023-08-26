@@ -233,7 +233,6 @@ session_start();
                         </div>
    
                         <br>
-                        <br>
    
                   <?php } ?>
 
@@ -253,7 +252,7 @@ session_start();
 
                } else {
 
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 9', PDO::FETCH_ASSOC) as $match_name) {
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
                         $date =  $match_name['match_date'];
                         $dateUS = DateTime::createFromFormat('Y-m-d', $date);
                         $dateUSfull = date_format($dateUS, 'l d F Y');
@@ -335,7 +334,6 @@ session_start();
                            </div>
                         </div>
    
-                        <br>
                         <br>
    
                   <?php } ?>

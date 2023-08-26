@@ -278,7 +278,6 @@ session_start();
                            </div>
 
                            <br>
-                           <br>
                         <?php } ?>
 
                         <ul class="pages_li">
@@ -297,7 +296,7 @@ session_start();
 
                         } else {
 
-                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 9', PDO::FETCH_ASSOC) as $match_name) {
+                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
                               $date =  $match_name['match_date'];
                               $dateUS = DateTime::createFromFormat('Y-m-d', $date);
                               $dateUSfull = date_format($dateUS, 'l d F Y');
@@ -401,22 +400,21 @@ session_start();
                               </div>
 
                               <br>
-                              <br>
                            <?php } ?>
 
                            <ul class="pages_li">
-                              <li>
-                                 <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
-                              </li>
-                              <?php
-                              for ($i = 2; $i <= $nbPages; $i++) { ?>
+                           <li>
+                              <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
+                           </li>
+                           <?php
+                           for ($i = 2; $i <= $nbPages; $i++) { ?>
                               <li>
                                  <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
-                              <?php } ?>
-                              <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                              echo '</ul>';
-                              echo '<br>';
+                           <?php } ?>
+                           <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
+                           echo '</ul>';
+                           echo '<br>';
                            }
                         }
                      } catch (PDOException $e) {
