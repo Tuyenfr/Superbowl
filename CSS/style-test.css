@@ -89,23 +89,36 @@ nav > ul {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-height: 75%;
-    overflow: auto;
+    max-height: 700px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
 
 }
 
 .table_equipe {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     max-height: 700px;
     margin-top: 0px;
     background-color: white;
 
 }
 
-.sous_table {
+
+.test {
     width: 100%;
+    max-height: 700px;
+    display: flex;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+
+}
+
+.sous_table {
+    width: 50%;
     text-align: center;
     height: fit-content;
     background-color: white;
@@ -152,7 +165,7 @@ nav > ul {
 
 .aside_left {
     width: 25%;
-    height: 1450px;
+    height: 200%;
     background-color: whitesmoke;
     font-size: smaller;
 }
@@ -185,7 +198,7 @@ nav > ul {
 
 .aside_right {
     width: 25%;
-    height: 1450px;
+    height: 200%;
     background-color: whitesmoke;
 
 }

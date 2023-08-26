@@ -20,7 +20,7 @@ session_start();
 
          <nav>
             <ul class="menu">
-               <li><a class="link_pages" href=".user/home.php">Accueil</a></li>
+               <li><a class="link_pages" href="home.php">Accueil</a></li>
                <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
                <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
                <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
@@ -29,7 +29,7 @@ session_start();
 
       </header>
 
-      <div class="container_about">
+      <div class="container_useraccount">
 
          <p class="title_form">A propos du Super Bowl</p>
 

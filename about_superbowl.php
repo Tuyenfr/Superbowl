@@ -29,7 +29,7 @@ session_start();
 
       </header>
 
-      <div class="container_about">
+      <div class="container_useraccount">
 
          <p class="title_form">A propos du Super Bowl</p>
 
