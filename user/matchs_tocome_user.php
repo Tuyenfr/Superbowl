@@ -292,18 +292,19 @@ session_start();
                               </li>
                            <?php } ?>
                            <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                                                                  echo '</ul>';
-                                                                  echo '<br>';
-                                                               } else {
+                           echo '</ul>';
+                           echo '<br>';
 
-                                                                  foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 9', PDO::FETCH_ASSOC) as $match_name) {
-                                                                     $date =  $match_name['match_date'];
-                                                                     $dateUS = DateTime::createFromFormat('Y-m-d', $date);
-                                                                     $dateUSfull = date_format($dateUS, 'l d F Y');
-                                                                     $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
-                                                                     $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
+                        } else {
 
-                                                                  ?>
+                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 9', PDO::FETCH_ASSOC) as $match_name) {
+                              $date =  $match_name['match_date'];
+                              $dateUS = DateTime::createFromFormat('Y-m-d', $date);
+                              $dateUSfull = date_format($dateUS, 'l d F Y');
+                              $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
+                              $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
+
+                           ?>
 
                               <div>
                                  <table width="100%">
@@ -408,20 +409,20 @@ session_start();
                                  <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
                               </li>
                               <?php
-                                                                  for ($i = 2; $i <= $nbPages; $i++) { ?>
-                                 <li>
-                                    <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
-                                 </li>
+                              for ($i = 2; $i <= $nbPages; $i++) { ?>
+                              <li>
+                                 <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                              </li>
                               <?php } ?>
                               <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                                                                     echo '</ul>';
-                                                                     echo '<br>';
-                                                                  }
-                                                               }
-                                                            } catch (PDOException $e) {
-                                                               echo 'pb de connexion';
-                                                            }
-                                                                     ?>
+                              echo '</ul>';
+                              echo '<br>';
+                           }
+                        }
+                     } catch (PDOException $e) {
+                        echo 'pb de connexion';
+                     }
+                              ?>
 
 
             </div>

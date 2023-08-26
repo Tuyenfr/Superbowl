@@ -8,45 +8,43 @@ session_start();
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv='refresh' content='60'>
-   <title>SuperBowl-BET</title>
-   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
+   <title>SuperBowl-BET - Pari en ligne</title>
+   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
 </head>
 
 <body>
+
    <div class="flux">
+
       <header>
-         <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
+         <p class="logo"><a class="link_pages" href="index.php"><i>Super</i>Bowl-BET</a></p>
+
          <nav>
             <ul class="menu">
-               <li class="bold"><a class="link_pages" href="home.php">Lives</a></li>
-               <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
-               <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
-               <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
+               <li class="bold"><a class="link_pages" href="index.php">Lives</a></li>
+               <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
+               <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
+               <li><a class="link_pages" href="about_superbowl.php">A propos du Super Bowl</a></li>
+               <li><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
             </ul>
          </nav>
       </header>
       <br>
+      <br>
 
-      <section class="container_matchs">
-
-         <div class="aside_left">
-            <?php include_once "../templates/aside_left_content.php"; ?>
-         </div>
-
-         <div class="table_equipe">
-
-            <div class="sous_table">
+      <section class="container_matchs_index">
+         <div class="table_equipe_index">
+            <div class="sous_table_index">
 
                <br>
-               <h4> Matchs terminés</h4>
 
                <?php
 
-               require_once "../constants/matchs_encours_update.php";
-               require_once "../constants/matchs_live.php";
-               require_once "../constants/matchs_avenir_update.php";
-               require_once "../constants/matchs_over_update.php";
-               require_once "../constants/bets_update.php";
+               require_once "./constants/matchs_encours_update.php";
+               require_once "./constants/matchs_live.php";
+               require_once "./constants/matchs_avenir_update.php";
+               require_once "./constants/matchs_over_update.php";
+               require_once "./constants/bets_update.php";
 
                try {
                   $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
@@ -137,36 +135,31 @@ session_start();
 
                      <ul class="pages_li">
                         <li>
-                           <a class="pages_liens" href="home.php">Page 1 &nbsp</a>
+                           <a class="pages_liens" href="index.php">Page 1 &nbsp</a>
                         </li>
                         <?php
                         for ($i = 2; $i <= $nbPages; $i++) { ?>
-                           <li>
-                              <a class="pages_liens" href='home_following.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
-                           </li>
+                        <li>
+                           <a class="pages_liens" href='index_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                        </li>
                         <?php } ?>
                         <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                                                               echo '</ul>';
+                        echo '</ul>';
 
-                                                               echo '<br>';
-                        }
-                                                         } catch (PDOException $e) {
-                                                            echo 'pb de connexion';
-                                                         }
+                        echo '<br>';
+               
+                  }
+               } catch (PDOException $e) {
+                  echo 'pb de connexion';
+               }
 
-                                                               ?>
+               ?>
 
             </div>
-
          </div>
-
-         <div class="aside_right">
-            <?php include_once "../templates/aside_right_content.php"; ?>
-         </div>
-
       </section>
 
-      <?php require_once "../templates/footer.php"; ?>
+      <?php require_once "./templates/footer.php"; ?>
 
    </div>
 </body>
