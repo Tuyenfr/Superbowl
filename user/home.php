@@ -29,11 +29,11 @@ session_start();
 
       <section class="container_matchs">
 
-         <div class="table_equipe">
+         <div class="aside_left">
+            <?php include_once "../templates/aside_left_content.php"; ?>
+         </div>
 
-            <div class="aside_left">
-               <?php include_once "../templates/aside_left_content.php"; ?>
-            </div>
+         <div class="table_equipe">
 
             <div class="sous_table">
 
@@ -575,10 +575,10 @@ session_start();
 
             </div>
 
-            <div class="aside_right">
-               <?php include_once "../templates/aside_right_content.php"; ?>
-            </div>
+         </div>
 
+         <div class="aside_right">
+            <?php include_once "../templates/aside_right_content.php"; ?>
          </div>
 
       </section>
