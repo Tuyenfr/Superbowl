@@ -30,6 +30,7 @@ session_start();
 
       <div class="container_connexion">
 
+         <br>
          <p class="title_form"> Mes informations personnelles</p>
          <br>
 
