@@ -29,11 +29,11 @@ session_start();
 
       <section class="container_matchs">
 
-         <div class="aside_left">
-            <?php include_once "../templates/aside_left_content.php"; ?>
-         </div>
-
          <div class="table_equipe">
+
+            <div class="aside_left">
+               <?php include_once "../templates/aside_left_content.php"; ?>
+            </div>
 
             <div class="sous_table">
 
@@ -487,24 +487,23 @@ session_start();
                         </li>
                         <?php
                         for ($i = 2; $i <= $nbPages; $i++) { ?>
-                        <li>
-                           <a class="pages_liens" href='home_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
-                        </li>
+                           <li>
+                              <a class="pages_liens" href='home_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                           </li>
                         <?php } ?>
                         <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                     echo '</ul>';
+                                                               echo '</ul>';
+                                                            } else {
 
-                        } else {
+                                                               foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
 
-                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
+                                                                  $date =  $match_name['match_date'];
+                                                                  $dateUS = DateTime::createFromFormat('Y-m-d', $date);
+                                                                  $dateUSfull = date_format($dateUS, 'l d F Y');
+                                                                  $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
+                                                                  $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
 
-                              $date =  $match_name['match_date'];
-                              $dateUS = DateTime::createFromFormat('Y-m-d', $date);
-                              $dateUSfull = date_format($dateUS, 'l d F Y');
-                              $dateFRday = str_replace(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'], $dateUSfull);
-                              $match_dateFR = str_replace(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'], $dateFRday);
-
-                           ?>
+                                                               ?>
                            <div>
                               <table width="100%">
                                  <tr width="100%">
@@ -567,19 +566,19 @@ session_start();
                               </table>
                            </div>
                   <?php }
-                     }
-                  } catch (PDOException $e) {
-                     echo 'pb de connexion';
-                  }
+                                                            }
+                                                         } catch (PDOException $e) {
+                                                            echo 'pb de connexion';
+                                                         }
 
                   ?>
 
             </div>
 
-         </div>
+            <div class="aside_right">
+               <?php include_once "../templates/aside_right_content.php"; ?>
+            </div>
 
-         <div class="aside_right">
-            <?php include_once "../templates/aside_right_content.php"; ?>
          </div>
 
       </section>

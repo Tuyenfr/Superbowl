@@ -90,14 +90,13 @@ nav > ul {
     justify-content: center;
     width: 100%;
     max-height: 75%;
-    overflow: auto;
 
 }
 
 .table_equipe {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     max-height: 700px;
     margin-top: 0px;
     background-color: white;
@@ -105,11 +104,13 @@ nav > ul {
 }
 
 .sous_table {
-    width: 100%;
+    width: 50%;
     text-align: center;
     height: fit-content;
     background-color: white;
-
+    overflow: auto;
+    position: relative;
+    z-index: 0;
 }
 
 .pages_li {
@@ -152,7 +153,7 @@ nav > ul {
 
 .aside_left {
     width: 25%;
-    height: 2000px;
+    height: 2500px;
     background-color: whitesmoke;
     font-size: smaller;
 }
@@ -185,8 +186,11 @@ nav > ul {
 
 .aside_right {
     width: 25%;
-    height: 2000px;
+    height: 2500x;
     background-color: whitesmoke;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
 
 }
 
