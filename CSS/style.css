@@ -267,7 +267,7 @@ nav > ul {
 /* FOOTER */
 
 footer {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     padding-top: 5px;
     padding-bottom: 5px;
