@@ -67,7 +67,7 @@ session_start();
             $pdo1 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
             $pdo1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $newmatch = $pdo1->prepare('INSERT INTO matchs (match_date, start_time, end_time, team1_name, team2_name, match_name, date_match_name, team1_odds, draw_odds, team2_odds, match_status, admin_status) VALUES (:match_date, :start_time, :end_time, :team1_name, :team2_name, :match_name, :date_match_name, :team1_odds, :draw_odds, :team2_odds, :match_status, :admin_status)');
+            $newmatch = $pdo1->prepare('INSERT INTO matchs (match_date, start_time, end_time, team1_name, team2_name, match_name, date_match_name, team1_odds, draw_odds, team2_odds, team1_score, team2_score, match_status, admin_status) VALUES (:match_date, :start_time, :end_time, :team1_name, :team2_name, :match_name, :date_match_name, :team1_odds, :draw_odds, :team2_odds, "0", "0", :match_status, :admin_status)');
             $newmatch->bindValue(':match_date', $match_date);
             $newmatch->bindValue(':start_time', $start_time);
             $newmatch->bindValue(':end_time', $end_time);
