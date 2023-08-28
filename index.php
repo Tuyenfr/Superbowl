@@ -255,7 +255,6 @@ session_start();
                ?>
 
                <br>
-               <br>
                <h4>Matchs à venir</h4>
 
                <?php
