@@ -159,7 +159,7 @@ nav > ul {
 }
 
 .aside_left_title1 {
-    background-color: rgba(200, 204, 204, 0.726);
+    background-color: rgba(200, 204, 204, 0.292);
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -167,25 +167,27 @@ nav > ul {
 }
 
 .aside_left_title2 {
-    background-color: rgba(200, 204, 204, 0.726);
+    background-color: rgba(200, 204, 204, 0.292);
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
     font-style: italic;
+    color:  rgb(73, 102, 206);
+    font-weight: bold;
 
 }
 
 .link_title {
     text-decoration: none;
-    color: rgb(54, 50, 50);
-    font-weight: 500;
+    color:  rgb(73, 102, 206);
+    font-weight: bold;
     font-style: italic;
 
 }
 
 .link_list_about_sb {
     text-decoration: none;
-    color: black;
+    color:black;
 }
 
 .link_list_about_sb:hover{
@@ -215,26 +217,26 @@ nav > ul {
 .aside_right_card1 {
     text-align: center;
     font-size: smaller;
-    background-color: darkturquoise;
+    background-color: rgba(107, 142, 212, 0.751);
     height: 30px;
     padding-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
     color: white;
-    font-weight: 530;
+    font-weight: 500;
     border-radius: 2px;
 }
 
 .aside_right_card2 {
     text-align: center;
     font-size: smaller;
-    background-color: rgb(167, 250, 179);
+    background-color: rgb(194, 234, 182);
     height: 30px;
     padding-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
-    color: rgb(54, 50, 50);
-    font-weight: 530;
+    color: rgb(63, 60, 60);
+    font-weight: 500;
     border-radius: 2px;
 }
 
