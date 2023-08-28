@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 27 août 2023 à 20:54
+-- Généré le : lun. 28 août 2023 à 15:11
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -74,7 +74,7 @@ INSERT INTO `bets` (`bet_id`, `bet_date`, `user_id`, `match_id`, `match_date`, `
 (21, '2023-08-14', 1, 41, '2023-08-14', 'Indianapolis', 'Jacksonville', '2023-08-14 Indianapolis - Jacksonville', 1.47, 0.00, 0.00, 'Indianapolis', 1.00, 0.00, 0.00, 'Gagné', 1.47, 1.47, 'closed'),
 (22, '2023-08-14', 1, 42, '2023-08-14', 'LA Rams', 'Tennessee', '2023-08-14 LA Rams - Tennessee', 0.00, 21.00, 0.00, 'Match nul', 0.00, 1.00, 0.00, 'Gagné', 21.00, 21.00, 'closed'),
 (24, '2023-08-16', 1, 25, '2023-08-22', 'Denver', 'Miami', '2023-08-22 Denver - Miami', 1.37, 0.00, 0.00, 'Denver', 1.00, 0.00, 0.00, 'Gagné', 1.37, 1.37, 'closed'),
-(55, '2023-08-22', 1, 47, '2023-08-23', 'Chicago', 'Pittsburgh', '2023-08-23 Chicago - Pittsburgh', 0.00, 0.00, 1.75, 'Pittsburgh', 0.00, 0.00, 2.00, 'En cours', 3.50, 0.00, 'open'),
+(55, '2023-08-22', 1, 47, '2023-08-23', 'Chicago', 'Pittsburgh', '2023-08-23 Chicago - Pittsburgh', 0.00, 0.00, 1.75, 'Pittsburgh', 0.00, 0.00, 2.00, 'Gagné', 3.50, 3.50, 'closed'),
 (56, '2023-08-24', 1, 20, '2023-09-02', 'Atlanta', 'Dallas', '2023-09-02 Atlanta - Dallas', 1.37, 0.00, 0.00, 'Atlanta', 1.00, 0.00, 0.00, 'En cours', 1.37, 0.00, 'open');
 
 -- --------------------------------------------------------
@@ -145,11 +145,12 @@ INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1
 (44, '2023-08-15', '15:00:00', '16:30:00', 'Cleveland', 'Seattle', 'Cleveland - Seattle', 'Beau combat à venir !', '2023-08-15 Cleveland - Seattle', 1.27, 16.00, 1.73, 42, 56, 'Cleveland', 'terminé', 'closed'),
 (45, '2023-08-15', '17:15:00', '18:45:00', 'Indianapolis', 'Cincinnati', 'Indianapolis - Cincinnati', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-15 Indianapolis - Cincinnati', 1.60, 13.00, 1.40, 42, 52, 'Cincinnati', 'terminé', 'closed'),
 (46, '2023-08-15', '17:30:00', '19:00:00', 'Pittsburgh', 'Dallas', 'Pittsburgh - Dallas', 'Un match de titans !', '2023-08-15 Pittsburgh - Dallas', 1.70, 15.00, 1.30, 26, 42, 'Dallas', 'terminé', 'closed'),
-(47, '2023-08-23', '15:00:00', '16:30:00', 'Chicago', 'Pittsburgh', 'Chicago - Pittsburgh', 'Un match de titans !', '2023-08-23 Chicago - Pittsburgh', 1.25, 16.00, 1.75, NULL, NULL, NULL, 'terminé', 'open'),
-(48, '2023-08-28', '19:00:00', '20:30:00', 'Denver', 'Houston', 'Denver - Houston', 'Beau match à venir !', '2023-08-28 Denver - Houston', 1.44, 13.00, 1.56, NULL, NULL, NULL, 'à venir', 'open'),
-(49, '2023-08-30', '20:00:00', '21:30:00', 'Seattle', 'Green Bay', 'Seattle - Green Bay', 'Beau match à venir !', '2023-08-30 Seattle - Green Bay', 1.67, 15.00, 1.33, NULL, NULL, NULL, 'à venir', 'open'),
-(50, '2023-09-01', '20:00:00', '21:30:00', 'Jacksonville', 'Tampa Bay', 'Jacksonville - Tampa Bay', 'Un match de titans !', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 16.00, 1.69, NULL, NULL, NULL, 'à venir', 'open'),
-(51, '2023-09-05', '20:00:00', '21:30:00', 'Indianapolis', 'Houston', 'Indianapolis - Houston', '', '2023-09-05 Indianapolis - Houston', 1.50, 12.00, 1.50, NULL, NULL, NULL, 'à venir', 'open');
+(47, '2023-08-23', '15:00:00', '16:30:00', 'Chicago', 'Pittsburgh', 'Chicago - Pittsburgh', 'Un match de titans !', '2023-08-23 Chicago - Pittsburgh', 1.25, 16.00, 1.75, 35, 36, 'Pittsburgh', 'terminé', 'closed'),
+(48, '2023-08-28', '19:00:00', '20:30:00', 'Denver', 'Houston', 'Denver - Houston', 'Beau match à venir !', '2023-08-28 Denver - Houston', 1.44, 13.00, 1.56, 0, 0, NULL, 'en cours', 'open'),
+(49, '2023-08-30', '20:00:00', '21:30:00', 'Seattle', 'Green Bay', 'Seattle - Green Bay', 'Beau match à venir !', '2023-08-30 Seattle - Green Bay', 1.67, 15.00, 1.33, 0, 0, NULL, 'à venir', 'open'),
+(50, '2023-09-01', '20:00:00', '21:30:00', 'Jacksonville', 'Tampa Bay', 'Jacksonville - Tampa Bay', 'Un match de titans !', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 16.00, 1.69, 0, 0, NULL, 'à venir', 'open'),
+(51, '2023-09-05', '20:00:00', '21:30:00', 'Indianapolis', 'Houston', 'Indianapolis - Houston', '', '2023-09-05 Indianapolis - Houston', 1.50, 12.00, 1.50, 0, 0, NULL, 'à venir', 'open'),
+(52, '2023-09-12', '20:00:00', '21:30:00', 'NY Jets', 'Kansas City', 'NY Jets - Kansas City', '', '2023-09-12 NY Jets - Kansas City', 1.82, 16.00, 1.18, 0, 0, NULL, 'à venir', 'open');
 
 -- --------------------------------------------------------
 
@@ -236,7 +237,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `birth_date`, `role`, `user_balance`) VALUES
-(1, 'John', 'Doe', 'john@doe.com', '$2y$10$pNOImO7wC0RW5DJ2fKhcqO1FXQoRCYtORT.Sxt9UxZaJCmPl6dQ7O', '1971-07-16', 'user', 7.52),
+(1, 'John', 'Doe', 'john@doe.com', '$2y$10$pNOImO7wC0RW5DJ2fKhcqO1FXQoRCYtORT.Sxt9UxZaJCmPl6dQ7O', '1971-07-16', 'user', 11.02),
 (2, 'Tuyen', 'Nguyen', 'tuyen.nguyen.fr@gmail.com', '$2y$10$OB04TjAvT4IYVmlsAYf8tuCi18hRykgEaFNzqTXWjc4nb/SRVWOcG', '1971-07-16', 'admin', 0.21),
 (3, 'Laure', 'Mondi', 'laure@mondi.com', '$2y$10$Nw/hIHVacODDDK/aymCIsel0NCSLVJszMlKazeS9Uk2DVaSP4sCy.', '1971-07-16', 'commentator', 0.00);
 
@@ -296,7 +297,8 @@ INSERT INTO `users_balance` (`transaction_id`, `transaction_date`, `user_id`, `t
 (67, '2023-08-20', 1, 'Gain pari', 1.90, 0.00, 8.15),
 (68, '2023-08-22', 1, 'Mise pari', 0.00, 1.00, 7.15),
 (69, '2023-08-24', 1, 'Mise pari', 0.00, 1.00, 6.15),
-(70, '2023-08-22', 1, 'Gain pari', 1.37, 0.00, 7.52);
+(70, '2023-08-22', 1, 'Gain pari', 1.37, 0.00, 7.52),
+(71, '2023-08-23', 1, 'Gain pari', 3.50, 0.00, 11.02);
 
 --
 -- Index pour les tables déchargées
@@ -346,7 +348,7 @@ ALTER TABLE `bets`
 -- AUTO_INCREMENT pour la table `matchs`
 --
 ALTER TABLE `matchs`
-  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT pour la table `teams`
@@ -364,7 +366,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users_balance`
 --
 ALTER TABLE `users_balance`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
