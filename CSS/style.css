@@ -158,14 +158,38 @@ nav > ul {
     font-size: smaller;
 }
 
+.aside_left_title1 {
+    background-color: rgba(200, 204, 204, 0.726);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.aside_left_title2 {
+    background-color: rgba(200, 204, 204, 0.726);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-style: italic;
+
+}
+
+.link_title {
+    text-decoration: none;
+    color: rgb(54, 50, 50);
+    font-weight: 500;
+    font-style: italic;
+
+}
+
 .link_list_about_sb {
     text-decoration: none;
     color: black;
 }
 
 .link_list_about_sb:hover{
-    color: rgb(66, 98, 185);
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 .button_team {
@@ -174,8 +198,7 @@ nav > ul {
 }
 
 .button_team:hover {
-    color: rgb(66, 98, 185);
-    font-weight: bold;
+    text-decoration: underline;
 }
 
 .teams_list {
@@ -188,6 +211,33 @@ nav > ul {
     width: 25%;
 
 }
+
+.aside_right_card1 {
+    text-align: center;
+    font-size: smaller;
+    background-color: darkturquoise;
+    height: 30px;
+    padding-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+    font-weight: 530;
+    border-radius: 2px;
+}
+
+.aside_right_card2 {
+    text-align: center;
+    font-size: smaller;
+    background-color: rgb(167, 250, 179);
+    height: 30px;
+    padding-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: rgb(54, 50, 50);
+    font-weight: 530;
+    border-radius: 2px;
+}
+
 
 
 /* TABLEAUX MATCHS */
