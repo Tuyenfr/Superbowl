@@ -1,5 +1,6 @@
 <?php require_once "../templates/header_home.php"; ?>
 
+<br>
       <section class="container_matchs">
 
          <div class="aside_left">
@@ -94,7 +95,7 @@
 
                               <tr>
                                  <td align="center" width="48%">
-                                    <form action="cart.php" method="GET">
+                                    <form action="cart.php" method="POST">
                                        <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
                                        <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                        <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -105,7 +106,7 @@
                                  </td>
 
                                  <td align="center" width="4%">
-                                    <form action="cart.php" method="GET">
+                                    <form action="cart.php" method="POST">
                                        <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
                                        <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                        <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -116,7 +117,7 @@
                                  </td>
 
                                  <td align="center" width="48%">
-                                    <form action="cart.php" method="GET">
+                                    <form action="cart.php" method="POST">
                                        <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
                                        <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                        <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -207,7 +208,7 @@
 
                                  <tr>
                                     <td align="center" width="48%">
-                                       <form action="cart.php" method="GET">
+                                       <form action="cart.php" method="POST">
                                           <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
                                           <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                           <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -218,7 +219,7 @@
                                     </td>
 
                                     <td align="center" width="4%">
-                                       <form action="cart.php" method="GET">
+                                       <form action="cart.php" method="POST">
                                           <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
                                           <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                           <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -229,7 +230,7 @@
                                     </td>
 
                                     <td align="center" width="48%">
-                                       <form action="cart.php" method="GET">
+                                       <form action="cart.php" method="POST">
                                           <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
                                           <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                           <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -334,7 +335,7 @@
 
                                     <tr>
                                        <td align="center" width="48%">
-                                          <form action="cart.php" method="GET">
+                                          <form action="cart.php" method="POST">
                                              <input type="hidden" name="team1_odds" value="<?php echo $match_name['team1_odds']; ?>">
                                              <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                              <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -345,7 +346,7 @@
                                        </td>
 
                                        <td align="center" width="4%">
-                                          <form action="cart.php" method="GET">
+                                          <form action="cart.php" method="POST">
                                              <input type="hidden" name="draw_odds" value="<?php echo $match_name['draw_odds']; ?>">
                                              <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                              <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">
@@ -356,7 +357,7 @@
                                        </td>
 
                                        <td align="center" width="48%">
-                                          <form action="cart.php" method="GET">
+                                          <form action="cart.php" method="POST">
                                              <input type="hidden" name="team2_odds" value="<?php echo $match_name['team2_odds']; ?>">
                                              <input type="hidden" name="team1_name" value="<?php echo $match_name['team1_name']; ?>">
                                              <input type="hidden" name="team2_name" value="<?php echo $match_name['team2_name']; ?>">

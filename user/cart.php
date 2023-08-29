@@ -4,7 +4,7 @@
 
       </header>
 
-      <div class="container_connexion">
+      <div class="container_useraccount">
 
          <p class="title_form">Mon panier</p>
          <br>
@@ -19,12 +19,12 @@
 
             <?php
 
-            if (isset($_GET['team1_odds']) && !empty($_GET['team1_odds'])) {
-               $team1_odds = $_GET['team1_odds'];
-               $team1_name = $_GET['team1_name'];
-               $team2_name = $_GET['team2_name'];
-               $match_id = $_GET['match_id'];
-               $match_date = $_GET['match_date'];
+            if (isset($_POST['team1_odds']) && !empty($_POST['team1_odds'])) {
+               $team1_odds = $_POST['team1_odds'];
+               $team1_name = $_POST['team1_name'];
+               $team2_name = $_POST['team2_name'];
+               $match_id = $_POST['match_id'];
+               $match_date = $_POST['match_date'];
 
                $matchdateUS = date_create_from_format('Y-m-d', $match_date);
                $matchdateFR = date_format($matchdateUS, 'd-m-Y');
@@ -74,12 +74,12 @@
                   </table>
                </div>
                <br>
-            <?php } elseif (isset($_GET['team2_odds']) && !empty($_GET['team2_odds'])) {
-               $team2_odds = $_GET['team2_odds'];
-               $team1_name = $_GET['team1_name'];
-               $team2_name = $_GET['team2_name'];
-               $match_id = $_GET['match_id'];
-               $match_date = $_GET['match_date'];
+            <?php } elseif (isset($_POST['team2_odds']) && !empty($_POST['team2_odds'])) {
+               $team2_odds = $_POST['team2_odds'];
+               $team1_name = $_POST['team1_name'];
+               $team2_name = $_POST['team2_name'];
+               $match_id = $_POST['match_id'];
+               $match_date = $_POST['match_date'];
 
                $matchdateUS = date_create_from_format('Y-m-d', $match_date);
                $matchdateFR = date_format($matchdateUS, 'd-m-Y');
@@ -129,12 +129,12 @@
                   </table>
                </div>
                <br>
-            <?php } elseif (isset($_GET['draw_odds']) && !empty($_GET['draw_odds'])) {
-               $draw_odds = $_GET['draw_odds'];
-               $team1_name = $_GET['team1_name'];
-               $team2_name = $_GET['team2_name'];
-               $match_id = $_GET['match_id'];
-               $match_date = $_GET['match_date'];
+            <?php } elseif (isset($_POST['draw_odds']) && !empty($_POST['draw_odds'])) {
+               $draw_odds = $_POST['draw_odds'];
+               $team1_name = $_POST['team1_name'];
+               $team2_name = $_POST['team2_name'];
+               $match_id = $_POST['match_id'];
+               $match_date = $_POST['match_date'];
 
                $matchdateUS = date_create_from_format('Y-m-d', $match_date);
                $matchdateFR = date_format($matchdateUS, 'd-m-Y');
