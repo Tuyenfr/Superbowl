@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 28 août 2023 à 15:11
+-- Généré le : mer. 30 août 2023 à 00:55
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -146,8 +146,8 @@ INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1
 (45, '2023-08-15', '17:15:00', '18:45:00', 'Indianapolis', 'Cincinnati', 'Indianapolis - Cincinnati', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-15 Indianapolis - Cincinnati', 1.60, 13.00, 1.40, 42, 52, 'Cincinnati', 'terminé', 'closed'),
 (46, '2023-08-15', '17:30:00', '19:00:00', 'Pittsburgh', 'Dallas', 'Pittsburgh - Dallas', 'Un match de titans !', '2023-08-15 Pittsburgh - Dallas', 1.70, 15.00, 1.30, 26, 42, 'Dallas', 'terminé', 'closed'),
 (47, '2023-08-23', '15:00:00', '16:30:00', 'Chicago', 'Pittsburgh', 'Chicago - Pittsburgh', 'Un match de titans !', '2023-08-23 Chicago - Pittsburgh', 1.25, 16.00, 1.75, 35, 36, 'Pittsburgh', 'terminé', 'closed'),
-(48, '2023-08-28', '19:00:00', '20:30:00', 'Denver', 'Houston', 'Denver - Houston', 'Beau match à venir !', '2023-08-28 Denver - Houston', 1.44, 13.00, 1.56, 0, 0, NULL, 'en cours', 'open'),
-(49, '2023-08-30', '20:00:00', '21:30:00', 'Seattle', 'Green Bay', 'Seattle - Green Bay', 'Beau match à venir !', '2023-08-30 Seattle - Green Bay', 1.67, 15.00, 1.33, 0, 0, NULL, 'à venir', 'open'),
+(48, '2023-08-28', '19:00:00', '20:30:00', 'Denver', 'Houston', 'Denver - Houston', 'Beau match à venir !', '2023-08-28 Denver - Houston', 1.44, 13.00, 1.56, 22, 39, 'Houston', 'terminé', 'closed'),
+(49, '2023-08-30', '20:00:00', '21:30:00', 'Seattle', 'Green Bay', 'Seattle - Green Bay', 'Beau match à venir !', '2023-08-30 Seattle - Green Bay', 1.67, 15.00, 1.33, 0, 0, NULL, 'en cours', 'open'),
 (50, '2023-09-01', '20:00:00', '21:30:00', 'Jacksonville', 'Tampa Bay', 'Jacksonville - Tampa Bay', 'Un match de titans !', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 16.00, 1.69, 0, 0, NULL, 'à venir', 'open'),
 (51, '2023-09-05', '20:00:00', '21:30:00', 'Indianapolis', 'Houston', 'Indianapolis - Houston', '', '2023-09-05 Indianapolis - Houston', 1.50, 12.00, 1.50, 0, 0, NULL, 'à venir', 'open'),
 (52, '2023-09-12', '20:00:00', '21:30:00', 'NY Jets', 'Kansas City', 'NY Jets - Kansas City', '', '2023-09-12 NY Jets - Kansas City', 1.82, 16.00, 1.18, 0, 0, NULL, 'à venir', 'open');
