@@ -1,30 +1,4 @@
-<?php
-session_start();
-?>
-
-<html>
-
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>authentification</title>
-   <link rel="stylesheet" href="./CSS/style.css" type="text/css">
-</head>
-
-<body>
-   <header>
-      <p class="logo"><a class="link_pages" href="index.php"><i>Super</i>Bowl-BET</p>
-      <nav>
-         <ul class="menu">
-            <li class="bold"><a class="link_pages" href="index.php">Lives</a></li>
-            <li><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
-            <li><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
-            <li><a class="link_pages" href="connexion.php">Connexion</a></li>
-         </ul>
-      </nav>
-   </header>
-   <br>
-   <br>
+<?php require_once "./templates/header_index.php"; ?>
 
    <div style="text-align: center">
 
