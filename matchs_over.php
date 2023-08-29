@@ -188,7 +188,7 @@
                            <?php
                            
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
-                              <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
+                              <li class="<?php if (htmlentities($currentPage) == $i) {echo 'bold';} ?>">
                                  <a class="pages_liens" href='matchs_over.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>
@@ -278,7 +278,7 @@
                            <?php
                            
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
-                              <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
+                              <li class="<?php if (htmlentities($currentPage) == $i) {echo 'bold';} ?>">
                                  <a class="pages_liens" href='matchs_over.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>

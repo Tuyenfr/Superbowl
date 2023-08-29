@@ -110,7 +110,7 @@
                      
                         for ($i = 2; $i <= $nbPages; $i++) {?>
                            
-                        <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
+                        <li class="<?php if (htmlentities($currentPage) == $i) {echo 'bold';} ?>">
                            <a class="pages_liens" href='index_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                         </li>
                         <?php } ?>
