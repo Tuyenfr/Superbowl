@@ -457,7 +457,7 @@
 
                      <ul class="pages_li">
                         <li>
-                           <a class="pages_liens" href="home.php">Page 1 &nbsp</a>
+                           <a class="pages_liens" href="home.php">Page <strong>1</strong> &nbsp</a>
                         </li>
                         <?php
                         for ($i = 2; $i <= $nbPages; $i++) { ?>

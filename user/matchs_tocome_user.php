@@ -254,12 +254,17 @@
                         <?php } ?>
 
                         <ul class="pages_li">
+                  
+                        <ul class="pages_li">
+                           
                            <li>
-                              <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
+                              Page <a class="pages_liens <?php if (!isset($currentPage)) {echo 'bold';} ?>" href="matchs_tocome_user.php">1 &nbsp</a>
                            </li>
+
                            <?php
+                           
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
-                              <li>
+                              <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
                                  <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>
@@ -375,13 +380,14 @@
                               <br>
                            <?php } ?>
 
-                           <ul class="pages_li">
                            <li>
-                              <a class="pages_liens" href="matchs_tocome_user.php">Page 1 &nbsp</a>
+                              Page <a class="pages_liens <?php if (!isset($currentPage)) {echo 'bold';} ?>" href="matchs_tocome_user.php">1 &nbsp</a>
                            </li>
+
                            <?php
+                           
                            for ($i = 2; $i <= $nbPages; $i++) { ?>
-                              <li>
+                              <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
                                  <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                               </li>
                            <?php } ?>

@@ -4,7 +4,7 @@
 
          <p class="title_form"> Mon solde</p>
 
-         <div align="center" style="font-size: smaller; color: cadetblue; font-weight:bold">
+         <div align="center" style="font-size: smaller; color: cadetblue; font-weight: bold">
 
             <?php
 

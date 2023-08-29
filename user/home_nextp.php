@@ -113,8 +113,10 @@
                            <a class="pages_liens" href="home.php">Page 1 &nbsp</a>
                         </li>
                         <?php
+                        
                         for ($i = 2; $i <= $nbPages; $i++) { ?>
-                        <li>
+
+                        <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
                            <a class="pages_liens" href='home_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                         </li>
                         <?php } ?>

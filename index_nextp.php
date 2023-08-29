@@ -102,12 +102,15 @@
                      <?php } ?>
 
                      <ul class="pages_li">
+                  
                         <li>
                            <a class="pages_liens" href="index.php">Page 1 &nbsp</a>
                         </li>
                         <?php
-                        for ($i = 2; $i <= $nbPages; $i++) { ?>
-                        <li>
+                     
+                        for ($i = 2; $i <= $nbPages; $i++) {?>
+                           
+                        <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
                            <a class="pages_liens" href='index_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
                         </li>
                         <?php } ?>
