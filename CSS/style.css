@@ -497,8 +497,5 @@ h5 {
     nav > ul {font-size: 11px;}
 }
 
-@media screen and (max-height: 600px) {
-    footer {visibility: hidden;}
-}
 
 
