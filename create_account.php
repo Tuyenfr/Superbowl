@@ -1,9 +1,11 @@
 <?php require_once "./templates/header_index_account.php"; ?>
 
-      </header>
       <div class="container_connexion">
-         <p class="title_form">Création de compte</p>
+         
+         <p class="title_form_pad40">Création de compte</p>
+         
          <div class="container_form">
+            
             <form action="create_account_output.php" method="POST">
                <div>
                   <label for="first_name">Votre prénom : </label>

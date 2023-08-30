@@ -21,3 +21,4 @@
                <li class="<?php if (basename($page) == "index.php") {echo 'bold';} ?>"><a class="link_pages" href="index.php">Mon compte</a></li>
             </ul>
          </nav>
+      </header>

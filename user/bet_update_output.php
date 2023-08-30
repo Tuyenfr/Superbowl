@@ -43,6 +43,9 @@
                echo '<br>';
                echo '<br>';
                echo 'Votre gain potentiel est de : ' . $potential_gain_1 . ' €';
+               echo '<br>';
+               echo '<br>';
+               echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
             } else {
                echo 'Impossible d\'enregistrer le nouveau pari.';
             }
@@ -66,6 +69,9 @@
                echo '<br>';
                echo '<br>';
                echo 'Votre gain potentiel est de : ' . $potential_gain_2 . ' €';
+               echo '<br>';
+               echo '<br>';
+               echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
             } else {
                echo 'Impossible d\'enregistrer le nouveau pari.';
             }
