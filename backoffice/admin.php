@@ -43,7 +43,7 @@ session_start();
 
             <div class="container_bo">
 
-                  <p class="title_form_pad15">Backoffice administrateur</p>
+                  <p class="title_form_pad10">Backoffice administrateur</p>
 
                   <h4 id="matchs_management">Gestion des matchs</h4>
 
@@ -142,8 +142,8 @@ session_start();
                         </select>
 
 
-                        <div> <label for="match_comment">Commnentaire match</label>
-                              <input type="text" name="match_comment" placeholder="Commentaire match">
+                        <div> <label for="match_comment"></label>
+                              <textarea type="text" name="match_comment" placeholder="Commentaire match"></textarea>
                         </div>
 
                         <input class="button_connexion" type="submit" value="Valider">

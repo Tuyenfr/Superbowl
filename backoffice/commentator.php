@@ -138,8 +138,8 @@ session_start();
                         </select>
 
 
-                        <div> <label for="match_comment">Commnentaire match</label>
-                              <input type="text" name="match_comment" placeholder="Commentaire match">
+                        <div> <label for="match_comment"></label>
+                              <textarea type="text" name="match_comment" placeholder="Commentaire match"></textarea>
                         </div>
 
                         <input class="button_connexion" type="submit" value="Valider">
@@ -228,6 +228,7 @@ session_start();
                                           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
+                                                $match_nul = 'Match nul';
                                                 $team_name = $team['team_name']; ?>
 
                                                 <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
@@ -237,6 +238,7 @@ session_start();
                                           echo 'Impossible de se connecter à la base de données';
                                     }
                                     ?>
+                                    <option value="<?php echo $match_nul; ?>"><?php echo $match_nul; ?></option>
                               </select>
                         </div>
 
