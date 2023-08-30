@@ -1,9 +1,5 @@
 <?php require_once "../templates/header_home.php"; ?>
 
-         </nav>
-
-      </header>
-
       <div class="container_useraccount">
 
          <p class="title_form_pad10">Mon panier</p>

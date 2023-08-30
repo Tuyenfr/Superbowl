@@ -1,10 +1,5 @@
 <?php require_once "../templates/header_home_norefresh.php"; ?>
 
-</nav>
-
-</header>
-
-
 <div class="container_connexion">
 
 <br>
