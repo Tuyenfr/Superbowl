@@ -8,7 +8,7 @@ session_start();
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv='refresh' content='120'>
-      <title>commentator backoffice</title>
+      <title>Commentator backoffice</title>
       <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
 
@@ -40,7 +40,7 @@ session_start();
 
             <div class="container_bo">
 
-                  <p class="title_form">Backoffice commentateur</p>
+                  <p class="title_form_pad10">Backoffice commentateur</p>
 
                   <h4 id="matchs_management">Gestion des matchs</h4>
 

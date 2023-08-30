@@ -359,12 +359,23 @@ footer {
     height: 70%;
     background-color: whitesmoke;
 }
-.title_form {
+.title_form_pad40 {
     font-size: 17px;
     text-align: center;
     color: rgb(73, 102, 206);
     font-weight: bold;
+    padding-top: 40px;
 }
+
+.title_form_pad10 {
+    font-size: 17px;
+    text-align: center;
+    color: rgb(73, 102, 206);
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .subtitle {
     font-size: 12px;
     text-align: center;

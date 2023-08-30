@@ -454,6 +454,7 @@
                               </tr>
                            </table>
                         </div>
+                        <br>
                      <?php } ?>
 
                      <ul class="pages_li">
@@ -468,6 +469,7 @@
                         <?php } ?>
                         <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
                         echo '</ul>';
+                        
                      } else {
 
                         foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
@@ -540,6 +542,7 @@
                                  </tr>
                               </table>
                            </div>
+                           <br>
                   <?php }
                   }
                } catch (PDOException $e) {

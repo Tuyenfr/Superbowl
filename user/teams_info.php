@@ -15,7 +15,7 @@
             $statement->bindValue(':team_name', $team_name);
             if ($statement->execute()) { ?>
 
-               <p class="title_form"><?php echo $team_name; ?></p>
+               <p class="title_form_pad10"><?php echo $team_name; ?></p>
 
          <?php }
          } catch (PDOException $e) {

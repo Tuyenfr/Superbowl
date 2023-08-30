@@ -411,6 +411,7 @@
                               </tr>
                            </table>
                         </div>
+                        <br>
                      <?php } ?>
 
                      <ul class="pages_li">
@@ -498,6 +499,7 @@
                                  </tr>
                               </table>
                            </div>
+                           <br>
                   <?php }
 
                   }

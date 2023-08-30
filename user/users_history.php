@@ -2,7 +2,7 @@
 
       <div class="container_useraccount">
 
-         <p class="title_form"> Mes paris</p>
+         <p class="title_form_pad10"> Mes paris</p>
 
          <table border="0" width="100%" align="center">
             <tr class="display_table">

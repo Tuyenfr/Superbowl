@@ -2,7 +2,7 @@
 
       <div class="container_useraccount">
 
-         <p class="title_form"> Mon solde</p>
+         <p class="title_form_pad10"> Mon solde</p>
 
          <div align="center" style="font-size: smaller; color: cadetblue; font-weight: bold">
 

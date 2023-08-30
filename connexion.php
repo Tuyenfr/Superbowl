@@ -1,9 +1,8 @@
 <?php require_once "./templates/header_index.php"; ?>
 
-      </header>
       <div class="container_connexion">
-         <br>
-         <p class="title_form">Formulaire de connexion</p>
+      
+         <p class="title_form_pad40">Formulaire de connexion</p>
          <div class="container_form">
             <form action="authentification.php" method="POST">
                <div>

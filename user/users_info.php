@@ -2,8 +2,7 @@
 
       <div class="container_connexion">
 
-         <br>
-         <p class="title_form"> Mes informations personnelles</p>
+         <p class="title_form_pad40"> Mes informations personnelles</p>
          <br>
 
          <?php

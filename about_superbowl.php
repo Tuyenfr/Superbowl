@@ -31,7 +31,7 @@ session_start();
 
       <div class="container_useraccount">
 
-         <p class="title_form">A propos du Super Bowl</p>
+         <p class="title_form_pad10">A propos du Super Bowl</p>
 
          <h4 id="superbowl_history">Histoire du Super Bowl</h4>
 
