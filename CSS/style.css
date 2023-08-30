@@ -280,11 +280,28 @@ nav > ul {
     bottom: 0; left: 0;
     display: flex;
     justify-content: center;
-    background: rgba(77, 77, 77, .7);
+    background-color: rgba(85, 85, 82, 0.89);
+    transition: all .4s;
+}
+
+.modal_home {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 26%;
+    bottom: 0; left: 26%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(85, 85, 82, 0.753);
     transition: all .4s;
 }
 
 .modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_home:target {
     visibility: visible;
     opacity: 1;
 }
@@ -303,7 +320,7 @@ nav > ul {
 
 .modal_close {
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 145px;
     color: grey;
     text-decoration: none;
@@ -400,6 +417,7 @@ footer {
     background-color:rgb(199, 237, 141); 
     font-size: 11px;
     border-color: rgb(202, 199, 204);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .button_bet:hover {
@@ -413,13 +431,15 @@ footer {
     font-size: 12px;
     min-height: 12px;
     border-color: rgba(147, 150, 153, 0.858);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .button_score {
-    background-color:rgb(184, 187, 179); 
+    background-color:rgb(219, 220, 217); 
     font-size: 12px;
     min-height: 12px;
     border-color: rgba(147, 150, 153, 0.858);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .display_table {
@@ -450,8 +470,9 @@ label {
 }
 
 .label_bet_update {
-    font-size: 14px;
+    font-size: 16px;
 }
+
 
 .button_connexion {
     background-color:rgb(89, 106, 207);

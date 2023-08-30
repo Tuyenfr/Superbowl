@@ -102,9 +102,9 @@
                            </table>
                         </div>
 
-                        <div>
+                        <div class="modal_margin">
                            <a href="#<?php echo $match_name['match_name']; ?>" class="link_comment">Commentaires match</a>
-                           <div id="<?php echo $match_name['match_name']; ?>" class="modal">
+                           <div id="<?php echo $match_name['match_name']; ?>" class="modal_home">
                               <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
                               <a href="#" class="modal_close">x</a>
                            </div>
@@ -227,9 +227,9 @@
                            </table>
                         </div>
 
-                        <div>
+                        <div class="modal_margin">
                            <a href="#<?php echo $match_name['match_name']; ?>" class="link_comment">Commentaires match</a>
-                           <div id="<?php echo $match_name['match_name']; ?>" class="modal">
+                           <div id="<?php echo $match_name['match_name']; ?>" class="modal_home">
                               <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
                               <a href="#" class="modal_close">x</a>
                            </div>
@@ -350,9 +350,9 @@
                         </table>
                      </div>
 
-                     <div>
+                     <div class="modal_margin">
                         <a href="#<?php echo $match_name['match_name']; ?>" class="link_comment">Commentaires match</a>
-                        <div id="<?php echo $match_name['match_name']; ?>" class="modal">
+                        <div id="<?php echo $match_name['match_name']; ?>" class="modal_home">
                            <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
                            <a href="#" class="modal_close">x</a>
                         </div>

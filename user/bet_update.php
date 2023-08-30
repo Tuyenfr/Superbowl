@@ -1,8 +1,4 @@
-<?php require_once "../templates/header_home.php"; ?>
-
-         </nav>
-
-      </header>
+<?php require_once "../templates/header_home_norefresh.php"; ?>
 
       <div class="container_connexion">
 

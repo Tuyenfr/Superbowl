@@ -225,6 +225,8 @@
                ?>
 
                <br>
+               <br>
+
                <h4>Matchs à venir</h4>
 
                <?php
@@ -309,6 +311,7 @@
                         <div id="<?php echo $match_name['match_name']; ?>" class="modal">
                            <div class="modal_content"><?php echo $match_name['match_comment']; ?></div>
                            <a href="#" class="modal_close">x</a>
+
                         </div>
                      </div>
 

@@ -19,6 +19,8 @@ session_start();
 
       <div class="container_connexion">
 
+      <br>
+
          <?php
 
          $team1_score = $_POST['team1_score'];

@@ -1,35 +1,4 @@
-<?php
-session_start();
-?>
-
-<html>
-
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Bet</title>
-   <link rel="stylesheet" href="../CSS/style.css" type="text/css">
-</head>
-
-<body>
-   <div class="flux">
-
-      <header>
-
-         <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
-
-         <nav>
-
-            <ul class="menu">
-               <li class="bold"><a class="link_pages" href="home.php">Lives</a></li>
-               <li><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
-               <li><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
-               <li><a class="link_pages" href="users_history.php">Mon compte</a></li>
-            </ul>
-
-         </nav>
-
-      </header>
+<?php require_once "../templates/header_home_norefresh.php"; ?>
 
       <div class="container_connexion">
          <br>
@@ -61,6 +30,7 @@ session_start();
                if (isset($bet_match_id)) {
                   echo 'Vous avez déjà parié sur ce match.';
                   echo '<br>';
+                  echo '<br>';
                ?>
 
                   <form method="POST" action="bet_update.php">
@@ -70,8 +40,8 @@ session_start();
                         <option value="Oui">Oui</option>
                         <option value="Non">Non</option>
                      </select>
-
                      <div>
+                        <br>
                         <input type="hidden" name="match_id" value="<?php echo $bet_match_id; ?>">
                         <input type="hidden" name="bet_team" value="<?php echo $bet_team; ?>">
                         <input type="hidden" name="bet_team1_name" value="<?php echo $bet_team1_name; ?>">
