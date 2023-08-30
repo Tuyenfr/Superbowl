@@ -6,7 +6,7 @@
 
       <div class="container_useraccount">
 
-         <p class="title_form">Mon panier</p>
+         <p class="title_form_pad10">Mon panier</p>
          <br>
 
          <?php

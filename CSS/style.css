@@ -381,7 +381,7 @@ footer {
     text-align: center;
 }
 .container_form {
-    padding-top: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -411,6 +411,10 @@ footer {
 .email_newaccount {
     text-decoration: none;
     color: black;
+}
+
+.bet_input {
+    width: 50px;
 }
 
 /* SESSION USER */

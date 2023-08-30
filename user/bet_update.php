@@ -19,7 +19,7 @@
          if ($bet_keepcurrentbet === "Oui") {
             header("location:home.php");
          } else {
-            echo 'Mettre à jour mon pari : ' . $bet_team1_name . ' - ' . $bet_team2_name;
+            echo 'Mon pari actuel sur le match : ' . $bet_team1_name . ' - ' . $bet_team2_name;
             echo '<br>';
             echo 'Equipe gagnante actuelle : ' . $bet_team;
             echo '<br>';
@@ -48,7 +48,7 @@
 
             echo '<br>';
             echo '<br>';
-            echo 'Nouveau pari :';
+            echo 'Nouveau pari pour le match :';
 
             /* AU CAS OU UN JOUR LES COTES SERAIENT DYNAMIQUES */
 
@@ -61,7 +61,8 @@
                $current_team2_odds = $currentodds['team2_odds'];
             }
          ?>
-
+            <br>
+            <br>
             <div>
                <table width="100%">
                   <tr>
@@ -121,16 +122,16 @@
                      <option value="Match nul">Match nul</option>
                   </Select>
                   <br>
-
-                  <label class="label_bet_update" for="new_bet">Confirmez la nouvelle mise</label>
-                  <input type="text" width="20px" name="new_bet" placeholder="Nouvelle mise">
                   <br>
-
+                  <label class="label_bet_update" for="new_bet">Confirmez la nouvelle mise : </label>
+                  <input type="text" class="bet_input" name="new_bet" placeholder="mise">
+                  <br>
+                  <br>
                   <input type="hidden" name="match_id" value="<?php echo $bet_match_id; ?>">
                   <input type="hidden" name="team1_odds" value="<?php echo $current_team1_odds; ?>">
                   <input type="hidden" name="draw_odds" value="<?php echo $current_draw_odds; ?>">
                   <input type="hidden" name="team2_odds" value="<?php echo $current_team2_odds; ?>">
-                  <input type="submit" class="button_connexion" value="Valider et annuler mise précédente">
+                  <input type="submit" class="button_connexion" value="Confirmer et annuler mise précédente">
 
                </form>
             </div>
