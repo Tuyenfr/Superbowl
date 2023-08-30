@@ -137,7 +137,7 @@ session_start();
                               ?>
                         </select>
 
-
+                        <!-- Mettre <br> pour le saut de ligne -->
                         <div> <label for="match_comment"></label>
                               <textarea type="text" name="match_comment" placeholder="Commentaire match"></textarea>
                         </div>
