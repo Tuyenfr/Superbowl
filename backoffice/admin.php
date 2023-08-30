@@ -43,7 +43,7 @@ session_start();
 
             <div class="container_bo">
 
-                  <p class="title_form">Backoffice administrateur</p>
+                  <p class="title_form_pad15">Backoffice administrateur</p>
 
                   <h4 id="matchs_management">Gestion des matchs</h4>
 
