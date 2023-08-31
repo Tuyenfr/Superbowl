@@ -156,7 +156,7 @@ nav > ul {
     font-weight: bold;
     font-style: italic;
     text-decoration: underline;
-    padding-top: 15px;
+    padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
 }
@@ -227,25 +227,12 @@ nav > ul {
 .aside_right_card1 {
     text-align: center;
     font-size: smaller;
-    background-color: rgba(107, 142, 212, 0.751);
-    height: 30px;
+    background-color: rgba(72, 118, 208, 0.856);
+    height: 130px;
     padding-top: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 17%;
+    margin-right: 17%;
     color: white;
-    font-weight: 500;
-    border-radius: 2px;
-}
-
-.aside_right_card2 {
-    text-align: center;
-    font-size: smaller;
-    background-color: rgb(194, 234, 182);
-    height: 30px;
-    padding-top: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
-    color: rgb(63, 60, 60);
     font-weight: 500;
     border-radius: 2px;
 }
@@ -258,6 +245,12 @@ nav > ul {
     border-color: rgb(170, 165, 164);
 }
 
+.link_aside_right {
+    color: black;
+    text-decoration: underline;
+    font-size: 12px;
+    font-style: italic;
+}
 
 /* TABLEAUX MATCHS */
 

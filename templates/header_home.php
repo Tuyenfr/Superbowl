@@ -22,7 +22,7 @@ session_start();
                <li class="<?php if (basename($page) == "home.php") {echo 'bold';} ?>"><a class="link_pages" href="home.php">Lives</a></li>
                <li class="<?php if (basename($page) == "matchs_tocome_user.php") {echo 'bold';} ?>"><a class="link_pages" href="matchs_tocome_user.php">Matchs à venir</a></li>
                <li class="<?php if (basename($page) == "matchs_over_user.php") {echo 'bold';} ?>"><a class="link_pages" href="matchs_over_user.php">Matchs terminés</a></li>
-               <li class="<?php if (basename($page) == "users_history.php") {echo 'bold';} ?>"><a class="link_pages" href="users_history.php">Mon compte</a></li>
+               <li class="<?php if (basename($page) == "user_history.php") {echo 'bold';} ?>"><a class="link_pages" href="user_history.php">Mon compte</a></li>
             </ul>
          </nav>
       </header>

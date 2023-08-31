@@ -19,9 +19,9 @@ session_start();
          <nav>
             <ul class="menu">
                <li><a class="link_pages" href="home.php">Accueil</li>
-               <li class="bold"><a class="link_pages" href="users_history.php">Mes paris</li>
-               <li><a class="link_pages" href="users_balance.php">Mon solde</li>
-               <li><a class="link_pages" href="users_info.php">Mes infos personnelles</a></li>
+               <li class="bold"><a class="link_pages" href="user_history.php">Mes paris</li>
+               <li><a class="link_pages" href="user_balance.php">Mon solde</li>
+               <li><a class="link_pages" href="user_info.php">Mes infos personnelles</a></li>
                <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
             </ul>
          </nav>
