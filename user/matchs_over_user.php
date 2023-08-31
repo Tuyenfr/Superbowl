@@ -308,8 +308,3 @@
       </section>
 
       <?php require_once "../templates/footer.php"; ?>
-
-   </div>
-</body>
-
-</html>

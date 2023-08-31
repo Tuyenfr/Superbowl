@@ -14,7 +14,7 @@ session_start();
 <body>
    <div class="flux">
       <header>
-         <p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
+         <a><p class="logo"><a class="link_pages" href="home.php"><i>Super</i>Bowl-BET</a></p>
       </header>
 
       <div class="container_connexion">
@@ -52,8 +52,3 @@ session_start();
       </div>
 
       <?php require_once "../templates/footer.php"; ?>
-
-   </div>
-</body>
-
-</html>

@@ -25,5 +25,4 @@ session_start();
                <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
             </ul>
          </nav>
-
       </header>

@@ -70,8 +70,3 @@ session_start();
       </div>
 
       <?php require_once "../templates/footer.php"; ?>
-
-   </div>
-</body>
-
-</html>
