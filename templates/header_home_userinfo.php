@@ -18,11 +18,12 @@ session_start();
 
          <nav>
             <ul class="menu">
-               <li><a class="link_pages" href="home.php">Accueil</li>
-               <li class="bold"><a class="link_pages" href="user_history.php">Mes paris</li>
-               <li><a class="link_pages" href="user_balance.php">Mon solde</li>
-               <li><a class="link_pages" href="user_info.php">Mes infos personnelles</a></li>
-               <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
+            <?php $page = $_SERVER['SCRIPT_NAME'];?>
+               <li class="<?php if (basename($page) == "home.php") {echo 'bold';} ?>"><a class="link_pages" href="home.php">Accueil</li>
+               <li class="<?php if (basename($page) == "user_history.php") {echo 'bold';} ?>"><a class="link_pages" href="user_history.php">Mes paris</li>
+               <li class="<?php if (basename($page) == "user_balance.php") {echo 'bold';} ?>"><a class="link_pages" href="user_balance.php">Mon solde</li>
+               <li class="<?php if (basename($page) == "user_info.php") {echo 'bold';} ?>"><a class="link_pages" href="user_info.php">Mes infos personnelles</a></li>
+               <li ><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
             </ul>
          </nav>
       </header>

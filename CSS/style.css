@@ -481,6 +481,7 @@ footer {
 .display_info {
     font-size: 12px;
     text-align: left;
+    padding-left: 35px;
 }
 
 /* SESSION ADMIN */

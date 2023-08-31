@@ -24,32 +24,31 @@
 
          ?>
 
-               <table border="0" width="100%">
-                  <tr class="display_info">
-                     <td width="20%">Email de connexion :</td>
-                     <td width="20%"><?php echo $user_info['email']; ?></td>
-                     <td width="50%">
+               <table width="100%" align="center">
+                  <tr>
+                     <td class="display_info" width="25%">Email :</td>
+                     <td class="display_info" width="10%"><?php echo $user_info['email']; ?></td>
+                     <td class="display_info" width="65%">
                         <form action="new_email.php" method="POST">
                            <input type="email" name="new_email" placeholder="Changer mon email">
                            <input type="submit" class="button_connexion" value="Changer mon email">
                         </form>
                      </td>
                   </tr>
-                  <tr class="display_info">
-                     <td>Date de naissance :</td>
-
-                     <td><?php echo $birthdateFR; ?></td>
-                     <td>
+                  <tr>
+                     <td class="display_info">Date de naissance :</td>
+                     <td class="display_info"><?php echo $birthdateFR; ?></td>
+                     <td class="display_info">
                         <form action="new_birthdate.php" method="POST">
                            <input type="date" name="new_birthdate" placeholder="Nouvelle date de naissance">
                            <input type="submit" class="button_connexion" value="Changer ma date de naissance">
                         </form>
                      </td>
                   </tr>
-                  <tr class="display_info">
-                     <td>Mot de passe :</td>
-                     <td><button style="border: none">********</button></td>
-                     <td>
+                  <tr>
+                     <td class="display_info">Mot de passe :</td>
+                     <td class="display_info"><button style="border: none">********</button></td>
+                     <td class="display_info">
                         <form action="new_password.php" method="POST">
                            <input type="text" name="new_password" placeholder="Nouveau mot de passe">
                            <input class="button_connexion" type="submit" value="Changer mon mot de passe">
