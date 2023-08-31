@@ -1,4 +1,4 @@
-<?php require_once "../templates/header_home_userhistory.php"; ?>
+<?php require_once "../templates/header_home_userinfo.php"; ?>
 
       <div class="container_connexion">
 

@@ -1,4 +1,4 @@
-<?php require_once "../templates/header_home.php"; ?>
+<?php require_once "../templates/header_home_norefresh.php"; ?>
 
 <br>
       <section class="container_matchs">

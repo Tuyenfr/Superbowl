@@ -1,4 +1,4 @@
-<?php require_once "./templates/header_index.php"; ?>
+<?php require_once "./templates/header_index_norefresh.php"; ?>
 
       <div class="container_connexion">
       
