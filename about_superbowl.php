@@ -30,10 +30,8 @@ session_start();
       </header>
 
       <div class="container_useraccount">
-
-         <p class="title_form_pad10">A propos du Super Bowl</p>
-
-         <h4 id="superbowl_history">Histoire du Super Bowl</h4>
+         
+         <p class="subtitles_aboutSB" id="superbowl_history">Histoire du Super Bowl</p>
 
          <div class="text_superbowl">
             <p>
@@ -54,13 +52,13 @@ session_start();
 
          </div>
 
-         <h4 id="superbowl_news">Actualités du Super Bowl</h4>
+         <p class="subtitles_aboutSB" id="superbowl_news">Actualités du Super Bowl</p>
 
          <p class="text_superbowl">
             Le Super Bowl 2024 se déroulera le 11 février au Allegiant Stadium de Paradise, dans l'Etat du Nevada. Après Katy Perry, Bruno Mars, ou encore Rihanna, qui se produira lors de mi-temps du match ? Les paris sont lancés.
          </p>
 
-         <h4 id="superbowl_results">Résultats antérieurs</h4>
+         <p class="subtitles_aboutSB" id="superbowl_results">Résultats antérieurs</p>
 
          <p class="text_superbowl">A compléter</p>
          <p class="text_superbowl">A compléter</p>

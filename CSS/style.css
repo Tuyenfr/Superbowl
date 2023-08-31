@@ -150,6 +150,17 @@ nav > ul {
 
 }
 
+.subtitles_aboutSB {
+    font-size: 14px;
+    color: rgba(0, 132, 209, 0.811);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
 /* ASIDE LEFT */
 
 .aside_left {
@@ -239,6 +250,13 @@ nav > ul {
     border-radius: 2px;
 }
 
+.aside_right_videos {
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-top: solid;
+    border-color: rgb(170, 165, 164);
+}
 
 
 /* TABLEAUX MATCHS */
@@ -370,10 +388,12 @@ footer {
 .title_form_pad10 {
     font-size: 17px;
     text-align: center;
-    color: rgb(73, 102, 206);
-    font-weight: bold;
+    background-color: rgb(73, 102, 206);
+    color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-right: 250px;
+    margin-left: 250px;
 }
 
 .subtitle {

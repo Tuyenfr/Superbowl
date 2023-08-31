@@ -59,3 +59,9 @@ echo 'Impossible de se connecter à la base de données';
 ?>
 
 </p>
+
+<div class="aside_right_videos" style="text-align: center; font-size: 14px">
+<p>Vidéos</p>
+<div style="font-size: 12px">Cérémonie d'ouverture par Rihanna</div>
+<a href="https://www.youtube.com/watch?v=HjBo--1n8lI"><img width="90%" src="../Images/Rihanna.jpeg" alt="photo Rihanna"></a>
+</div>

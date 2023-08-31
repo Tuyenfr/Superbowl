@@ -31,11 +31,11 @@ session_start();
 
       <div class="container_useraccount">
 
-         <p class="title_form_pad10">A propos du Super Bowl</p>
+      <div style="text-align: center; padding-top: 10px"><img width="35%" src="../images/superbowl-LVII.avif" alt="photo Super Bowl"></div>
+               
+         <p class="subtitles_aboutSB" id="superbowl_history">Histoire du Super Bowl</p>
 
-         <h4 id="superbowl_history">Histoire du Super Bowl</h4>
-
-         <div class="text_superbowl">
+            <div class="text_superbowl">
             <p>
                Le Super Bowl est la finale du championnat organisé par la National Football League (NFL), ligue américaine de football américain. Conclusion des séries éliminatoires, il oppose les vainqueurs des deux conférences de la ligue, l'American Football Conference (AFC) et la National Football Conference (NFC). Le match clôt une saison d'envirion cinq mois, allant de septembre à février.
             </p>
@@ -54,13 +54,13 @@ session_start();
 
          </div>
 
-         <h4 id="superbowl_news">Actualités du Super Bowl</h4>
+         <p class="subtitles_aboutSB" id="superbowl_news">Actualités du Super Bowl</p>
 
          <p class="text_superbowl">
             Le Super Bowl 2024 se déroulera le 11 février au Allegiant Stadium de Paradise, dans l'Etat du Nevada. Après Katy Perry, Bruno Mars, ou encore Rihanna, qui se produira lors de mi-temps du match ? Les paris sont lancés.
          </p>
 
-         <h4 id="superbowl_results">Résultats antérieurs</h4>
+         <p class="subtitles_aboutSB" id="superbowl_results">Résultats antérieurs</p>
 
          <p class="text_superbowl">A compléter</p>
          <p class="text_superbowl">A compléter</p>
