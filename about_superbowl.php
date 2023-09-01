@@ -23,7 +23,7 @@ session_start();
                <li><a class="link_pages" href="index.php">Accueil</a></li>
                <li><a class="link_pages" href="#superbowl_history">Histoire du Super Bowl</a></li>
                <li><a class="link_pages" href="#superbowl_news">Actualités du Super Bowl</a></li>
-               <li><a class="link_pages" href="#superbowl_results">Résultats antérieurs du Super Bowl</a></li>
+               <li><a class="link_pages" href="#superbowl_results">Résultats du Super Bowl</a></li>
             </ul>
          </nav>
 
