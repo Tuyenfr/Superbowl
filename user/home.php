@@ -247,7 +247,6 @@
                ?>
 
                <br>
-               <br>
                
                <h4> Matchs à venir</h4>
 
