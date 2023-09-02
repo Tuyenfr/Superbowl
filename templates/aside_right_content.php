@@ -71,16 +71,16 @@
 
 <div class="aside_right_videos" style="text-align: center; font-size: 14px">
   <p>Vidéos</p>
-  <a href="https://www.youtube.com/watch?v=HjBo--1n8lI"><img width="95%" src="../Images/Rihanna.jpeg" alt="photo Rihanna" target="_blank"></a>
+  <a href="https://www.youtube.com/watch?v=HjBo--1n8lI" target="_blank"><img width="95%" src="../Images/Rihanna.jpeg" alt="photo Rihanna"></a>
   <div style="font-size: 12px; font-style: italic">Cérémonie d'ouverture 2023 par Rihanna</div>
 </div>
 
 <div class="aside_right_videos" style="text-align: center; font-size: 14px">
   <p>Articles</p>
-  <a href="https://frenchdistrict.com/articles/super-bowl-finale-sport-us-football-americain/"><img width="95%" src="../Images/article-foot-americain.png" alt="photo Rihanna" target="_blank"></a>
+  <a href="https://frenchdistrict.com/articles/super-bowl-finale-sport-us-football-americain/" target="_blank"><img width="95%" src="../Images/article-foot-americain.png" alt="photo Rihanna"></a>
   <div style="font-size: 12px; font-style: italic">Tout savoir sur le Super Bowl</div>
 
   <br>
-  <a href="https://www.france24.com/fr/info-en-continu/20230213-%F0%9F%94%B4-football-am%C3%A9ricain-les-chiefs-remportent-le-super-bowl-aux-d%C3%A9pens-des-eagles"><img width="95%" src="../Images/finale-LVII.webp" alt="finale Super Bowl 2023" target="_blank"></a>
+  <a href="https://www.france24.com/fr/info-en-continu/20230213-%F0%9F%94%B4-football-am%C3%A9ricain-les-chiefs-remportent-le-super-bowl-aux-d%C3%A9pens-des-eagles" target="_blank"><img width="95%" src="../Images/finale-LVII.webp" alt="finale Super Bowl 2023"></a>
   <div style="font-size: 12px; font-style: italic">Victoire des Chiefs de Kansas City</div>
 </div>
