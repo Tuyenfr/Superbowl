@@ -28,10 +28,9 @@
 
          try {
 
-            $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
-            $players = $pdo2->prepare('SELECT * FROM teams WHERE team_name = :team_name');
+            $players = $pdo->prepare('SELECT * FROM teams WHERE team_name = :team_name');
             $players->bindValue(':team_name', $team_name);
             $players->execute();
             $team_info = $players->fetchAll();
@@ -80,10 +79,9 @@
 
          try {
 
-            $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
-            $team_matchs = $pdo3->prepare('SELECT * FROM matchs WHERE team1_name = :team_name OR team2_name = :team_name');
+            $team_matchs = $pdo->prepare('SELECT * FROM matchs WHERE team1_name = :team_name OR team2_name = :team_name');
             $team_matchs->bindValue(':team_name', $team_name);
             $team_matchs->execute();
             $matchs_info = $team_matchs->fetchAll();

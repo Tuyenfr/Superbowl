@@ -425,8 +425,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>

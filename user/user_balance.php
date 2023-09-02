@@ -49,8 +49,7 @@
                $user_id = $_SESSION['user_id'];
             }
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             foreach ($pdo->query('SELECT * FROM users_balance WHERE user_id = ' . $user_id . ' ORDER BY transaction_id DESC', PDO::FETCH_ASSOC) as $transaction) {
                $transactiondate = $transaction['transaction_date'];

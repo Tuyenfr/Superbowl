@@ -265,22 +265,21 @@
 
                         require "../constants/pdo.php";
 
-                        foreach ($pdo2->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
+                        foreach ($pdo->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
                            $currentbalance['user_balance'] -= $draw_bet;
                            $newcurrentbalance = $currentbalance['user_balance'];
                            echo 'Votre nouveau solde est de : ' . $newcurrentbalance . ' euros';
 
-                           $newbalance = $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
+                           $newbalance = $pdo->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
                            $newbalance->bindValue(':balance', $newcurrentbalance);
                            $newbalance->execute();
 
-                           $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                           $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                           require "../constants/pdo.php";
 
                            $credit = "0";
                            $transaction_description = "Mise pari";
 
-                           $newtransaction = $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :draw_bet, :newcurrentbalance)');
+                           $newtransaction = $pdo->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :draw_bet, :newcurrentbalance)');
                            $newtransaction->bindValue(':user_id', $user_id);
                            $newtransaction->bindValue(':bet_date', $bet_date);
                            $newtransaction->bindValue(':transaction_description', $transaction_description);

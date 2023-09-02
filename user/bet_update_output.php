@@ -53,8 +53,7 @@
 
             $potential_gain_2 = $bet_new_amount * $bet_team2_odds;
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $bet_update_2 = $pdo->prepare('UPDATE bets SET team1_odds = "0", draw_odds = "0", team2_odds = :bet_team2_odds, team1_bet = "0", draw_bet = "0", team2_bet = :bet_new_amount, team_name_bet = :bet_team, potential_gain = :potential_gain_2 WHERE match_id = :bet_match_id');
             $bet_update_2->bindValue(':bet_team2_odds', $bet_team2_odds);
@@ -79,8 +78,7 @@
 
             $potential_gain_0 = $bet_new_amount * $bet_draw_odds;
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $bet_update_0 = $pdo->prepare('UPDATE bets SET team1_odds = "0", draw_odds = :bet_draw_odds, team2_odds = "0", team1_bet = "0", draw_bet = :bet_new_amount, team2_bet = "0", team_name_bet = "Match nul", potential_gain = :potential_gain_0 WHERE match_id = :bet_match_id');
             $bet_update_0->bindValue(':bet_draw_odds', $bet_draw_odds);
