@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 31 août 2023 à 00:25
+-- Généré le : sam. 02 sep. 2023 à 18:05
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -75,8 +75,8 @@ INSERT INTO `bets` (`bet_id`, `bet_date`, `user_id`, `match_id`, `match_date`, `
 (22, '2023-08-14', 1, 42, '2023-08-14', 'LA Rams', 'Tennessee', '2023-08-14 LA Rams - Tennessee', 0.00, 21.00, 0.00, 'Match nul', 0.00, 1.00, 0.00, 'Gagné', 21.00, 21.00, 'closed'),
 (24, '2023-08-16', 1, 25, '2023-08-22', 'Denver', 'Miami', '2023-08-22 Denver - Miami', 1.37, 0.00, 0.00, 'Denver', 1.00, 0.00, 0.00, 'Gagné', 1.37, 1.37, 'closed'),
 (55, '2023-08-22', 1, 47, '2023-08-23', 'Chicago', 'Pittsburgh', '2023-08-23 Chicago - Pittsburgh', 0.00, 0.00, 1.75, 'Pittsburgh', 0.00, 0.00, 2.00, 'Gagné', 3.50, 3.50, 'closed'),
-(56, '2023-08-24', 1, 20, '2023-09-02', 'Atlanta', 'Dallas', '2023-09-02 Atlanta - Dallas', 1.37, 0.00, 0.00, 'Atlanta', 1.00, 0.00, 0.00, 'En cours', 1.37, 0.00, 'open'),
-(57, '2023-08-30', 1, 50, '2023-09-01', 'Jacksonville', 'Tampa Bay', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 0.00, 0.00, 'Jacksonville', 1.00, 0.00, 0.00, 'En cours', 1.31, 0.00, 'open');
+(56, '2023-08-24', 1, 20, '2023-09-02', 'Atlanta', 'Dallas', '2023-09-02 Atlanta - Dallas', 0.00, 0.00, 1.63, 'Dallas', 0.00, 0.00, 1.00, 'En cours', 1.63, 0.00, 'open'),
+(57, '2023-08-30', 1, 50, '2023-09-01', 'Jacksonville', 'Tampa Bay', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 0.00, 0.00, 'Jacksonville', 1.00, 0.00, 0.00, 'Perdu', 1.31, 0.00, 'open');
 
 -- --------------------------------------------------------
 
@@ -121,7 +121,7 @@ INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1
 (17, '2023-07-21', '20:00:00', '21:30:00', 'LA Rams', 'LA Chargers', 'LA Rams - LA Chargers', '', '2023-07-21 LA Rams - LA Chargers', 1.50, 12.00, 1.50, 35, 28, 'LA Chargers', 'terminé', 'closed'),
 (18, '2023-07-25', '20:00:00', '21:30:00', 'Houston', 'San Francisco', 'Houston - San Francisco', '', '2023-07-25 Houston - San Francisco', 1.33, 15.00, 1.67, 37, 45, 'San Francisco', 'terminé', 'closed'),
 (19, '2023-08-20', '20:00:00', '21:30:00', 'Washington', 'Buffalo', 'Washington - Buffalo', 'Un match de titans !', '2023-08-20 Washington - Buffalo', 1.90, 23.00, 1.10, 41, 39, 'Washington', 'terminé', 'closed'),
-(20, '2023-09-02', '20:00:00', '21:30:00', 'Atlanta', 'Dallas', 'Atlanta - Dallas', 'Un beau combat en perspective !', '2023-09-02 Atlanta - Dallas', 1.37, 13.00, 1.63, NULL, NULL, NULL, 'à venir', 'open'),
+(20, '2023-09-02', '20:00:00', '21:30:00', 'Atlanta', 'Dallas', 'Atlanta - Dallas', 'Un beau combat en perspective !', '2023-09-02 Atlanta - Dallas', 1.37, 13.00, 1.63, NULL, NULL, NULL, 'en cours', 'open'),
 (22, '2023-08-10', '22:00:00', '23:30:00', 'Pittsburgh', 'LA Rams', 'Pittsburgh - LA Rams', 'Un très beau match en perspective ! Le match s\'annonce palpitant !', '2023-08-10 Pittsburgh - LA Rams', 1.60, 14.00, 1.40, 24, 36, 'LA Rams', 'terminé', 'closed'),
 (23, '2023-08-11', '14:00:00', '15:30:00', 'NY Jets', 'Minnesota', 'NY Jets - Minnesota', 'Un très beau match en perspective !', '2023-08-11 NY Jets - Minnesota', 1.56, 13.00, 1.44, 42, 36, 'NY Jets', 'terminé', 'closed'),
 (24, '2023-08-11', '16:00:00', '17:30:00', 'Detroit', 'Baltimore', 'Detroit - Baltimore', 'Beau combat à venir !', '2023-08-11 Detroit - Baltimore', 1.67, 14.00, 1.33, 20, 42, 'Baltimore', 'terminé', 'closed'),
@@ -149,7 +149,7 @@ INSERT INTO `matchs` (`match_id`, `match_date`, `start_time`, `end_time`, `team1
 (47, '2023-08-23', '15:00:00', '16:30:00', 'Chicago', 'Pittsburgh', 'Chicago - Pittsburgh', 'Un match de titans !', '2023-08-23 Chicago - Pittsburgh', 1.25, 16.00, 1.75, 35, 36, 'Pittsburgh', 'terminé', 'closed'),
 (48, '2023-08-28', '19:00:00', '20:30:00', 'Denver', 'Houston', 'Denver - Houston', 'Beau match à venir !', '2023-08-28 Denver - Houston', 1.44, 13.00, 1.56, 22, 39, 'Houston', 'terminé', 'closed'),
 (49, '2023-08-30', '20:00:00', '21:30:00', 'Seattle', 'Green Bay', 'Seattle - Green Bay', 'Beau match à venir !', '2023-08-30 Seattle - Green Bay', 1.67, 15.00, 1.33, 29, 25, 'Seattle', 'terminé', 'closed'),
-(50, '2023-09-01', '20:00:00', '21:30:00', 'Jacksonville', 'Tampa Bay', 'Jacksonville - Tampa Bay', 'A ne pas rater!\r\n<br> Un beau match en perspective !', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 16.00, 1.69, 0, 0, NULL, 'à venir', 'open'),
+(50, '2023-09-01', '20:00:00', '21:30:00', 'Jacksonville', 'Tampa Bay', 'Jacksonville - Tampa Bay', 'A ne pas rater!\r\n<br> Un beau match en perspective !', '2023-09-01 Jacksonville - Tampa Bay', 1.31, 16.00, 1.69, 20, 28, 'Tampa Bay', 'terminé', 'closed'),
 (51, '2023-09-05', '20:00:00', '21:30:00', 'Indianapolis', 'Houston', 'Indianapolis - Houston', 'Ne ratez surtout pas ce rendez-vous ! <br> Bon match !', '2023-09-05 Indianapolis - Houston', 1.50, 12.00, 1.50, 0, 0, NULL, 'à venir', 'open'),
 (52, '2023-09-12', '20:00:00', '21:30:00', 'NY Jets', 'Kansas City', 'NY Jets - Kansas City', 'Beau match à venir !', '2023-09-12 NY Jets - Kansas City', 1.82, 16.00, 1.18, 0, 0, NULL, 'à venir', 'open');
 
@@ -238,7 +238,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `birth_date`, `role`, `user_balance`) VALUES
-(1, 'John', 'Doe', 'john@doe.com', '$2y$10$pNOImO7wC0RW5DJ2fKhcqO1FXQoRCYtORT.Sxt9UxZaJCmPl6dQ7O', '1971-07-16', 'user', 10.02),
+(1, 'John', 'Doe', 'john@doe.com', '$2y$10$.7295l1tWzsbkU8zxmousOTIMB.Irw141D6GwYvWUwP3oJMmZ/LEa', '1971-07-16', 'user', 10.02),
 (2, 'Tuyen', 'Nguyen', 'tuyen.nguyen.fr@gmail.com', '$2y$10$OB04TjAvT4IYVmlsAYf8tuCi18hRykgEaFNzqTXWjc4nb/SRVWOcG', '1971-07-16', 'admin', 0.21),
 (3, 'Laure', 'Mondi', 'laure@mondi.com', '$2y$10$Nw/hIHVacODDDK/aymCIsel0NCSLVJszMlKazeS9Uk2DVaSP4sCy.', '1971-07-16', 'commentator', 0.00),
 (4, 'John2', 'Doe2', 'john2@doe.com', '$2y$10$WE3KMKRQuCnZKXXHVds5SeORYSzpnf6IvAVgIz7rBq.f2J4dkCsOC', '1971-07-16', 'user', 0.00);
