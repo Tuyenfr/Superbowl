@@ -26,8 +26,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $newcomment = $pdo->prepare('UPDATE teams SET comment = :comment WHERE team_name = :team_name');
             $newcomment->bindValue(':team_name', $team_name);

@@ -1,8 +1,8 @@
 <?php 
 
 try {
-$pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    require "pdo.php";
 
     foreach ($pdo->query('SELECT * FROM bets WHERE bet_status = "Gagné" AND bet_admin_status = "open"', PDO::FETCH_ASSOC) as $betUpdate)
     {   $potential_gain = $betUpdate['potential_gain'];
@@ -14,10 +14,9 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
     if ($betUpdateGain->execute()){
 
-        $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-        $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require "pdo.php";
 
-            foreach ($pdo2->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
+            foreach ($pdo->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
                 $currentbalance['user_balance'] += $potential_gain;
                 $newcurrentbalance = $currentbalance['user_balance'];
     
@@ -25,8 +24,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $newbalance->bindValue(':balance', $newcurrentbalance);
                 $newbalance->execute();
     
-                $pdo = new PDO('mysql:host=localhost;dbname=superbowl','root', '');
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                require "pdo.php";
                 
                 $credit = $potential_gain;
                 $debit = "0";

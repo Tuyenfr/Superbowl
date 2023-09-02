@@ -52,8 +52,7 @@
 
             /* AU CAS OU UN JOUR LES COTES SERAIENT DYNAMIQUES */
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             foreach ($pdo->query('SELECT * FROM matchs WHERE match_id =' . $bet_match_id . '', PDO::FETCH_ASSOC) as $currentodds) {
                $current_team1_odds = $currentodds['team1_odds'];

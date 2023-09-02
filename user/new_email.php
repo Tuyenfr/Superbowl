@@ -29,8 +29,7 @@ session_start();
                $user_id = $_SESSION['user_id'];
             }
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $emailchange = $pdo->prepare('UPDATE users SET email = :new_email WHERE user_id = :user_id');
             $emailchange->bindValue(':new_email', $new_email);

@@ -28,8 +28,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $passwordreset = $pdo->prepare('UPDATE users SET password = :password_reset WHERE email = :email AND first_name = :first_name AND last_name = :last_name');
             $passwordreset->bindValue(':password_reset', password_hash($password_reset, PASSWORD_BCRYPT));

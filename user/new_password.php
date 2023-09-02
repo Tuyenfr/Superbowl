@@ -29,8 +29,7 @@ session_start();
                $user_id = $_SESSION['user_id'];
             }
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $passwordchange = $pdo->prepare('UPDATE users SET password = :new_password WHERE user_id = :user_id');
             $passwordchange->bindValue(':new_password', password_hash($new_password, PASSWORD_BCRYPT));

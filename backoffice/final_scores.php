@@ -29,8 +29,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $finalscores = $pdo->prepare('UPDATE matchs SET team1_score = :team1_score, team2_score = :team2_score, team_winning_name = :team_winning_name, admin_status = :admin_status WHERE date_match_name = :date_match_name');
             $finalscores->bindValue(':date_match_name', $date_match_name);
@@ -52,8 +51,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $betUpdateGain = $pdo->prepare('UPDATE bets SET bet_status = "Gagné" WHERE date_match_name = :date_match_name AND team_name_bet = :team_winning_name');
             $betUpdateGain->bindValue(':date_match_name', $date_match_name);
@@ -70,8 +68,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $betUpdateLost = $pdo->prepare('UPDATE bets SET bet_status = "Perdu"  WHERE date_match_name = :date_match_name AND team_name_bet != :team_winning_name');
             $betUpdateLost->bindValue(':date_match_name', $date_match_name);

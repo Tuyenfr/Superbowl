@@ -10,8 +10,8 @@
          $match_id = $_POST['match_id'];
 
          try {
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            require "../constants/pdo.php";
 
             foreach ($pdo->query('SELECT * FROM bets WHERE user_id = ' .$user_id. ' AND match_id = ' .$match_id. '', PDO::FETCH_ASSOC) as $bet) {
                $bet_match_id = $bet['match_id'];
@@ -75,8 +75,8 @@
                   $bet_admin_status = "open";
 
                   try {
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                     
+                     require "../constants/pdo.php";
 
                      $statement = $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name,date_match_name, team1_odds, team_name_bet, team1_bet, bet_status, potential_gain, bet_admin_status) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team1_odds, :team_name_bet, :team1_bet, :bet_status, :potential_gain, :bet_admin_status)');
                      $statement->bindValue(':bet_date', $bet_date);
@@ -102,10 +102,9 @@
                         echo '<br>';
                         echo '<br>';
 
-                        $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                        $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        require "../constants/pdo.php";
 
-                        foreach ($pdo2->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
+                        foreach ($pdo->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
                            $currentbalance['user_balance'] -= $team1_bet;
                            $newcurrentbalance = $currentbalance['user_balance'];
                            echo 'Votre nouveau solde est de : ' . $newcurrentbalance . ' euros';
@@ -114,8 +113,7 @@
                            $newbalance->bindValue(':balance', $newcurrentbalance);
                            $newbalance->execute();
 
-                           $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                           $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                           require "../constants/pdo.php";
 
                            $credit = "0";
                            $transaction_description = "Mise pari";
@@ -158,8 +156,8 @@
                   $bet_admin_status = "open";
 
                   try {
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                     
+                     require "../constants/pdo.php";
 
                      $statement = $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name, date_match_name, team2_odds, team_name_bet, team2_bet, bet_status, potential_gain, bet_admin_status) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :team2_odds, :team_name_bet, :team2_bet, :bet_status, :potential_gain, :bet_admin_status)');
                      $statement->bindValue(':bet_date', $bet_date);
@@ -185,20 +183,18 @@
                         echo '<br>';
                         echo '<br>';
 
-                        $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                        $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        require "../constants/pdo.php";
 
-                        foreach ($pdo2->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
+                        foreach ($pdo->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
                            $currentbalance['user_balance'] -= $team2_bet;
                            $newcurrentbalance = $currentbalance['user_balance'];
                            echo 'Votre nouveau solde est de : ' . $newcurrentbalance . ' euros';
 
-                           $newbalance = $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
+                           $newbalance = $pdo->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
                            $newbalance->bindValue(':balance', $newcurrentbalance);
                            $newbalance->execute();
 
-                           $pdo3 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                           $pdo3->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                           require "../constants/pdo.php";
 
                            $credit = "0";
                            $transaction_description = "Mise pari";
@@ -240,8 +236,8 @@
                   $bet_admin_status = "open";
 
                   try {
-                     $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                     require "../constants/pdo.php";
 
                      $statement = $pdo->prepare('INSERT INTO bets(bet_date, user_id, match_id, match_date, team1_name, team2_name, date_match_name, draw_odds, team_name_bet, draw_bet, bet_status, potential_gain, bet_admin_status) VALUES (:bet_date, :user_id, :match_id, :match_date, :team1_name, :team2_name, :date_match_name, :draw_odds, :team_name_bet, :draw_bet, :bet_status, :potential_gain, :bet_admin_status)');
                      $statement->bindValue(':bet_date', $bet_date);
@@ -267,8 +263,7 @@
                         echo '<br>';
                         echo '<br>';
 
-                        $pdo2 = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                        $pdo2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        require "../constants/pdo.php";
 
                         foreach ($pdo2->query('SELECT * FROM users WHERE user_id =' . $user_id . '', PDO::FETCH_ASSOC) as $currentbalance) {
                            $currentbalance['user_balance'] -= $draw_bet;

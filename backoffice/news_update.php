@@ -26,8 +26,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $newsupdate = $pdo->prepare('UPDATE teams SET latest_news = :latest_news WHERE team_name = :team_name');
             $newsupdate->bindValue(':team_name', $team_name);

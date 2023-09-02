@@ -8,7 +8,9 @@
       $password = $_POST['password'];
 
       try {
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
+
+         require "./constants/pdo.php";
+
          $connexion = $pdo->prepare('SELECT * FROM users WHERE email = :email');
          $connexion->bindValue(':email', $email);
 

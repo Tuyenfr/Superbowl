@@ -8,8 +8,7 @@
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $statement = $pdo->prepare('SELECT * FROM teams WHERE team_name = :team_name');
             $statement->bindValue(':team_name', $team_name);

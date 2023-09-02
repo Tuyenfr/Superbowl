@@ -67,8 +67,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>
@@ -90,8 +89,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>
@@ -121,8 +119,7 @@ session_start();
                               <?php
                               try {
 
-                                    $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    require "../constants/pdo.php";
 
                                     foreach ($pdo->query('SELECT * FROM matchs WHERE admin_status = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_open) {
                                           $date_match_name = $match_open['date_match_name'];
@@ -154,8 +151,7 @@ session_start();
                               <?php
                               try {
 
-                                    $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    require "../constants/pdo.php";
 
                                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_live) {
                                           $date_match_name = $match_live['date_match_name'];
@@ -191,8 +187,7 @@ session_start();
                               <?php
                               try {
 
-                                    $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    require "../constants/pdo.php";
 
                                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" AND admin_status = "open" ORDER BY match_date ASC', PDO::FETCH_ASSOC) as $match_over) {
                                           $date_match_name = $match_over['date_match_name'];
@@ -224,8 +219,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $match_nul = 'Match nul';
@@ -258,8 +252,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>
@@ -295,8 +288,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>
@@ -331,8 +323,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>
@@ -428,8 +419,7 @@ session_start();
                                     <?php
                                     try {
 
-                                          $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-                                          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                          require "../constants/pdo.php";
 
                                           foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
                                                 $team_name = $team['team_name']; ?>

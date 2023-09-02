@@ -29,8 +29,7 @@ session_start();
                $user_id = $_SESSION['user_id'];
             }
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $birthdatechange = $pdo->prepare('UPDATE users SET birth_date = :new_birthdate WHERE user_id = :user_id');
             $birthdatechange->bindValue(':new_birthdate', $new_birthdate);

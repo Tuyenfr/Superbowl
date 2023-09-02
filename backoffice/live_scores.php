@@ -29,8 +29,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $newscores = $pdo->prepare('UPDATE matchs SET team1_score = :team1_score, team2_score = :team2_score WHERE date_match_name = :date_match_name');
             $newscores->bindValue(':date_match_name', $date_match_name);

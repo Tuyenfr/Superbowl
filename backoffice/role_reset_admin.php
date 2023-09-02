@@ -28,8 +28,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $newrole = $pdo->prepare('UPDATE users SET role = :role_reset WHERE email = :email AND first_name = :first_name AND last_name = :last_name');
             $newrole->bindValue(':role_reset', $role_reset);

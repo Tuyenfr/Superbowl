@@ -15,8 +15,8 @@
                require_once "./constants/bets_update.php";
 
                try {
-                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  
+                  require "./constants/pdo.php";
 
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();

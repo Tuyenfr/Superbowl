@@ -37,8 +37,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $newteam = $pdo->prepare('INSERT INTO teams (team_name, team_winning_odds, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11) VALUES (:team_name, :team_winning_odds, :player1, :player2, :player3, :player4, :player5, :player6, :player7, :player8, :player9, :player10, :player11)');
             $newteam->bindValue(':team_name', $team_name);

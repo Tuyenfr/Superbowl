@@ -25,9 +25,8 @@ session_start();
          $team_winning_odds = $_POST['team_winning_odds'];
 
          try {
-
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            require "../constants/pdo.php";
 
             $newodd = $pdo->prepare('UPDATE teams SET team_winning_odds = :team_winning_odds WHERE team_name = :team_name');
             $newodd->bindValue(':team_name', $team_name);

@@ -41,8 +41,8 @@ session_start();
          } else {
 
             try {
-               $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+               require "../constants/pdo.php";
 
                $statement = $pdo->prepare('INSERT INTO users(first_name, last_name, email, birth_date, password, role) VALUES (:first_name, :last_name, :email, :birth_date, :password, :role)');
                $statement->bindValue(':first_name', $first_name);

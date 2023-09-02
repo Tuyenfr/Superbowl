@@ -13,8 +13,8 @@
    $bet_team2_odds = $_POST['team2_odds'];
 
    try {
-      $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+      require "../constants/pdo.php";
 
       foreach ($pdo->query('SELECT * FROM bets WHERE match_id =' . $bet_match_id . '', PDO::FETCH_ASSOC) as $newbet) {
          $team1_name = $newbet['team1_name'];

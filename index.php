@@ -23,8 +23,8 @@
                require_once "./constants/bets_update.php";
 
                try {
-                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               
+                  require "./constants/pdo.php";
 
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "live" ORDER BY start_time DESC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
@@ -126,8 +126,7 @@
 
                try {
 
-                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  require "./constants/pdo.php";
 
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "en cours" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
@@ -232,8 +231,8 @@
                <?php
 
                try {
-                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                  
+                  require "./constants/pdo.php";
 
                   foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC) as $match_name) {
                      $date =  $match_name['match_date'];
@@ -329,8 +328,8 @@
                <?php
 
                try {
-                  $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
-                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                  require "./constants/pdo.php";
 
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();

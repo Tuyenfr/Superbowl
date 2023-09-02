@@ -26,8 +26,7 @@ session_start();
 
          try {
 
-            $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require "../constants/pdo.php";
 
             $matchcomment = $pdo->prepare('UPDATE matchs SET match_comment = :match_comment WHERE date_match_name = :date_match_name');
             $matchcomment->bindValue(':match_comment', $match_comment);

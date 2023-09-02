@@ -6,7 +6,9 @@
          <br>
 
          <?php
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
+
+         require "../constants/pdo.php";
+
          $statementcount = $pdo->prepare('SELECT COUNT(credit) FROM users_balance');
          $statementcount->execute();
          ?>
