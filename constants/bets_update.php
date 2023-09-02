@@ -2,7 +2,7 @@
 
 try {
 
-    require "pdo.php";
+    require 'pdo.php';
 
     foreach ($pdo->query('SELECT * FROM bets WHERE bet_status = "Gagné" AND bet_admin_status = "open"', PDO::FETCH_ASSOC) as $betUpdate)
     {   $potential_gain = $betUpdate['potential_gain'];
@@ -14,7 +14,7 @@ try {
         
     if ($betUpdateGain->execute()){
 
-        require "pdo.php";
+        require 'pdo.php';
 
             foreach ($pdo->query('SELECT * FROM users WHERE user_id ='.$user_id.'', PDO::FETCH_ASSOC) as $currentbalance) {
                 $currentbalance['user_balance'] += $potential_gain;
@@ -24,7 +24,7 @@ try {
                 $newbalance->bindValue(':balance', $newcurrentbalance);
                 $newbalance->execute();
     
-                require "pdo.php";
+                require 'pdo.php';
                 
                 $credit = $potential_gain;
                 $debit = "0";
