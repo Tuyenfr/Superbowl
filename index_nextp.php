@@ -26,7 +26,7 @@
 
                   if (isset($_GET["page"])) {
                      $currentPage = $_GET["page"];
-                     $limitX = ($currentPage * $itemsPerPage) - $itemsPerPage;
+                     $limitX = ($currentPage * $itemsPerPage) - ($itemsPerPage - 1);
                      $limitY = $itemsPerPage;
 
                      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT ' . $limitX . ', ' . $limitY . '', PDO::FETCH_ASSOC) as $match_name) {

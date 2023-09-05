@@ -337,9 +337,9 @@
                   $nbPages = ceil($count / $itemsPerPage);
 
 
-                  if ($count > 7) {
+                  if ($count > 8) {
 
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 6', PDO::FETCH_ASSOC) as $match_name) {
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 7', PDO::FETCH_ASSOC) as $match_name) {
 
                         $date =  $match_name['match_date'];
                         $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -427,7 +427,7 @@
 
                         } else {
 
-                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 6', PDO::FETCH_ASSOC) as $match_name) {
+                           foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 7', PDO::FETCH_ASSOC) as $match_name) {
 
                               $date =  $match_name['match_date'];
                               $dateUS = DateTime::createFromFormat('Y-m-d', $date);
