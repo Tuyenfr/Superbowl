@@ -377,13 +377,13 @@
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
                   $count = count($nbmatch);
-                  $itemsPerPage = 10;
+                  $itemsPerPage = 7;
                   $nbPages = ceil($count / $itemsPerPage);
 
 
-                  if ($count > 10) {
+                  if ($count > 7) {
 
-                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 9', PDO::FETCH_ASSOC) as $match_name) {
+                     foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 6', PDO::FETCH_ASSOC) as $match_name) {
 
                         $date =  $match_name['match_date'];
                         $dateUS = DateTime::createFromFormat('Y-m-d', $date);
@@ -471,7 +471,7 @@
                         
                      } else {
 
-                        foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
+                        foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT 0, 6', PDO::FETCH_ASSOC) as $match_name) {
 
                            $date =  $match_name['match_date'];
                            $dateUS = DateTime::createFromFormat('Y-m-d', $date);

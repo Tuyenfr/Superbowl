@@ -21,13 +21,13 @@
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
                   $count = count($nbmatch);
-                  $itemsPerPage = 10;
+                  $itemsPerPage = 7;
                   $nbPages = ceil($count / $itemsPerPage);
 
                   if (isset($_GET["page"])) {
                      $currentPage = $_GET["page"];
-                     $limitX = ($currentPage * $itemsPerPage) - 10;
-                     $limitY = $itemsPerPage - 1;
+                     $limitX = ($currentPage * $itemsPerPage) - $itemsPerPage;
+                     $limitY = $itemsPerPage;
 
                      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT ' . $limitX . ', ' . $limitY . '', PDO::FETCH_ASSOC) as $match_name) {
 

@@ -11,9 +11,6 @@
 
             <div class="sous_table">
 
-               <br>
-               <h4> Matchs terminés</h4>
-
                <?php
 
                require_once "../constants/matchs_encours_update.php";
@@ -29,13 +26,13 @@
                   $statement = $pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date ASC, start_time ASC', PDO::FETCH_ASSOC);
                   $nbmatch = $statement->fetchAll();
                   $count = count($nbmatch);
-                  $itemsPerPage = 10;
+                  $itemsPerPage = 7;
                   $nbPages = ceil($count / $itemsPerPage);
 
                   if (isset($_GET["page"])) {
                      $currentPage = $_GET["page"];
-                     $limitX = ($currentPage * $itemsPerPage) - 10;
-                     $limitY = $itemsPerPage - 1;
+                     $limitX = ($currentPage * $itemsPerPage) - $itemsPerPage;
+                     $limitY = $itemsPerPage;
 
                      foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "terminé" ORDER BY match_date DESC, start_time DESC LIMIT ' . $limitX . ', ' . $limitY . '', PDO::FETCH_ASSOC) as $match_name) {
 
@@ -48,14 +45,14 @@
                ?>
                         <div>
                            <table width="100%">
-                              <tr width="100%">
-                                 <td class="display_td">
+                              <tr>
+                                 <td class="display_td" width="100%">
                                     <?php echo $match_dateFR . ' - ' . 'Match' . ' ' . $match_name['match_status']; ?>
                                  </td>
                               </tr>
 
-                              <tr width="100%">
-                                 <td class="display_td">
+                              <tr>
+                                 <td class="display_td" width="100%">
                                     <?php echo substr($match_name['start_time'], 0, -3) . ' - ' . substr($match_name['end_time'], 0, -3); ?>
                                  </td>
                               </tr>

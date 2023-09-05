@@ -256,24 +256,26 @@
 
                         <ul class="pages_li">
                   
-                        <ul class="pages_li">
-                           
                            <li>
                               Page <a class="pages_liens <?php if (!isset($currentPage)) {echo 'bold';} ?>" href="matchs_tocome_user.php">1 &nbsp</a>
                            </li>
 
-                           <?php
+                              <?php
                            
-                           for ($i = 2; $i <= $nbPages; $i++) { ?>
-                              <li class="<?php if (htmlentities($currentPage) == $i) {echo 'bold';} ?>">
-                                 <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
-                              </li>
+                              for ($i = 2; $i <= $nbPages; $i++) { ?>
+                           <li class="<?php if (htmlentities($currentPage) == $i) {echo 'bold';} ?>">
+                              <a class="pages_liens" href='matchs_tocome_user.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                           </li>
                            <?php } ?>
-                           <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                           echo '</ul>';
-                           echo '<br>';
 
-                        } else {
+                           <li>
+                              &nbsp &nbsp &nbsp &nbsp &nbsp
+                           </li> 
+                        
+                        </ul>
+                        <br>
+
+                           <?php } else {
 
                            foreach ($pdo->query('SELECT * FROM matchs WHERE match_status = "à venir" ORDER BY match_date ASC, start_time ASC LIMIT 0, 10', PDO::FETCH_ASSOC) as $match_name) {
                               $date =  $match_name['match_date'];
