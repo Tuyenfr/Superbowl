@@ -1,6 +1,5 @@
 <?php require_once "../templates/header_home_nextp.php"; ?>
 
-<br>
       <section class="container_matchs">
 
          <div class="aside_left">
@@ -10,6 +9,8 @@
          <div class="table_equipe">
 
             <div class="sous_table">
+
+            <br>
 
                <?php
 
@@ -116,14 +117,15 @@
                         for ($i = 2; $i <= $nbPages; $i++) { ?>
 
                         <li class="<?php if ($currentPage == $i) {echo 'bold';} ?>">
-                           <a class="pages_liens" href='home_nextp.php?page=<?php echo $i; ?>'><?php echo $i; ?> &nbsp</a>
+                           <a class="pages_liens" href="home_nextp.php?page=<?php echo $i; ?>"><?php echo $i; ?> &nbsp</a>
                         </li>
                         <?php } ?>
-                        <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> <?php
-                        echo '</ul>';
+                        <li>&nbsp &nbsp &nbsp &nbsp &nbsp</li> 
+                        
+                     </ul>
+                     <br>
 
-                        echo '<br>';
-                     }
+                  <?php }
                   } catch (PDOException $e) {
                      echo 'pb de connexion';
                   }
