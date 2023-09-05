@@ -314,6 +314,7 @@
                      </div>
 
                      <br>
+                     <br>
 
                <?php }
                } catch (PDOException $e) {
@@ -321,7 +322,6 @@
                }
                ?>
 
-               <br>
                <h4>Matchs terminés</h4>
 
                <?php
