@@ -17,8 +17,7 @@
         $user_id = $_SESSION['user_id'];
       }
 
-      $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      require "../constants/pdo.php";
 
       $balance = $pdo->prepare('SELECT user_balance FROM users WHERE user_id = :user_id');
       $balance->bindValue(':user_id', $user_id);
