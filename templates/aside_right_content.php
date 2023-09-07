@@ -48,8 +48,7 @@
         $user_id = $_SESSION['user_id'];
       }
 
-      $pdo = new PDO('mysql:host=localhost;dbname=superbowl', 'root', '');
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      require "../constants/pdo.php";
 
       $bets = $pdo->prepare('SELECT * FROM bets WHERE user_id = :user_id AND bet_status = "En cours"');
       $bets->bindValue(':user_id', $user_id);

@@ -11,7 +11,8 @@
       <?php
 
       try{
-         $pdo = new PDO('mysql:host=localhost;dbname=superbowl', username: "root", password: "");
+         
+         require "../constants/pdo.php";
    
          foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team)
          {
