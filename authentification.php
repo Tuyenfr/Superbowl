@@ -1,6 +1,6 @@
 <?php require_once "./templates/header_index_norefresh.php"; ?>
 
-   <div style="text-align: center">
+   <div style="text-align: center; margin-top: 50px">
 
       <?php
       $email = $_POST['email'];
@@ -42,7 +42,7 @@
                         setcookie('user', 'commentator', time() + 3600, '/');
                         header("location:backoffice/commentator.php");
                      } else {
-                        echo 'Identifiants incorrects';
+                        echo '// Identifiants incorrects - Veuillez-vous reconnecter //';
                      }
                   }
                }
