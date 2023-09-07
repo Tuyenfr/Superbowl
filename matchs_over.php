@@ -10,7 +10,6 @@
 
                <h4> Matchs terminés</h4>
 
-
                <?php
 
                require_once "./constants/matchs_encours_update.php";

@@ -13,7 +13,6 @@
 
             <div class="sous_table">
 
-               <br>
                <h4> Matchs terminés</h4>
 
                <?php

@@ -10,7 +10,6 @@
                <a class="link_about_SB" href="about_superbowl.php" target="_blank">En savoir plus</a>
 
                <br>
-               <br>
 
                <h4>Matchs live</h4>
 
@@ -108,6 +107,7 @@
                               <a href="#" class="modal_close">x</a>
                            </div>
                         </div>
+                        <br>
                         
                <?php }
                   } else {
@@ -118,8 +118,6 @@
                }
                ?>
 
-               <br>
-               <br>
                <h4>Matchs du jour</h4>
 
                <?php
@@ -210,9 +208,7 @@
                               <a href="#" class="modal_close">x</a>
                            </div>
                         </div>
-
-                        <br>
-
+                     <br>
                <?php }
                   } else {
                      echo 'Aucun match en cours';
@@ -222,8 +218,6 @@
                }
 
                ?>
-
-               <br>
 
                <h4>Matchs à venir</h4>
 
@@ -314,14 +308,13 @@
                      </div>
 
                      <br>
-                     <br>
 
                <?php }
                } catch (PDOException $e) {
                   echo 'pb de connexion';
                }
                ?>
-
+         
                <h4>Matchs terminés</h4>
 
                <?php

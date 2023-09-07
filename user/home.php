@@ -11,7 +11,6 @@
 
             <div class="sous_table">
 
-               <br>
                <h4> Matchs live</h4>
 
                <?php
@@ -109,7 +108,7 @@
                               <a href="#" class="modal_close">x</a>
                            </div>
                         </div>
-
+                        <br>
                <?php }
                   } else {
                      echo 'Aucun match en cours';
@@ -119,8 +118,6 @@
                }
                ?>
 
-               <br>
-               <br>
                <h4>Matchs du jour</h4>
 
                <?php
@@ -234,8 +231,8 @@
                               <a href="#" class="modal_close">x</a>
                            </div>
                         </div>
+                  <br>
 
-                        <br>
                <?php }
                   } else {
                      echo 'Aucun match en cours';
@@ -246,8 +243,6 @@
 
                ?>
 
-               <br>
-               
                <h4> Matchs à venir</h4>
 
                <?php
@@ -357,7 +352,6 @@
                         </div>
                      </div>
 
-                     <br>
                      <br>
 
                <?php }
