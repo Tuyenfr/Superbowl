@@ -385,10 +385,11 @@ footer {
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+    box-shadow: 4px 4px 4px rgb(196, 194, 194);
     margin-right: 240px;
     margin-left: 240px;
-    box-shadow: 4px 4px 4px rgb(196, 194, 194);
 }
+
 
 .subtitle {
     font-size: 12px;
@@ -533,6 +534,12 @@ h5 {
 
 @media screen and (max-width: 960px) {
     nav > ul {font-size: small;}
+
+    .title_form_pad10 {
+        font-size: small;
+        margin-right: 150px;
+        margin-left: 150px;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -540,10 +547,29 @@ h5 {
         margin-left: 0%;
         margin-right: 0%;
     }
+
+    .title_form_pad10 {
+        margin-right: 120px;
+        margin-left: 120px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
     nav > ul {font-size: 11px;}
+
+    .title_form_pad10 {
+        font-size: small;
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+
+
+}
+
+@media screen and (max-width: 360px) {
+    footer {display: none;}
+
 }
 
 @media screen and (max-height: 600px) {
