@@ -580,7 +580,20 @@ h5 {
 
 
 @media screen and (max-width: 360px) {
+
     footer {display: none;}
+
+    .table_equipe {
+        width: 100%;
+    }
+
+    .aside_left {
+        display: none;
+    }
+
+    .aside_right {
+        display: none;
+    }
 
     .container_bo {
         margin-left: 0%;
