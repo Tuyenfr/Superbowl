@@ -31,7 +31,7 @@ session_start();
 
       <div class="container_useraccount">
 
-      <div style="text-align: center; padding-top: 10px"><img width="35%" src="../Images/superbowl-LVII.avif" alt="photo Super Bowl"></div>
+      <div style="text-align: center; padding-top: 10px"><img width="35%" src="../Images/superbowl-LVII.png" alt="photo Super Bowl"></div>
                
          <p class="subtitles_aboutSB" id="superbowl_history">Histoire du Super Bowl</p>
 
