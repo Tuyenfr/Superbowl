@@ -370,6 +370,7 @@ footer {
     height: 70%;
     background-color: whitesmoke;
 }
+
 .title_form_pad40 {
     font-size: 17px;
     text-align: center;
@@ -389,7 +390,6 @@ footer {
     margin-right: 240px;
     margin-left: 240px;
 }
-
 
 .subtitle {
     font-size: 12px;
@@ -532,14 +532,32 @@ h5 {
 
 /* MEDIA QUERY */
 
+@media screen and (max-width: 1300px) {
+
+    .title_form_pad10 {
+        margin-right: 200px;
+        margin-left: 200px;
+    }
+
+    .container_bo {
+        margin-left: 10%;
+        margin-right: 10%;
+        }
+
+    .container_useraccount {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
 @media screen and (max-width: 960px) {
     nav > ul {font-size: small;}
 
     .title_form_pad10 {
         font-size: small;
-        margin-right: 150px;
-        margin-left: 150px;
+
     }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -548,6 +566,11 @@ h5 {
         margin-right: 0%;
     }
 
+}
+
+@media screen and (max-width: 600px) {
+    nav > ul {font-size: 11px;}
+
     .title_form_pad10 {
         margin-right: 120px;
         margin-left: 120px;
@@ -555,8 +578,24 @@ h5 {
 
 }
 
-@media screen and (max-width: 600px) {
-    nav > ul {font-size: 11px;}
+@media screen and (max-width: 360px) {
+    footer {display: none;}
+
+    .container_bo {
+        margin-left: 0%;
+        margin-right: 0%;
+        }
+
+    .container_useraccount {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .container_connexion {
+        margin-left: 0%;
+        margin-right: 0%;
+
+    }
 
     .title_form_pad10 {
         font-size: small;
@@ -564,15 +603,39 @@ h5 {
         margin-left: 100px;
     }
 
-
-}
-
-@media screen and (max-width: 360px) {
-    footer {display: none;}
-
 }
 
 @media screen and (max-height: 600px) {
     footer {display: none;}
 }
 
+
+@media screen and (min-height: 900px) {
+
+    .container_matchs_index {
+        height: 1000px;
+    }
+    
+    .table_equipe_index {
+        height: 1000px;
+    }
+
+    .container_matchs {
+        height: 900px;
+    }
+
+    .table_equipe {
+        height: 900px;
+    }
+    
+    .container_useraccount {
+        height: 900px;
+
+    }
+
+    .container_connexion {
+        height: 900px;
+
+    }
+
+}

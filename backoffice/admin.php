@@ -8,6 +8,12 @@ session_start();
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv='refresh' content='120'>
+
+      <link rel="apple-touch-icon" sizes="180x180" href="./Images/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon/favicon-16x16.png">
+      <link rel="manifest" href="./Images/favicon/site.webmanifest">
+
       <title>admin backoffice</title>
       <link rel="stylesheet" href="../CSS/style.css" type="text/css">
 </head>
@@ -22,9 +28,9 @@ session_start();
                   <nav>
                         <ul class="menu">
                               <li class="bold"><a class="link_pages" href="../index.php">Accueil</a></li>
-                              <li><a class="link_pages" href="#matchs_management">Gestion des matchs</a></li>
-                              <li><a class="link_pages" href="#teams_management">Gestion des équipes</a></li>
-                              <li><a class="link_pages" href="#users_management">Gestion des utilisateurs</a></li>
+                              <li><a class="link_pages" href="#matchs_management">Gestion matchs</a></li>
+                              <li><a class="link_pages" href="#teams_management">Gestion équipes</a></li>
+                              <li><a class="link_pages" href="#users_management">Gestion utilisateurs</a></li>
                               <li><a class="link_pages" href="../session_destroy.php">Déconnexion</a></li>
                         </ul>
                   </nav>

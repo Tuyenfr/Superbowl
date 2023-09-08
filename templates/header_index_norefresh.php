@@ -30,7 +30,7 @@ session_start();
                <li class="<?php if (basename($page) == "index.php") {echo 'bold';} ?>"><a class="link_pages" href="index.php">Lives</a></li>
                <li class="<?php if (basename($page) == "matchs_tocome.php") {echo 'bold';} ?>"><a class="link_pages" href="matchs_tocome.php">Matchs à venir</a></li>
                <li class="<?php if (basename($page) == "matchs_over.php") {echo 'bold';} ?>"><a class="link_pages" href="matchs_over.php">Matchs terminés</a></li>
-               <li class="<?php if (basename($page) == "about_superbowl.php") {echo 'bold';} ?>"><a class="link_pages" href="about_superbowl.php">A propos du Super Bowl</a></li>
+               <li class="<?php if (basename($page) == "about_superbowl.php") {echo 'bold';} ?>"><a class="link_pages" href="about_superbowl.php">Le Super Bowl</a></li>
                <li class="<?php if (basename($page) == "connexion.php") {echo 'bold';} ?>"><a class="link_pages" href="connexion.php" target="_blank">Connexion</a></li>
             </ul>
          </nav>
