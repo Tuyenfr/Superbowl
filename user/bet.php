@@ -109,7 +109,7 @@
                            $newcurrentbalance = $currentbalance['user_balance'];
                            echo 'Votre nouveau solde est de : ' . $newcurrentbalance . ' euros';
 
-                           $newbalance = $pdo2->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
+                           $newbalance = $pdo->prepare('UPDATE users SET user_balance = :balance WHERE user_id =' . $user_id . '');
                            $newbalance->bindValue(':balance', $newcurrentbalance);
                            $newbalance->execute();
 
@@ -118,7 +118,7 @@
                            $credit = "0";
                            $transaction_description = "Mise pari";
 
-                           $newtransaction = $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :team1_bet, :newcurrentbalance)');
+                           $newtransaction = $pdo->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :team1_bet, :newcurrentbalance)');
                            $newtransaction->bindValue(':user_id', $user_id);
                            $newtransaction->bindValue(':bet_date', $bet_date);
                            $newtransaction->bindValue(':transaction_description', $transaction_description);
@@ -199,7 +199,7 @@
                            $credit = "0";
                            $transaction_description = "Mise pari";
 
-                           $newtransaction = $pdo3->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :team2_bet, :newcurrentbalance)');
+                           $newtransaction = $pdo->prepare('INSERT INTO users_balance (user_id, transaction_date, transaction_description, credit, debit, user_balance) VALUES (:user_id, :bet_date, :transaction_description, :credit, :team2_bet, :newcurrentbalance)');
                            $newtransaction->bindValue(':user_id', $user_id);
                            $newtransaction->bindValue(':bet_date', $bet_date);
                            $newtransaction->bindValue(':transaction_description', $transaction_description);
