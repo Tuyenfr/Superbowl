@@ -43,6 +43,7 @@
                      <div>
                         <br>
                         <input type="hidden" name="match_id" value="<?php echo $bet_match_id; ?>">
+                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                         <input type="hidden" name="bet_team" value="<?php echo $bet_team; ?>">
                         <input type="hidden" name="bet_team1_name" value="<?php echo $bet_team1_name; ?>">
                         <input type="hidden" name="bet_team2_name" value="<?php echo $bet_team2_name; ?>">

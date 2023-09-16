@@ -5,6 +5,7 @@
          <?php
 
          $bet_match_id = $_POST['match_id'];
+         $bet_user_id = $_POST['user_id'];
          $bet_team = $_POST['bet_team'];
          $bet_team1_name = $_POST['bet_team1_name'];
          $bet_team2_name = $_POST['bet_team2_name'];
@@ -18,6 +19,7 @@
 
          if ($bet_keepcurrentbet === "Oui") {
             header("location:home.php");
+
          } else {
             echo 'Mon pari actuel sur le match : ' . $bet_team1_name . ' - ' . $bet_team2_name;
             echo '<br>';
@@ -127,9 +129,13 @@
                   <br>
                   <br>
                   <input type="hidden" name="match_id" value="<?php echo $bet_match_id; ?>">
+                  <input type="hidden" name="user_id" value="<?php echo $bet_user_id; ?>">
                   <input type="hidden" name="team1_odds" value="<?php echo $current_team1_odds; ?>">
                   <input type="hidden" name="draw_odds" value="<?php echo $current_draw_odds; ?>">
                   <input type="hidden" name="team2_odds" value="<?php echo $current_team2_odds; ?>">
+                  <input type="hidden" name="team1_bet" value="<?php echo $bet_team1; ?>">
+                  <input type="hidden" name="draw_bet" value="<?php echo $bet_draw; ?>">
+                  <input type="hidden" name="team2_bet" value="<?php echo $bet_team2; ?>">
                   <input type="submit" class="button_connexion" value="Confirmer et annuler mise précédente">
 
                </form>

@@ -6,11 +6,17 @@
 
    <?php
    $bet_match_id = $_POST['match_id'];
+   $bet_user_id = $_POST['user_id'];
    $bet_team = $_POST['confirm_winning_team'];
    $bet_new_amount = $_POST['new_bet'];
    $bet_team1_odds = $_POST['team1_odds'];
    $bet_draw_odds = $_POST['draw_odds'];
    $bet_team2_odds = $_POST['team2_odds'];
+   $bet_team1_old = $_POST['team1_bet'];
+   $bet_draw_old = $_POST['draw_bet'];
+   $bet_team2_old = $_POST['team2_bet'];
+
+   $bet_difference = $bet_new_amount - ($bet_team1_old + $bet_draw_old + $bet_team2_old);
 
    try {
       
@@ -44,10 +50,11 @@
                echo 'Votre gain potentiel est de : ' . $potential_gain_1 . ' €';
                echo '<br>';
                echo '<br>';
-               echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
+               
             } else {
                echo 'Impossible d\'enregistrer le nouveau pari.';
             }
+
          } elseif ($bet_team === $team2_name) {
 
             $potential_gain_2 = $bet_new_amount * $bet_team2_odds;
@@ -69,7 +76,7 @@
                echo 'Votre gain potentiel est de : ' . $potential_gain_2 . ' €';
                echo '<br>';
                echo '<br>';
-               echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
+
             } else {
                echo 'Impossible d\'enregistrer le nouveau pari.';
             }
@@ -93,10 +100,87 @@
                echo 'Votre gain potentiel est de : ' . $potential_gain_0 . ' €';
                echo '<br>';
                echo '<br>';
-               echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
+         
             } else {
                echo 'Impossible d\'enregistrer le nouveau pari.';
             }
+         }
+      }
+
+      //MISE A JOUR SOLDE USER 
+
+      require "../constants/pdo.php";
+
+      $user_update = $pdo->prepare('SELECT * FROM users WHERE user_id =' . $bet_user_id . '');
+      $user_update->execute();
+      $current_user_balance = $user_update->fetchAll();
+
+      foreach ($current_user_balance as $user_balance) {
+
+      $new_user_balance = $user_balance['user_balance'] - $bet_difference;
+      $transaction_date = date('Y-m-d');
+
+      if ($bet_difference > 0) {
+
+      $debit = $bet_difference;
+
+      require "../constants/pdo.php";
+
+      $user_balance_update = $pdo->prepare('INSERT INTO users_balance(transaction_date, transaction_description, user_id, debit, user_balance) VALUES (:transaction_date, "Mise à jour pari", :bet_user_id, :debit, :new_user_balance)');
+      $user_balance_update->bindValue(':transaction_date', $transaction_date);
+      $user_balance_update->bindValue(':debit', $debit);
+      $user_balance_update->bindValue(':new_user_balance', $new_user_balance);
+      $user_balance_update->bindValue(':bet_user_id', $bet_user_id);
+
+
+      if ($user_balance_update->execute()) {
+
+      require "../constants/pdo.php";
+
+      $user_update = $pdo->prepare('UPDATE users SET user_balance = :new_user_balance WHERE user_id = :bet_user_id');
+      $user_update->bindValue(':new_user_balance', $new_user_balance);
+      $user_update->bindValue(':bet_user_id', $bet_user_id);
+
+      if ($user_update->execute()) {
+      
+      echo "Votre nouveau solde est de : ".$new_user_balance;
+      echo '<br>';
+      echo '<br>';
+      echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
+            }
+         }
+      } elseif ($bet_difference < 0)  {
+
+            $credit = - $bet_difference;
+      
+            require "../constants/pdo.php";
+      
+            $user_balance_update1 = $pdo->prepare('INSERT INTO users_balance(transaction_date, transaction_description, user_id, credit, user_balance) VALUES (:transaction_date, "Mise à jour pari", :bet_user_id, :credit, :new_user_balance)');
+            $user_balance_update1->bindValue(':transaction_date', $transaction_date);
+            $user_balance_update1->bindValue(':credit', $credit);
+            $user_balance_update1->bindValue(':new_user_balance', $new_user_balance);
+            $user_balance_update1->bindValue(':bet_user_id', $bet_user_id);
+
+            if ($user_balance_update1->execute()) {
+      
+            require "../constants/pdo.php";
+      
+            $user_update1 = $pdo->prepare('UPDATE users SET user_balance = :new_user_balance WHERE user_id = :bet_user_id');
+            $user_update1->bindValue(':new_user_balance', $new_user_balance);
+            $user_update1->bindValue(':bet_user_id', $bet_user_id);
+               
+            if ($user_update1->execute()) {
+            echo "Votre nouveau solde est de : ".$new_user_balance;
+            echo '<br>';
+            echo '<br>';
+            echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
+                  }
+               }
+            } else {
+            echo "Votre solde reste inchangé";
+            echo '<br>';
+            echo '<br>';
+            echo '<button class="button_connexion"><a class="link_pages" href="home.php">Retour à la page d\'accueil</a></button>';
          }
       }
    } catch (PDOException $e) {
