@@ -7,7 +7,7 @@ Mode d’installation du code de l’application web :
 •	Copier le dossier SuperBowlBET sous xampp/htdocs/
 •	Ouvrir PHPmyAdmin en local, créer la base de données superbowl et importer le fichier superbowl.sql
 
-Accès utiilsateurs :
+Accès utilisateurs :
 John Doe 
 16/07/1971
 Pswd : studi1
