@@ -247,7 +247,7 @@ session_start();
 
                   <h4 id="teams_management">Gestion des équipes</h4>
 
-                  <h5>Mise à jour cote équipe matchs</h5>
+                  <h5>Mise à jour cote globale équipe</h5>
 
                   <form action="team_odds_update.php" method="POST">
 
@@ -414,42 +414,7 @@ session_start();
 
                   </form>
 
-                  <h5>Mise à jour cote équipe matchs</h5>
-
-                  <form action="team_odds_update.php" method="POST">
-
-                        <div>
-                              <label for="team_name">Sélectionner l'équipe</label>
-                              <select name="team_name">
-
-                                    <?php
-                                    try {
-
-                                          require "../constants/pdo.php";
-
-                                          foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team) {
-                                                $team_name = $team['team_name']; ?>
-
-                                                <option value="<?php echo $team_name; ?>"><?php echo $team_name; ?></option>
-
-                                    <?php }
-                                    } catch (PDOException $e) {
-                                          echo 'Impossible de se connecter à la base de données';
-                                    }
-                                    ?>
-
-                              </select>
-                        </div>
-
-                        <div> <label for="team_winning_odds">Nouvelle cote équipe match</label>
-                              <input type="text" name="team_winning_odds" placeholder="Nouvelle cote">
-                        </div>
-
-                        <div> <input class="button_connexion" type="submit" value="Mettre à jour la cote"> </div>
-
-                  </form>
-
-
+                  
             </div>
       </div>
 </body>
