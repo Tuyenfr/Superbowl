@@ -247,7 +247,7 @@ session_start();
 
                   <h4 id="teams_management">Gestion des équipes</h4>
 
-                  <h5>Mise à jour cote globale équipe</h5>
+                  <h5>Mise à jour cote équipe gagnante</h5>
 
                   <form action="team_odds_update.php" method="POST">
 
@@ -345,7 +345,7 @@ session_start();
                               </select>
                         </div>
 
-                        <div> <label for="latest_news">Nouvelle cote équipe match</label>
+                        <div> <label for="latest_news">Dernière actualité</label>
                               <input type="text" name="latest_news" placeholder="Dernière actualité">
                         </div>
 
@@ -362,7 +362,7 @@ session_start();
                               <input type="text" name="team_name" placeholder="Nom nouvelle équipe">
                         </div>
 
-                        <div> <label for="team_winning_odds">Cote équipe matchs</label>
+                        <div> <label for="team_winning_odds">Cote équipe gagnante</label>
                               <input type="text" name="team_winning_odds" placeholder="Cote équipe">
                         </div>
 
