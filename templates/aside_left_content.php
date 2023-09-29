@@ -17,7 +17,7 @@
          foreach ($pdo->query('SELECT * FROM teams ORDER BY team_name ASC', PDO::FETCH_ASSOC) as $team)
          {
             ?>
-            <form action="teams_info_user.php" method="POST">
+            <form action="team_info.php" method="POST">
             <ul>
                <li class="teams_list">
                   <input class="button_team" type="submit" name="team_name" value="<?php echo $team['team_name']; ?>">
