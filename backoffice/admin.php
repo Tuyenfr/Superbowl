@@ -425,7 +425,7 @@ session_start();
 
                   <h5>Créer un nouvel utilisateur</h5>
 
-                  <form action="form_admin.php" method="POST">
+                  <form action="new_user.php" method="POST">
 
                         <div> <label for="first_name">Prénom</label>
                               <input type="text" name="first_name" placeholder="Saisir le prénom">
@@ -462,7 +462,7 @@ session_start();
 
                   <h5>Changer le rôle de l'utilisateur</h5>
 
-                  <form action="role_reset_admin.php" method="POST">
+                  <form action="role_reset.php" method="POST">
 
                         <div> <label for="first_name">Prénom utilisateur</label>
                               <input type="text" name="first_name" placeholder="Saisir le prénom">
@@ -492,7 +492,7 @@ session_start();
 
                   <h5>Changer le mot de passe de l'utilisateur</h5>
 
-                  <form action="password_reset_admin.php" method="POST">
+                  <form action="password_reset.php" method="POST">
 
                         <div> <label for="first_name">Prénom utilisateur</label>
                               <input type="text" name="first_name" placeholder="Saisir le prénom">
