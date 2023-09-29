@@ -285,7 +285,7 @@ session_start();
 
                   <h5>Mise à jour commentaire Equipe</h5>
 
-                  <form action="comment_update.php" method="POST">
+                  <form action="team_comment.php" method="POST">
 
                         <div>
                               <label for="team_name">Sélectionner l'équipe</label>
