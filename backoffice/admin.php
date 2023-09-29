@@ -492,7 +492,7 @@ session_start();
 
                   <h5>Changer le mot de passe de l'utilisateur</h5>
 
-                  <form action="password_reset.php" method="POST">
+                  <form action="password_reset_admin.php" method="POST">
 
                         <div> <label for="first_name">Prénom utilisateur</label>
                               <input type="text" name="first_name" placeholder="Saisir le prénom">
