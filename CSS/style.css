@@ -277,65 +277,7 @@ nav > ul {
     text-align: center;
 }
 
-/* MODAL commentaires matchs */
-
-/* .modal_margin {
-    margin-top: 5px;
-}
-
-.modal {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 0; right: 0;
-    bottom: 0; left: 0;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(85, 85, 82, 0.251);
-    transition: all .4s;
-}
-
-.modal_home {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 0; right: 26%;
-    bottom: 0; left: 26%;
-    display: flex;
-    justify-content: center;
-    background-color: rgba(85, 85, 82, 0.211);
-    transition: all .4s;
-}
-
-.modal:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal_home:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal_content {
-    border-radius: 4px;
-    top: 20px;
-    position: relative;
-    max-height: 50px;
-    width: 200px;
-    max-width: 90%;
-    background: whitesmoke;
-    padding: 1.5em 1.5em;
-    font-size: 12px;
-}
-
-.modal_close {
-    position: absolute;
-    top: 20px;
-    right: 145px;
-    color: grey;
-    text-decoration: none;
-} */
+/* MODALE commentaires matchs */
 
 .comment {
     margin-top: 5px;
