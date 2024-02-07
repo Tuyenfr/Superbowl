@@ -62,6 +62,7 @@ nav > ul {
     max-height: 700px;
     width: 100%;
     background-image: url(../Images/SB-matchups.png);
+    background-repeat: no-repeat;
     overflow-y: auto;
     position: relative;
     z-index: 1;
